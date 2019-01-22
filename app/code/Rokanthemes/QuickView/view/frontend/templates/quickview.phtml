@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+<script type="text/x-magento-init">
+{
+	".quickview-product [data-role=quickview-button]": {
+		"productQuickview": {}
+	}
+}
+</script>
+<script>
+require([
+		'jquery',
+		'mage/mage',
+		'quickview/cloudzoom',
+		'quickview/bxslider'
+	], function ($) {
+	});
+</script>

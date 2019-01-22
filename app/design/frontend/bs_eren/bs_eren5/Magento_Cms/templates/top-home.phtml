@@ -1,0 +1,79 @@
+<div class="top-content-home">
+	<div class="about-top-home">
+		<div class="col-xs-12 col-sm-6 col-md-6 nopadding about-top">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('about_top')->toHtml();?>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 nopadding video-top">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('video_top')->toHtml();?>
+		</div>
+	</div>
+	<div class="box-sale">
+		<div class="col-xs-12">
+			<div class="row">
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="content-sale">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('box_sale')->toHtml();?>
+			</div>
+		</div>
+	</div>
+	<div class="box-new">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Newproduct\Block\Newproduct')->setTemplate('Rokanthemes_Newproduct::newproduct.phtml')->toHtml();?> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-banner-middle effect-image-1">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle')->toHtml();?>
+	</div>
+	<div class="box-featured">
+		<div class="container">
+			<div class="row">
+				<?php echo $block->getLayout()->createBlock('Rokanthemes\Featuredpro\Block\Featured')->setTemplate('Rokanthemes_Featuredpro::featured.phtml')->toHtml();?> 
+			</div>
+		</div>
+	</div>
+	<div class="section-newsletter">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('Magento_Newsletter::subscribe.phtml')->toHtml();?> 
+		</div>
+	</div>
+	<div class="group-product">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_bestseller.phtml')->setCategoryId(53)->toHtml();?>
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Onsaleproduct\Block\Onsaleproduct')->setTemplate('Rokanthemes_Onsaleproduct::onsaleproduct.phtml')->toHtml();?> 
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_mostviewed.phtml')->setCategoryId(54)->toHtml();?>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box-blog">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_brands')->toHtml(); ?>
+		</div>
+	</div>
+	<!--
+	<div class="section-services">
+		<div class="container">
+			<?php //echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_services')->toHtml(); ?>
+		</div>
+	</div>
+	-->
+</div>

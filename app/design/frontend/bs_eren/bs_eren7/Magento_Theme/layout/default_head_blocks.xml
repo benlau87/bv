@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<!-- <script src="js/bootstrap.js"/> -->
+		<css src="css/bootstrap.css" />
+		<css src="css/font-awesome.min.css" />
+		<css src="css/elegant.css" />
+		<css src="css/font.css" />
+		<css src="css/pe-icon-7-stroke.css" />
+		<css src="css/helper.css" />
+		<css src="css/styles-l.css" />
+		<css src="css/styles-m.css" />
+		<css src="css/themes.css" />
+		<link src="https://fonts.googleapis.com/css?family=Montserrat:100,400,500,700,900" rel='stylesheet' type='text/css' src_type="url" />
+		<link src="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel='stylesheet' type='text/css' src_type="url" />
+		<link src="https://fonts.googleapis.com/css?family=Oswald:400,700" rel='stylesheet' type='text/css' src_type="url" />
+    </head>
+</page>

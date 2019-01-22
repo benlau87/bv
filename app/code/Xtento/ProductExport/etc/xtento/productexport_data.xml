@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Xtento_ProductExport:etc/xtento/productexport_data.xsd">
+    <data>
+        <!-- General product data -->
+        <export id="product_general" class="\Xtento\ProductExport\Model\Export\Data\Product\General"/>
+        <export id="parent_product" class="\Xtento\ProductExport\Model\Export\Data\Product\ParentProduct"/>
+        <export id="child_products" class="\Xtento\ProductExport\Model\Export\Data\Product\Children"/>
+        <export id="categories" class="\Xtento\ProductExport\Model\Export\Data\Product\Categories"/>
+        <export id="stock" class="\Xtento\ProductExport\Model\Export\Data\Product\Stock"/>
+        <!-- General review data -->
+        <export id="review_general" class="\Xtento\ProductExport\Model\Export\Data\Review\General"/>
+        <!-- General category data -->
+        <export id="category_general" class="\Xtento\ProductExport\Model\Export\Data\Category\General"/>
+        <!-- Third party -->
+    </data>
+</config>
+<!--
+/**
+ * Product:       Xtento_ProductExport (2.6.9)
+ * ID:            1eBZP1q/cM67kYGMQm8wxVjSda4Ywx7ofUEMdoI8sb8=
+ * Packaged:      2018-09-11T11:23:45+00:00
+ * Last Modified: 2017-11-28T11:23:40+00:00
+ * File:          app/code/Xtento/ProductExport/etc/xtento/productexport_data.xml
+ * Copyright:     Copyright (c) 2018 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

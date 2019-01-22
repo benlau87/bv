@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+	<default>
+		<themeoption>
+			<general>
+				<render_less>0</render_less>
+			</general>
+			<newsletter>
+				<enable>1</enable>
+				<width>600</width>
+				<height>330</height>
+				<bg_color>F4F4F4</bg_color>
+			</newsletter>
+		</themeoption>
+	</default>
+</config>

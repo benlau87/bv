@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2016 TuanHatay. All rights reserved.
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.topnav" remove="true"/>
+        <referenceContainer name="page.top">
+            <block class="Rokanthemes\CustomMenu\Block\Topmenu" name="custom.topnav" template="Rokanthemes_CustomMenu::topmenu.phtml" group="navigation-sections" ttl="3600" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

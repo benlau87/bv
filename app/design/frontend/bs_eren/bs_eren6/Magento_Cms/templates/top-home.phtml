@@ -1,0 +1,56 @@
+<div class="top-content-home">
+	<div class="wrapper-main-content clearfix">
+		<div class="col-md-9 col-sm-9 col-xs-12">
+			<?php echo $this->getLayout()->createBlock('Rokanthemes\SlideBanner\Block\Slider')->setSliderId('homepage6slider')->toHtml(); ?>
+
+			<div class="section-services">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_services')->toHtml(); ?>
+			</div>
+			
+			<div class="section-product-tab">
+				<?php echo $this->getLayout()->createBlock('Rokanthemes\ProductTab\Block\Producttab')->setTemplate('Rokanthemes_ProductTab::producttab.phtml')->toHtml();?> 
+			</div>
+			
+			<div class="box-banner-middle">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle')->toHtml();?>
+			</div>
+
+			<div class="section-mostviewed">
+				<?php echo $this->getLayout()->createBlock('Rokanthemes\MostviewedProduct\Block\Mostviewed')->setTemplate('Rokanthemes_MostviewedProduct::mostviewed.phtml')->toHtml();?> 
+			</div>
+
+			<div class="box-blog">
+				<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-sm-3 col-xs-12 right-main-content">
+			<div class="banner-top-right">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top')->toHtml();?>
+			</div>
+
+			<div class="onsale-countdown">
+				<?php echo $block->getLayout()->createBlock('Rokanthemes\PriceCountdown\Block\Pricecountdown')->setTemplate('Rokanthemes_PriceCountdown::pricecountdown.phtml')->toHtml();?>
+			</div>
+
+			<div class="banner-right-middle">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_right_middle')->toHtml();?>
+			</div>
+			
+			<div class="section-bestseller">
+				<?php echo $block->getLayout()->createBlock('Rokanthemes\BestsellerProduct\Block\Bestseller')->setTemplate('Rokanthemes_BestsellerProduct::bestseller.phtml')->toHtml();?>
+			</div>
+
+			<div class="section-newsletter">
+				<?php echo $block->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('Magento_Newsletter::subscribe.phtml')->toHtml();?> 
+			</div>
+
+		</div>
+		<div class="section-brands">
+			<div class="container">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_brands')->toHtml(); ?>
+			</div>
+		</div>
+	</div>
+	
+</div>

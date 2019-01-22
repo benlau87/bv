@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+		<add id="Rokanthemes_CustomMenu::custommenu" title="Custom Menu" module="Rokanthemes_CustomMenu" sortOrder="0" parent="Rokanthemes_RokanBase::rokanbase_setting" resource="Rokanthemes_CustomMenu::custommenu" action="adminhtml/system_config/edit/section/custommenu" />
+    </menu>
+</config>

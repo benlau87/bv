@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+    <body>
+		<referenceContainer name="page.wrapper">
+            <block class="Rokanthemes\Themeoption\Block\Themeoption" name="toki_header" template="html/header.phtml" before="-">
+				<block class="Magento\Framework\View\Element\Template" name="top_link" template="Magento_Theme::html/toplink.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
+				<block class="Magento\Framework\View\Element\Template" name="top.navigation.sections" template="Magento_Theme::html/sections.phtml">
+					<arguments>
+						<argument name="group_name" xsi:type="string">navigation-sections</argument>
+						<argument name="group_css" xsi:type="string">nav-sections</argument>
+					</arguments>
+				</block>
+            </block>
+        </referenceContainer>
+		<move element="store_language" destination="toki_header"/>
+		<move element="store_switcher" destination="toki_header"/>
+		<move element="currency" destination="toki_header"/>
+		<move element="header" destination="toki_header"/>
+		<move element="header.links" destination="toki_header" />		
+		<move element="logo" destination="toki_header"/>		
+		<move element="minicart" destination="toki_header"/>
+		<move element="top.search" destination="toki_header" />
+		<move element="top.links" destination="toki_header" />
+		<move element="slideshow.top" destination="toki_header" />
+		<move element="custom.topnav" destination="top.navigation.sections" />
+		
+		<referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceContainer name="header-wrapper" remove="true"/>
+		<referenceContainer name="navigation.sections" remove="true"/>
+		<referenceContainer name="footer-container">
+            <block class="Rokanthemes\Themeoption\Block\Themeoption" name="toki_footer" template="html/footer.phtml">
+				<block class="Magento\Cms\Block\Block" name="footer_static">
+					<arguments>
+						<argument name="block_id" xsi:type="string">footer_static</argument>
+					</arguments>
+				</block>
+				<block class="Magento\Cms\Block\Block" name="social_block">
+					<arguments>
+						<argument name="block_id" xsi:type="string">social_block</argument>
+					</arguments>
+				</block>
+            </block>
+        </referenceContainer>
+		<move element="footer_links" destination="toki_footer" />
+		<move element="store_switcher" destination="toki_footer" />
+		<move element="copyright" destination="toki_footer" />
+		<referenceContainer name="report.bugs" remove="1"/>
+		<referenceContainer name="form.subscribe" remove="1"/>
+    </body>
+</page>

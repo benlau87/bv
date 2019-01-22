@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rokanthemes_Featuredpro::rokanbase_featuredpro" title="Featured Product" module="Rokanthemes_Featuredpro" sortOrder="0" parent="Rokanthemes_RokanBase::rokanbase_setting" resource="Rokanthemes_Featuredpro::rokanbase_featuredpro" action="adminhtml/system_config/edit/section/featuredproduct" />
+    </menu>
+</config>

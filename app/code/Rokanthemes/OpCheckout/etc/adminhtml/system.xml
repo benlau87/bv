@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="opcheckout" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>OpCheckout</label>
+			<tab>rokanthemes</tab>
+            <resource>Rokanthemes_OpCheckout::opcheckout_configuration</resource>
+            <group id="general" translate="label" sortOrder="1" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="active" translate="label comment" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable One Step Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable module One Step Checkout</comment>
+                </field>
+				<field id="show_shipping_address" translate="label comment" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable billing to different address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>For Customers that have billing address different from shipping address</comment>
+                </field>
+				<field id="msg_disable_billing_address" translate="label comment" sortOrder="30" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show message disable billing address</label>
+					<comment>Only show when disable billing address</comment>
+					<depends>
+                        <field id="show_shipping_address">0</field>
+                    </depends>
+				</field>
+				<field id="checkout_title" translate="label" sortOrder="40" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Checkout title</label>
+                </field>
+                <field id="checkout_description" translate="label" sortOrder="50" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Checkout description</label>
+                </field>
+                <field id="show_newsletter" translate="label" sortOrder="60" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Newsletter checkbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="newsletter_default_checked" translate="label" sortOrder="70" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter checkbox checked by default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="show_newsletter">1</field>
+                    </depends>
+                </field>
+                <field id="show_discount" translate="label" sortOrder="80" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Discount Code section</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_items_image" translate="label" sortOrder="90" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Product Thumbnail Shown In Order Review Section</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="show_login_link" translate="label" sortOrder="100" type="select" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Login Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="login_link_title" translate="label" sortOrder="110" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Login Title</label>
+                    <depends>
+                        <field id="show_login_link">1</field>
+                    </depends>
+                </field>
+            </group>
+			<group id="terms_and_conditions" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Terms and Conditions</label>
+				<field id="terms_enable" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable Terms and Conditions</comment>
+                </field>
+				<field id="terms_text" translate="label" sortOrder="20" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Checkbox Text</label>
+					<depends>
+                        <field id="terms_enable">1</field>
+                    </depends>
+				</field>
+				<field id="terms_content" translate="label" sortOrder="30" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Checkbox Content</label>
+					<depends>
+                        <field id="terms_enable">1</field>
+                    </depends>
+				</field>
+				<field id="terms_warning" translate="label" sortOrder="40" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title warning</label>
+					<depends>
+                        <field id="terms_enable">1</field>
+                    </depends>
+				</field>
+				<field id="terms_warning_content" translate="label" sortOrder="40" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Content warning</label>
+					<depends>
+                        <field id="terms_enable">1</field>
+                    </depends>
+				</field>
+			</group>
+			<group id="field_position_management" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Field Position Management</label>
+                <field id="position" translate="label" sortOrder="1" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Field Position Management</label>
+                    <frontend_model>Rokanthemes\OpCheckout\Block\System\Config\FieldPosition</frontend_model>
+                </field>
+            </group>
+	    </section>
+    </system>
+</config>

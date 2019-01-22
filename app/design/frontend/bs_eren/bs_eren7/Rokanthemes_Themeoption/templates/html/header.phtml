@@ -1,0 +1,55 @@
+<div class="header-container">
+	<div class="top-header"></div>
+	<div class="header">
+		<div class="content-header">
+			<div class="row">
+				<div class="col-md-3 col-sm-3 col-xs-12 col-logo">
+					<?php echo $this->getChildHtml("logo"); ?>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6 col-menu-control">
+					<div class="toggle-action">
+						<div class="menu-line"></div>
+						<div class="menu-line"></div>
+						<div class="menu-line"></div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6 col-search pull-right">
+					<?php echo $this->getChildHtml("minicart");?>
+					<div class="header-top-setting pull-right">
+						<i class="fa fa-bars"> </i>
+						<div class="setting-container">
+							<h3><?php echo __('My Account') ?></h3>
+							<?php echo $this->getChildHtml("top_link"); ?>
+							<h3><?php echo __('Language') ?></h3>
+							<?php echo $this->getChildHtml("store_language"); ?>
+							<h3><?php echo __('Currency') ?></h3>
+							<?php echo $this->getChildHtml("currency"); ?>
+						</div>
+					</div>
+					<?php echo $this->getChildHtml("top.search"); ?>
+				</div>
+				<div class="absolute-menu">
+					<?php echo $this->getChildHtml("top.navigation.sections"); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    require(['jquery'],function($){
+        $(document).ready(function($){
+			$(window).scroll(function() {
+				var num = $('.header-container').outerHeight();
+				var screenWidth = $(window).width();
+				
+				if ($(this).scrollTop() > num && screenWidth >= 768 ){  
+					$(".header-container").addClass("sticky");
+				}
+				else{
+					$(".header-container").removeClass("sticky");
+				}
+			});
+		});
+    });
+</script>
+

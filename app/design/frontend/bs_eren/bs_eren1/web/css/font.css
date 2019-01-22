@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/** 1.1.1.  Google fonts **/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@font-face {
+    font-family: 'luma-icons';
+    src:url('../fonts/Luma-Icons.eot');
+    src:url('../fonts/Luma-Icons.eot') format('embedded-opentype'),
+    url('../fonts/Luma-Icons.woff') format('woff'),
+    url('../fonts/Luma-Icons.ttf') format('truetype'),
+    url('../fonts/Luma-Icons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

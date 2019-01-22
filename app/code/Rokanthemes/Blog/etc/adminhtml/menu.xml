@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 RokanThemes.com. All rights reserved.
+
+ * @author RokanThemes Team <contact@rokanthemes.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Rokanthemes_Blog::elements" title="Blogs" module="Rokanthemes_Blog" sortOrder="0" parent="Rokanthemes_RokanBase::rokanbase" resource="Rokanthemes_Blog::elements"/>
+		<add id="Rokanthemes_Blog::post" title="Posts" module="Rokanthemes_Blog" parent="Rokanthemes_Blog::elements" sortOrder="10" action="blog/post/" resource="Rokanthemes_Blog::post"/>
+
+        <add id="Rokanthemes_Blog::category" title="Categories" module="Rokanthemes_Blog" parent="Rokanthemes_Blog::elements" sortOrder="20" action="blog/category/" resource="Rokanthemes_Blog::category"/>
+		
+		<add id="Rokanthemes_Blog::config_blog" title="Blogs setting" module="Rokanthemes_Blog" sortOrder="30" parent="Rokanthemes_Blog::elements" resource="Rokanthemes_Blog::config_blog" action="adminhtml/system_config/edit/section/mfblog" />
+    </menu>
+</config>

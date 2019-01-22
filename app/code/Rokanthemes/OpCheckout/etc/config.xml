@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <opcheckout>
+            <general>
+                <active>1</active>
+                <show_shipping_address>1</show_shipping_address>
+                <checkout_title>Express checkout</checkout_title>
+                <checkout_description></checkout_description>
+                <show_newsletter>0</show_newsletter>
+				<show_discount>1</show_discount>
+				<enable_items_image>1</enable_items_image>
+				<show_login_link>1</show_login_link>
+				<login_link_title>Already have an account? Click Here to login</login_link_title>
+            </general>
+            <terms_and_conditions>
+				<terms_text>Terms and Conditions</terms_text>
+				<terms_content>Terms and Conditions Content</terms_content>
+				<terms_warning>Terms and Conditions Warning</terms_warning>
+				<terms_warning_content>Please checked Terms and Conditions</terms_warning_content>
+            </terms_and_conditions>
+			<field_position_management>
+                <position>test</position>
+                <row_0>firstname</row_0>
+                <row_1>lastname</row_1>
+                <row_2>email</row_2>
+                <row_3>telephone</row_3>
+                <row_4>street</row_4>
+                <row_6>country_id</row_6>
+                <row_8>city</row_8>
+                <row_10>postcode</row_10>
+                <row_11>region_id</row_11>
+                <row_12>company</row_12>
+            </field_position_management>
+        </opcheckout>
+    </default>
+</config>

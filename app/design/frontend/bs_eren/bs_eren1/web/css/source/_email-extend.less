@@ -1,0 +1,135 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Email extend styles
+//  _____________________________________________
+
+//  This file should be used for theme-specific styles for emails that extend or modify the styles in _email.less
+//  This will allow you to edit email styles without copying and editing the _email.less file
+
+//  Custom fonts are declared here, rather than in _email-base.less, as it allows for custom fonts to be changed/removed
+//  in custom themes.
+
+//  Importing fonts from an external CSS file, rather than embedding @font-face declarations inside the <style> tag,
+//  as the latter will cause font rendering issues if the web fonts are inaccessible.
+
+.email-non-inline() {
+  a:visited, a:hover, a:active {
+    color: @maincolor !important;
+    text-decoration: underline !important;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  a {
+    color: @maincolor !important;
+  }
+}
+
+.header {
+  text-align: center;
+  padding: 25px 10px 0;
+}
+
+.header.hotline {
+  padding: 35px 10px 0;
+  font-size: 13px;
+  text-align: right;
+}
+
+.main-content {
+  padding: 20px 10px 10px;
+}
+
+.email-intro-header {
+  background: @maincolor;
+  color: #fff;
+
+  td {
+    padding: 10px 15px 5px;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 26px;
+    margin-top: 0;
+    color: #fff;
+  }
+}
+
+.email-intro {
+  td {
+    padding-bottom: 20px;
+  }
+}
+
+.email-summary {
+  td {
+    background: @maincolor;
+    color: #fff;
+    padding: 10px 15px 5px;
+    margin: 20px 0;
+  }
+
+  h1 {
+    color: #fff;
+  }
+}
+
+.email-information {
+  td {
+    padding-top: 10px;
+  }
+
+  tr {
+    td.address-details, td.method-info {
+      border: 1px solid @maincolor;
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 2%;
+      margin-right: 2%;
+      width: 44%;
+
+      &.last-col {
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+
+}
+
+td.footer {
+  padding-top: 20px;
+}
+
+table.email-items {
+  tr.grand_total th, tr.grand_total td, th.item-info, th.item-qty, th.item-price, th.item-subtotal {
+    background-color: @maincolor;
+    color: #fff;
+  }
+}
+
+table.order-details {
+  margin-top: 10px;
+}
+
+table.message-info {
+ margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 479px) {
+  .order-details .address-details, .order-details .method-info {
+    padding: 10px 0 !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 0 10px !important;
+  }
+
+}

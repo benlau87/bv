@@ -1,0 +1,106 @@
+.category-grid .item-inner {
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+
+.category-grid .item-inner img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category-grid .item-inner:hover .category-button, .category-grid .item-inner:hover .category-content {
+    background: #303030;
+    color: #bdbdbd;
+    opacity: 1;
+}
+
+.category-grid .item-inner:hover .category-button {
+    background: #59b031;
+}
+
+.category-grid .item-inner .category-button {
+    opacity: 0;
+    display: block;
+    text-align: center;
+    min-height: 76px;
+    max-width: 76px!important;
+    min-width: 76px;
+    position: absolute;
+    left: 50%;
+    line-height: 70px;
+    margin-left: -38px;
+    border-radius: 100px;
+    top: 87px;
+    border: 3px solid #fff;
+}
+
+.category-grid .item-inner .category-button:before {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+    font-family: FontAwesome;
+    content: '\f105';
+}
+
+.category-grid .item-inner .category-content {
+    color: #8e8e8e;
+    margin: 0;
+    padding: 25px 30px 13px;
+    background: #f9f9f9;
+    line-height: 24px;
+    width: auto;
+    -ms-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.category-grid .item-inner .category-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-bottom: 8px;
+}
+
+.category-grid .item-inner .category-content h3 a {
+    color: #303030;
+}
+
+.category-grid .item-inner:hover .category-content h3 a {
+    color: #fff;
+}
+
+.category-grid .item-inner .category-content p {
+    margin-top: 0;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: #8e8e8e;
+}
+
+.category-grid .item-inner:hover .category-content p {
+    color: #bdbdbd;
+}
+
+.category-grid .item-inner .category-content a.more-link {
+    text-decoration: none;
+    text-shadow: none;
+    margin-top: 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    font-weight: 900;
+    transition: all .2s linear;
+    outline: 0;
+    color: #59b031;
+}
+
+.category-grid .item-inner .category-content a.more-link:hover {
+    text-decoration: none;
+    color: #59b031;
+}
+
+
+

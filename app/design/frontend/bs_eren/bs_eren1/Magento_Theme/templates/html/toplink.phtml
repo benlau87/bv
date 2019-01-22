@@ -1,0 +1,11 @@
+<ul class="top-link">
+	<?php if($this->helper('Rokanthemes\Themeoption\Helper\Data')->isLoggedIn()): ?>
+	<?php /* <li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/logout');?>"><?php echo __('Logout');?></a></li> */ ?>
+	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/'); ?>"><span><?php echo __('Mein Konto') ?></span></a></li>
+	<?php else: ?>
+	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/login/'); ?>"><span><?php echo __('Mein Konto') ?></span></a></li>
+	<?php endif ?>
+<?php /* <li><a href="<?php /*echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('wishlist/index/index/'); ?>"><?php echo __('Wishlish') ?></a></li>-->
+	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('checkout/cart'); ?>"><?php echo __('Warenkorb'); ?><span class="cart-counter">(<?php $helper = $this->helper('\Magento\Checkout\Helper\Cart'); echo $helper->getItemsCount(); ?>)</span></a></li>
+	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('checkout'); ?>"><?php echo __('Checkout') ?></a></li> */ ?>
+</ul>

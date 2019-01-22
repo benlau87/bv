@@ -1,0 +1,44 @@
+/**
+ * WaPoNe
+ *
+ * @category   WaPoNe
+ * @package    WaPoNe_CookieNotification
+ * @copyright  Copyright (c) 2017 WaPoNe (http://www.fantetti.net)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+#cookienotification-block {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    padding: 10px 20px;
+    display: block;
+    line-height: 1.2em;
+    font-size: 14px;
+    margin: 0;
+	text-align: center;
+}
+
+#cookienotification-block > p {
+    display: inline-block;
+	margin-bottom: 0;
+}
+
+button#btn-cookienotification-more {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+	display: inline-block;
+	background: transparent !important;
+	text-transform: none;
+	text-decoration: underline;
+}
+
+button#btn-cookienotification-allow {
+    cursor: pointer;
+    padding: 8px;
+    font-size: 14px;
+	display: inline-block;
+}

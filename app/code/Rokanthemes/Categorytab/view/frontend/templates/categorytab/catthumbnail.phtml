@@ -1,0 +1,120 @@
+<?php 
+	$enable = $block->getConfig('enabled');
+	if($enable < 1) return ; 
+	$title = $block->getTitle();
+	$categoryIds = $block->getCategoryIds();
+	$categoryIds = explode(',', $categoryIds);
+?>
+<h2 class="title-catthum"><?php 	echo '<span>'.$title.'</span>'; ?></h2>
+<div class="row">
+	<div class="col-md-5 col-sm-5 col-xs-12">
+		<div class="popcat-box">
+			<?php 
+			if(count($categoryIds) > 0){
+				foreach($categoryIds as $key => $cate_id) {
+					$cate_model =  $block->getCategory($cate_id);
+					echo '
+						<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+						<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+					';
+					unset($categoryIds[$key]);
+					break;
+				}
+			}
+		   ?>
+		</div>
+	</div>
+	<div class="col-md-7 col-sm-7 col-xs-12">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="popcat-box">
+					<?php 
+						if(count($categoryIds) > 0){
+							foreach($categoryIds as $key => $cate_id) {
+								$cate_model =  $block->getCategory($cate_id);
+								echo '
+									<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+									<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+								';
+								unset($categoryIds[$key]);
+								break;
+							}
+						}
+					?>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="popcat-box">
+					<?php 
+						if(count($categoryIds) > 0){
+							foreach($categoryIds as $key => $cate_id) {
+								$cate_model =  $block->getCategory($cate_id);
+								echo '
+									<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+									<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+								';
+								unset($categoryIds[$key]);
+								break;
+							}
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-7 col-sm-7 col-xs-12">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="popcat-box">
+					<?php 
+						if(count($categoryIds) > 0){
+							foreach($categoryIds as $key => $cate_id) {
+								$cate_model =  $block->getCategory($cate_id);
+								echo '
+									<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+									<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+								';
+								unset($categoryIds[$key]);
+								break;
+							}
+						}
+					?>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="popcat-box">
+					<?php 
+						if(count($categoryIds) > 0){
+							foreach($categoryIds as $key => $cate_id) {
+								$cate_model =  $block->getCategory($cate_id);
+								echo '
+									<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+									<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+								';
+								unset($categoryIds[$key]);
+								break;
+							}
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5 col-sm-5 col-xs-12">
+		<div class="popcat-box">
+			<?php 
+			if(count($categoryIds) > 0){
+				foreach($categoryIds as $key => $cate_id) {
+					$cate_model =  $block->getCategory($cate_id);
+					echo '
+						<img src="'.$this->helper('Rokanthemes\Categorytab\Helper\Data')->getThumbnailImageUrl($cate_model).'" alt="'.$cate_model->getName().'" />
+						<h3><a href="'.$cate_model->getUrl().'">'.$cate_model->getName().'</a></h3>
+					';
+					unset($categoryIds[$key]);
+					break;
+				}
+			}
+		   ?>
+		</div>
+	</div>
+</div>

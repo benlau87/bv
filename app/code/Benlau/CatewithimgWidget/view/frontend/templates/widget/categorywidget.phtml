@@ -1,0 +1,81 @@
+<?php
+$categories = $this->getCategoryCollection();
+$categoryHelper = $this->getCategoryHelper();
+?>
+<div class="container">
+    <div class="widget block block-static-block cwiw row" id="catewithimg">
+        <div class="block-content">
+            <div class="rokan-product-heading catwithimg-heading">
+                <h2><?php echo $this->getMainTitle(); ?></h2>
+                <div class="short_desc">
+                    <p><?php echo $this->getTagLine(); ?></p>
+                </div>
+            </div>
+            <ol class="category-grid product-grid">
+                <?php
+                foreach ($categories as $category):
+                    $cat = $this->getCategorymodel($category->getId());
+                    #$image = $cat->getImageUrl();
+                    $rt_menu_hide_item = $cat->getData('rt_menu_hide_item');
+
+                    if (!$rt_menu_hide_item) :
+
+                    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                    $category = $this->getCategorymodel($category->getId());
+                    $desc = $category->getData('category_shortdescription_home');
+                    $thumbnail = $category->getImageUrl('thumbnail');
+
+                    /*$categoryModel = Mage::getModel(‘catalog/category’)->load($id); // Replace with Id of Cat
+
+                    $productColl = Mage::getModel(‘catalog/product’)->getCollection()
+                        ->addCategoryFilter($categoryModel)
+                        ->addAttributeToSort(‘price’, ‘asc’)
+                        ->setPageSize(1)
+                        ->load();
+
+                    $lowestProductPrice = $productColl->getFirstItem()->getPrice();*/
+                    ?>
+                    <?php #if ($image != null): ?>
+                    <li class="item-inner <?php echo $this->getProductsPerRow() == "3" ? 'col-md-4 col-sm-6 col-xs-12' : 'col-md-3 col-sm-6 col-xs-12'; ?>">
+
+                        <img src="<?php echo $thumbnail; ?>" class="img-responsive category_image"
+                             alt="<?php echo $cat->getName(); ?>" width=""/>
+
+                        <a class="category-button" href="<?php echo $cat->getUrl(); ?>"></a>
+                        <div class="category-content">
+                            <h3>
+                                <a class="category-name"
+                                   href="<?php echo $cat->getUrl(); ?>"><?php echo $cat->getName(); ?></a>
+                            </h3>
+
+                            <p>
+                                <span class="description"><?php echo $desc ?  $desc : 'keine Kurzbeschreibung für diese Kategorie hinterlegt'; ?></span>
+                                <a href="<?php echo $cat->getUrl(); ?>" class="more-link"><?php echo $this->getShowAllLabel(); ?></a>
+                            </p>
+                        </div>
+
+                    </li>
+                <?php endif; ?>
+                <?php endforeach; ?>
+            </ol>
+        </div>
+    </div>
+</div>
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        'use strict';
+        $( document ).ready(function() {
+            $("#catewithimg").find('li.item-inner').click(function () {
+                window.location = $(this).find("a.category-button").attr("href");
+                return false;
+            });
+
+            $('.onsale-countdown').find('li.item').click(function () {
+                window.location = $(this).find("h3.product-name > a").attr("href");
+                return false;
+            });
+        });
+    });
+</script>

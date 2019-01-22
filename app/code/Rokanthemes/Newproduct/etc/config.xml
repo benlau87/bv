@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+	<default>
+        <newproduct>
+			<newproduct_config>
+				<enabled>1</enabled>
+				<auto>0</auto>
+				<title>New Products</title>
+				<show_price>1</show_price>
+				<addtocart>1</addtocart>
+				<addtowishlist>1</addtowishlist>
+				<addtocompare>1</addtocompare>
+				<review>1</review>
+				<qty>8</qty>
+				<items_show>1</items_show>
+				<width_thumbnail>270</width_thumbnail>
+				<height_thumbnail>285</height_thumbnail>
+				<next_back>1</next_back>
+				<nav_ctrl>0</nav_ctrl>
+			</newproduct_config>
+		</newproduct>
+	</default>
+</config>

@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product view template
+ *
+ * @see \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_product = $block->getProduct();
+$_attributeValue = $_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product);
+if ($_attributeValue): ?>
+    <div class="product-manufacturer" itemprop="manufacturer">
+        <?php echo $_attributeValue; ?>
+    </div>
+<?php endif; ?>

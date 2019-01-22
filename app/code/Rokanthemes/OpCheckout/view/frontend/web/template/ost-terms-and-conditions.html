@@ -1,0 +1,14 @@
+<!-- ko if: isShowTermsandConditions() -->
+<div class="opcheckout-terms_and_conditions checkbox-group">
+    <input type="checkbox" data-validate="{required:true}" id="terms_and_conditions_checkbox" name="terms_and_conditions"
+           class="checkbox osc-additional-data">
+    <label class="label--checkbox" data-bind="click: showContentOpCheckoutContent">
+        <span class="check"></span>
+        <span class="box-check"></span>
+		<!-- ko text: labelOstTermsAndConditions() --><!-- /ko -->
+    </label>
+</div>
+<div id="checkout-agreements-modal-opcheckout"style="display: none">
+	<div class="checkout-agreements-item-content" data-bind="html: contentOstTermsAndConditions"></div>
+</div>
+<!-- /ko -->

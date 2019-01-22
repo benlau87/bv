@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="xtento_productexport_destination_grid_block"/>
+    <container name="root" label="Root">
+        <block class="Xtento\ProductExport\Block\Adminhtml\Destination" name="adminhtml.productexport.destination.grid.container"/>
+    </container>
+</layout>
+
+<!--
+/**
+ * Product:       Xtento_ProductExport (2.6.9)
+ * ID:            1eBZP1q/cM67kYGMQm8wxVjSda4Ywx7ofUEMdoI8sb8=
+ * Packaged:      2018-09-11T11:23:45+00:00
+ * Last Modified: 2016-04-14T15:37:57+00:00
+ * File:          app/code/Xtento/ProductExport/view/adminhtml/layout/xtento_productexport_destination_grid.xml
+ * Copyright:     Copyright (c) 2018 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

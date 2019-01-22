@@ -1,0 +1,21 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+$_code = $block->getAtCode();
+$_className = $block->getCssClass();
+$_attributeLabel = $block->getAtLabel();
+$_attributeType = $block->getAtType();
+$_attributeAddAttribute = $block->getAddAttribute();
+if ($_attributeLabel && $_attributeLabel == 'default') {
+    $_attributeLabel = $_product->getResource()->getAttribute($_code)->getFrontendLabel();
+}
+$_attributeValue =$_product->getResource()->getAttribute($_code)->getFrontend()->getValue($_product);
+?>
+<?php if ($_attributeValue): ?>
+
+    <div class="product-info-stock-sku">
+        <div class="stock available" title="<?php echo $_attributeLabel?>">
+         <?php echo $_attributeLabel?> <span><?php echo $_attributeValue; ?></span>
+        </div>
+    </div>
+<?php endif; ?>

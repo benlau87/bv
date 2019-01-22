@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="benlau_catewithimgwidget" class="Benlau\CatewithimgWidget\Block\Widget\CatewithimgWidget">
+		<label translate="true">Kategorie-Auflistung Startseite</label>
+		<description>Kategorie-Listing Widget (1. Kategorieebene)</description>
+		<parameters>
+            <parameter name="blocktitle" xsi:type="text"  visible="true" required="true" sort_order="1">
+                <label translate="true">Überschrift</label>
+            </parameter>
+            <parameter name="tagline" xsi:type="text"  visible="true" required="true" sort_order="2">
+                <label translate="true">Untertitel</label>
+            </parameter>
+			<parameter name="parentcat"  xsi:type="multiselect"  visible="true" sort_order="3" source_model="Benlau\CatewithimgWidget\Model\Config\Source\Categorylist">
+                <label translate="true">Kategorie auswählen</label>
+                <description translate="true">Achtung: Kategorie muss ein Kategoriebild haben!</description>
+            </parameter>
+            <parameter name="products_per_row" xsi:type="select" required="true" visible="true" sort_order="4">
+                <label translate="true">Kategorien pro Zeile</label>
+                <options>
+                    <option name="default" value="3" selected="true">
+                        <label translate="true">3</label>
+                    </option>
+                    <option name="top_products" value="4">
+                        <label translate="true">4</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="show_all_label" xsi:type="text"  visible="true" required="true" sort_order="5">
+                <label translate="true">"alle anzeigen"-Text</label>
+                <value>alle anzeigen</value>
+            </parameter>
+            <parameter name="thumbnail_size" xsi:type="text"  visible="true" required="true" sort_order="6">
+                <label translate="true">Thumbnail-Größe (ohne px)</label>
+                <value>250</value>
+            </parameter>
+		</parameters>
+	</widget>
+</widgets>

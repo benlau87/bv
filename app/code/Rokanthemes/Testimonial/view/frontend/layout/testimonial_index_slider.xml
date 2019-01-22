@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* Copyright © 2015 tokitheme.com. All rights reserved.
+
+* @author Blue Sky Team <contact@tokitheme.com>
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+    </head>
+    <body>
+
+		<referenceContainer name="page.full">
+
+			<!-- <block class="Rokanthemes\Testimonial\Block\Testimonial" name="Testimo" after="bestsellerproduct" template="testimonial.phtml">
+
+			</block> -->
+
+		</referenceContainer>
+
+	</body>
+</page>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+	<default>
+        <pricecountdown>
+            <pricecountdown_config>
+                <enabled>1</enabled>
+                <title>DAILY DEAL</title>
+                <auto>0</auto>
+                <speed>3000</speed>
+                <show_price>1</show_price>
+                <addtocart>1</addtocart>
+                <addtowishlist>1</addtowishlist>
+                <addtocompare>1</addtocompare>
+                <review>1</review>
+                <description>0</description>
+                <maxlength></maxlength>
+                <qty>9</qty>
+                <itemsDefault>2</itemsDefault>
+                <itemsDesktop>2</itemsDesktop>
+                <itemsDesktopSmall>2</itemsDesktopSmall>
+                <itemsTablet>2</itemsTablet>
+                <itemsMobile>1</itemsMobile>
+                <row_show>1</row_show>
+                <next_back>1</next_back>
+                <nav_ctrl>0</nav_ctrl>
+            </pricecountdown_config>
+        </pricecountdown>
+	</default>
+</config>

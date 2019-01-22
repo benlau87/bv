@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rokanthemes_Themeoption::theme" title="Theme Option" module="Rokanthemes_Themeoption" sortOrder="10" parent="Rokanthemes_RokanBase::rokanbase" resource="Rokanthemes_Themeoption::theme"/>
+        <add id="Rokanthemes_Themeoption::themeoption" title="Theme Settings" module="Rokanthemes_Themeoption" sortOrder="10" parent="Rokanthemes_Themeoption::theme" action="adminhtml/system_config/edit/section/themeoption" resource="Rokanthemes_Themeoption::themeoption"/>
+    </menu>
+</config>

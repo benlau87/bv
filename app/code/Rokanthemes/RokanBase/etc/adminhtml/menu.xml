@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rokanthemes_RokanBase::rokanbase" title="Rokanthemes" module="Rokanthemes_RokanBase" sortOrder="50" resource="Rokanthemes_RokanBase::rokanbase"/>
+        <add id="Rokanthemes_RokanBase::rokanbase_setting" parent="Rokanthemes_RokanBase::rokanbase" title="Configuration" module="Rokanthemes_RokanBase" sortOrder="100" resource="Rokanthemes_RokanBase::rokanbase_setting"/>
+        <add id="Rokanthemes_RokanBase::rokanbase_import_export" parent="Rokanthemes_RokanBase::rokanbase_setting" title="Import and Export" module="Rokanthemes_RokanBase" sortOrder="100" resource="Rokanthemes_RokanBase::rokanbase_import_export" action="adminhtml/system_config/edit/section/import_export" />
+    </menu>
+</config>

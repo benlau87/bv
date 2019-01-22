@@ -1,0 +1,107 @@
+<?php
+/**
+ * Copyright © 2015 RokanThemes.com. All rights reserved.
+
+ * @author RokanThemes Team <contact@rokanthemes.com>
+ */
+?>
+<?php
+/**
+ * Blog sidebar recent posts template
+ *
+ * @var $block \Rokanthemes\Blog\Block\Sidebar\Recent
+ */
+?>
+
+<?php
+	$enable = $this->getConfig('enable_frontend');
+	$auto = $this->getConfig('auto');
+	$speed = $this->getConfig('speed');
+	$default = $this->getConfig('default');
+	$desktop = $this->getConfig('desktop');
+	$desktop_small = $this->getConfig('desktop_small');
+	$tablet = $this->getConfig('tablet');
+	$mobile = $this->getConfig('mobile');
+	$pagination = $this->getConfig('pagination');
+	$show_next_back = $this->getConfig('show_next_back');
+	$show_navigation_control = $this->getConfig('show_navigation_control');
+	$title = $this->getConfig('title');
+	if($show_next_back)
+		$show_next_back = 'true';
+	else
+		$show_next_back = 'false';
+	$show_navigation_control = $this->getConfig('show_navigation_control');
+	if($show_navigation_control)
+		$show_navigation_control = 'true';
+	else
+		$show_navigation_control = 'false';
+	$_postCollection = $block->getPostCollection();
+?>
+<?php if ($_postCollection->count() && $enable) { ?>
+<section class="widget box-section block-recent-posts" data-bind="scope: 'recemt-posts'">
+	<div class="container"> 
+		<div class="rokan-product-heading rokan-onsale-heading">
+			<h2><?php echo __($title) ?></h2>
+		</div>
+		<div class="owl-container">
+			<div class="block-content">
+				<div class="owl">
+					<?php foreach ($_postCollection as $_post) { ?>
+						<div class="item">
+							<div class="product-item">
+								<div class="blog-image">
+									<a href="<?php echo $_post->getPostUrl() ?>">
+										<img src="<?php echo $this->getMediaFolder().$_post->getThumbnailimage() ?>"/>
+									</a>
+									
+								</div>
+								<div class="blog-content">
+									<div class="time-conment">
+										<?php 
+											$date = $_post->getPublishTime();
+										?>
+										<span class="date-time"><span class="date"><?php echo __(date("d", strtotime($date))) ?></span><span class="separator">/</span><span class="month"><?php echo __(date("M", strtotime($date))) ?></span></span>
+									</div>
+									<div class="blog-content-inner">
+										 <h3 class="blog-title"><a href="<?php echo $_post->getPostUrl() ?>"><?php echo $block->escapeHtml($_post->getTitle()) ?></a></h3> 	
+										<p class="short-des"><?php echo $_post->getShortContent() ?></p>
+										<a class="readmore" href="<?php echo $_post->getPostUrl() ?>">
+											<?php echo __('Read more') ?>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+
+<script type="text/javascript">
+	require([
+		'jquery',
+		'mage/mage',
+		'rokanthemes/owl'
+	], function ($) {
+		'use strict';
+
+		jQuery(".block-recent-posts .owl").owlCarousel({
+			items : <?php echo $default; ?>,
+			itemsDesktop : [1199,<?php echo $desktop; ?>],
+			itemsDesktopSmall : [980,<?php echo $desktop_small; ?>],
+			itemsTablet: [768,<?php echo $tablet; ?>],
+			itemsMobile : [479,<?php echo $mobile; ?>],
+			slideSpeed : <?php echo $pagination; ?>,
+			paginationSpeed : <?php echo $pagination; ?>,
+			rewindSpeed : <?php echo $pagination; ?>,
+			addClassActive: true,
+			navigation : <?php echo $show_next_back; ?>,
+			stopOnHover : true,
+			pagination : <?php echo $show_navigation_control; ?>,
+			scrollPerPage:true,
+		});
+	});
+</script>
+<?php } ?>

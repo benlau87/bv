@@ -1,0 +1,25 @@
+<div id="back-top" class="hidden-xs"><i class="fa fa-angle-double-up"></i></div>
+<div class="footer-container">
+	<div class="footer-static-container">
+		<div class="container">
+			<?php echo $this->getChildHtml("footer_static"); ?>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<?php echo $this->getChildHtml("copyright"); ?>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<?php echo $this->getChildHtml("social_block"); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	window.onload = function () {
+		document.body.className += " preloaded";
+	}
+</script>

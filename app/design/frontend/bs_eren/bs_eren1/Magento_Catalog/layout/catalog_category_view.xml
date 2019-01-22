@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="move.category.view.container" htmlTag="div" htmlClass="category-view-move" before="-"></container>
+        </referenceContainer>
+        <move element="category.image" destination="move.category.view.container"/>
+        <move element="category.description" destination="move.category.view.container"/>
+        <move element="category.cms" destination="move.category.view.container"/>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="sidebar.main">
+            <block class="Rokanthemes\SlideBanner\Block\Slider" name="left-slider" after="-">
+                <arguments>
+                    <argument name="slider_id" xsi:type="string">left-slider</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

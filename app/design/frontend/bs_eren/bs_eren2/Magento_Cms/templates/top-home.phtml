@@ -1,0 +1,67 @@
+<div class="top-content-home">
+	<div class="banner-top-home">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top')->toHtml();?>
+		</div>
+	</div>
+	<div class="box-sale">
+		<div class="container">
+			<div class="content-sale">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('box_sale')->toHtml();?>
+			</div>
+		</div>
+	</div>
+	<div class="box-new">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Newproduct\Block\Newproduct')->setTemplate('Rokanthemes_Newproduct::newproduct.phtml')->toHtml();?> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box-banner-middle">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle')->toHtml();?>
+	</div>
+	<div class="group-product">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_bestseller.phtml')->setCategoryId(53)->toHtml();?>
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Onsaleproduct\Block\Onsaleproduct')->setTemplate('Rokanthemes_Onsaleproduct::onsaleproduct.phtml')->toHtml();?> 
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_mostviewed.phtml')->setCategoryId(54)->toHtml();?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section_testimonial">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Testimonial\Block\Testimonial')->setTemplate('Rokanthemes_Testimonial::testimonial.phtml')->toHtml();?>
+		</div>
+	</div>
+	<div class="box-blog">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_brands')->toHtml(); ?>
+		</div>
+	</div>
+	<div class="section-newsletter">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('Magento_Newsletter::subscribe.phtml')->toHtml();?> 
+		</div>
+	</div>
+	<div class="section-services">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_services')->toHtml(); ?>
+		</div>
+	</div>
+	
+</div>

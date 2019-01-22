@@ -1,0 +1,10 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+
+$versandkostenfrei = $_helper->productAttribute($_product, $_product->getFreedelivery(), 'freedelivery'); ?>
+<?php if ($versandkostenfrei || $_product->getFinalPrice() >= 50 ): ?>
+    <div>
+        <span class="label-view freeshipping"><?php echo __('Versandkostenfrei') ?></span>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,11 @@
+<!-- ko if: isShowNewsletter() -->
+<div class="opcheckout-newsletter  checkbox-group">
+    <input type="checkbox" id="newsletter_subscriber_checkbox" name="billing[newsletter_subscriber_checkbox]"
+           class="checkbox osc-additional-data" data-bind="checked: isChecked">
+    <label class="label--checkbox" for="newsletter_subscriber_checkbox">
+        <span class="check"></span>
+        <span class="box-check"></span>
+        <!-- ko text: $t('Sign Up for Our Newsletter') --><!-- /ko -->
+        </label>
+</div>
+<!-- /ko -->

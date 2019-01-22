@@ -1,0 +1,8 @@
+<?php
+$_product = $block->getProduct();
+$deliverytime = $_product->getAttributeText('deliverytime'); ?>
+<?php if ($deliverytime != ''): ?>
+    <div class="product-deliverytime">
+        <span class="product-label"><?php echo __('Delivery Time') ?></span> <span class="availability in-stock"><?php echo $deliverytime; ?></span>
+    </div>
+<?php endif; ?>

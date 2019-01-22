@@ -1,0 +1,88 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+    #print_r($block->getAdditionalData());
+
+?>
+<!--
+<div class="additional-attributes-wrapper table-wrapper">
+    <table class="data table additional-attributes" id="product-attribute-specs-table">
+        <caption class="table-caption"><?php /*/* @escapeNotVerified */# echo __('More Information') */?></caption>
+        <tbody>
+        <?php /*if($_product->hasData('geschlecht')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('geschlecht')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('geschlecht')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('geschlecht')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('inko_groessen')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('inko_groessen')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('inko_groessen')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('inko_groessen')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('saugstaerke')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('saugstaerke')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('saugstaerke')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('saugstaerke')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('inkontinenzstufe')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('inkontinenzstufe')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('inkontinenzstufe')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('inkontinenzstufe')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('stufenzahl_inkontinenz')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('stufenzahl_inkontinenz')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('stufenzahl_inkontinenz')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('stufenzahl_inkontinenz')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('koerperliche_verfassung')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('koerperliche_verfassung')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('koerperliche_verfassung')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('koerperliche_verfassung')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        <?php /*if($_product->hasData('stuhlinkontinenz')): */?>
+        <tr>
+            <th class="col label" scope="row"><?php /*echo $_product->getResource()->getAttribute('stuhlinkontinenz')->getFrontend()->getLabel(); */?></th>
+            <td class="col data" data-th="<?php /*echo $_product->getResource()->getAttribute('stuhlinkontinenz')->getFrontend()->getValue($_product); */?>"><?php /*echo $_product->getResource()->getAttribute('stuhlinkontinenz')->getFrontend()->getValue($_product); */?></td>
+        </tr>
+        <?php /*endif; */?>
+        </tbody>
+    </table>
+</div>
+
+-->
+<?php if ($_additional = $block->getAdditionalData()): ?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <table class="data table additional-attributes" id="product-attribute-specs-table">
+            <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('More Information') ?></caption>
+            <tbody>
+            <?php foreach ($_additional as $_data): ?>
+                <tr>
+                    <th class="col label" scope="row"><?php echo $block->escapeHtml(__($_data['label'])) ?></th>
+                    <td class="col data" data-th="<?php echo $block->escapeHtml(__($_data['label'])) ?>"><?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif;?>
+<span itemprop="itemCondition" style="display:none">NewCondition</span>

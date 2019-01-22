@@ -1,0 +1,20 @@
+<ol class="opcheckout-header">
+<li>
+    <h1 class="checkout_header" data-bind="text: oneStepTitle"></h1>
+    <p class="subtitle" data-bind="text: oneStepDescription"></p>
+</li>
+<!-- ko if: !isLogin() -->
+<li id='opcheckout_login_link' class="opcheckout-login-link" data-bind="visible: isShowLoginLink">
+    <a href="javascript:void(0);" id="opcheckout-login-link"
+       data-bind="text: loginLinkTitle, click: showLoginForm">
+    </a>
+</li>
+<!-- /ko  -->
+<!-- ko if: isLogin() -->
+<li id='opcheckout_logout_link' class="opcheckout-login-link" data-bind="visible: isShowLoginLink">
+    <a href="javascript:void(0);" id="opcheckout-logout-link"
+       data-bind="i18n: 'Logout', click: logout">
+    </a>
+</li>
+<!-- /ko  -->
+</ol>

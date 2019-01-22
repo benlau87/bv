@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* Copyright © 2015 tokitheme.com. All rights reserved.
+
+* @author Blue Sky Team <contact@tokitheme.com>
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+ 
+        <add id="Rokanthemes_Testimonial::testimonial_testimonial" title="Testimonial" module="Rokanthemes_Testimonial" sortOrder="2" parent="Rokanthemes_RokanBase::rokanbase" resource="Rokanthemes_Testimonial::testimonial_testimonial"/>
+		
+        <add id="Rokanthemes_Testimonial::testimonial_testimos" title="Manage Testimonials" module="Rokanthemes_Testimonial" sortOrder="10" parent="Rokanthemes_Testimonial::testimonial_testimonial" action="testimonialadmin/testimo" resource="Rokanthemes_Testimonial::testimonial_testimos"/>
+
+        <add id="Rokanthemes_Testimonial::settings" title="Settings" module="Rokanthemes_Testimonial" sortOrder="20" parent="Rokanthemes_Testimonial::testimonial_testimonial" action="adminhtml/system_config/edit/section/testimonial" resource="Rokanthemes_Testimonial::settings"/>
+    </menu>
+</config>

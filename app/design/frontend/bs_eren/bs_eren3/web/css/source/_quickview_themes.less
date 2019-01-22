@@ -1,0 +1,153 @@
+.quick-view-content{
+	padding: 20px;
+	.product-info-price{
+		margin-top: 25px;
+		margin-bottom: 20px;
+	} 
+	.product.media{
+		width: 47%;
+		overflow: inherit;
+		.main-img-quickview{
+			margin-bottom: 10px;
+		}
+	}
+	.product-info-main{
+		width: 50%; 
+		float: right;
+		.product-info-stock-sku{
+			display: block;
+			.stock{
+			    color: #333;
+			    font-size: 13px;
+			    margin-bottom: 10px;
+			    text-transform: none;
+			    font-weight: normal;
+			    span{
+			    	color: @maincolor;
+			    	margin-left: 10px;
+			    }
+			}
+			.product.attibute.sku{
+				text-transform: none;
+				display: block;
+				color: #333;
+				.value{
+					color: @maincolor;
+				}
+			}
+		}
+		.product-reviews-summary{
+			.reviews-actions{
+				font-size: 13px;
+			}
+		}
+		.price-box{
+			.price-wrapper{
+				.price{
+					font-size: 20px;
+				}
+			}
+			.special-price {
+				display: inline-block;
+			    margin: 0;
+			    color: @maincolor;
+			}
+			.old-price {
+				display: inline-block;
+			    float: left;
+			    margin-right: 10px;
+			    color: #797979;
+			}
+		}
+		.box-tocart{
+			.label{
+				display: inline-block;
+				line-height: 40px;
+				margin-right: 10px;
+			}
+			.control{
+				display: inline-block;
+				input{
+				    height: 40px;
+				    line-height: 40px;
+				    width: 40px;
+				    text-align: center;
+				    padding: 0;
+				}
+			}
+			.actions{
+				padding-top: 0;
+				vertical-align: top;
+				.action.primary {
+				    border: 0;
+				    border-radius: 0;
+				    box-shadow: none;
+				    display: inline-block;
+				    font-family: Montserrat,sans-serif;
+				    border-radius: 3px;
+				    font-weight: normal;
+				    text-shadow: none;
+				    white-space: nowrap;
+				    -webkit-transition: all .3s ease;
+				    transition: all .3s ease;
+				    font-size: 14px;
+				    padding: 0 25px;
+				    height: 50px;
+				    line-height: 50px;
+				}
+			}
+			.field {
+				&.qty {
+					.control {
+						input {
+							height: 50px;
+						    line-height: 50px;
+						    width: 50px;
+						    text-align: center;
+						    padding: 0;
+						}
+					}
+				}
+			}
+		}
+		.product-social-links{
+			.product-addto-links{
+				margin: 0;
+				.action.towishlist,
+				.action.tocompare{
+					background: none;
+					border: 0;
+					padding: 0;
+					border-radius: 0;
+					margin-right: 10px;
+				}
+			}
+		}
+		.product.attibute.overview{
+			color: #777;
+			font-size: 13px;
+			line-height: 1.5;
+		}
+		.product-add-form {
+			.product-options-wrapper {
+				select {
+					border: 1px solid #eee;
+					color: #7b7b7b;
+				}
+			}
+		}
+	}
+	.product.info.detailed{
+		display: inline-block;
+		.product.attibute.description{
+			color: #777;
+			font-size: 13px;
+			line-height: 1.5;
+		}
+	}
+	.bxslider{
+		li{
+			cursor: pointer;
+		}
+	}
+}

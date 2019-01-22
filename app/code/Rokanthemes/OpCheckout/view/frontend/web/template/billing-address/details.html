@@ -1,0 +1,15 @@
+<div class="billing-address-details" data-bind="if: isAddressDetailsVisible() && currentBillingAddress()">
+    <!-- ko text: currentBillingAddress().prefix --><!-- /ko --> <!-- ko text: currentBillingAddress().firstname --><!-- /ko -->
+    <!-- ko text: currentBillingAddress().lastname --><!-- /ko --> <!-- ko text: currentBillingAddress().suffix --><!-- /ko --><br/>
+    <!-- ko text: currentBillingAddress().street --><!-- /ko -->,
+    <!-- ko text: currentBillingAddress().city --><!-- /ko -->, <!-- ko text: currentBillingAddress().region --><!-- /ko --> ,<!-- ko text: currentBillingAddress().postcode --><!-- /ko -->,
+    <!-- ko text: getCountryName(currentBillingAddress().countryId) --><!-- /ko -->,
+    <!-- ko text: currentBillingAddress().telephone --><!-- /ko -->
+    <div class='clear'></div>
+    <button type="button"
+            class="action action-edit-address osc-edit-button"
+            data-bind="visible: !addressSameAsShipping(), click: editAddress">
+        <span data-bind="i18n: 'Edit'"></span>
+    </button>
+    <div class="clear"></div>
+</div>

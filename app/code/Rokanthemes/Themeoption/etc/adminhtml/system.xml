@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+		<section id="themeoption" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Theme Settings</label>
+            <tab>rokanthemes</tab>
+			<resource>Rokanthemes_Themeoption::themeoption</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+				<field id="render_less" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto Render Style Less</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Auto render less css of theme.less when refresh page.</comment>
+                </field>
+				<field id="enable_preloaded" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable page preloader</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Show icon loader until complete page is fully loaded, including all frames, objects and images</comment>
+                </field>
+                <field id="layout" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Width</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Layout</source_model>
+                </field>
+				<field id="copyright" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright</label>
+                </field>
+            </group>
+			<group id="header" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Header</label>
+				<field id="sticky_enable" translate="label comment" type="select" sortOrder="1"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="sticky_logo" translate="label" type="image" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Logo</label>
+                    <comment>Allowed file types:PNG, JPG, JPEG. (Size: 157x31)</comment>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Stickylogo</backend_model>
+					<base_url type="media" scope_info="1">rokanthemes/stickylogo</base_url>
+                    <depends>
+                        <field id="sticky_enable">1</field>
+                    </depends>
+                </field>
+				<field id="sticky_select_bg_color" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Header Background Color</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Stickybg</source_model>
+					<depends>
+                        <field id="sticky_enable">1</field>
+                    </depends>
+                </field>
+				<field id="sticky_bg_color_custom" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Background Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="sticky_select_bg_color">custom</field>
+                    </depends>
+                </field>
+            </group>
+			<group id="font" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Font</label>
+                <field id="custom" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Font</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="font_size" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Basic Font Size</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Fontsize</source_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+				<field id="font_family" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Basic Font Family</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Fontfamily</source_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+				<field id="google_font_family" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Family - Google Fonts</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Googlefonts</source_model>
+                    <depends>
+                        <field id="custom">1</field>
+                        <field id="font_family">google</field>
+                    </depends>
+                </field>
+				<field id="custom_font_family" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Family - Custom Fonts</label>
+                    <depends>
+                        <field id="custom">1</field>
+                        <field id="font_family">custom</field>
+                    </depends>
+                </field>
+            </group>
+			<group id="colors" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Colors</label>
+                <field id="custom" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Color</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="color_heading" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Basic Colors</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+				<field id="text_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="link_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="link_hover_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Hover Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+				<field id="button_heading" translate="label comment" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Buttons</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+				<field id="button_text_color" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Text Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="button_bg_color" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Background Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>     
+				<field id="button_hover_text_color" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Hover Text Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="button_hover_bg_color" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Hover Background Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+			</group>
+			<group id="main" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Main Content Container</label>
+                <field id="custom" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="main_bgcolor" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="main_bg_image" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Image</label>
+                    <comment>Allowed file types:PNG, JPG, JPEG.</comment>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Mainbackground</backend_model>
+					<base_url type="media" scope_info="1">rokanthemes/main_background</base_url>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="main_custom_style" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Style Background Image (CSS)</label>
+                    <comment><![CDATA[E.g.:<br/>
+                            <em>&nbsp;&nbsp;&nbsp;&nbsp;background-repeat: no-repeat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-size: cover;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-attachment: fixed;</em>
+                            ]]></comment>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+            </group>
+			<group id="page" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Page Wrapper Container</label>
+                <field id="custom" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="page_bgcolor" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="page_bg_image" translate="label" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Image</label>
+                    <comment>Allowed file types:PNG, JPG, JPEG.</comment>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Pagebackground</backend_model>
+                    <base_url type="media" scope_info="1">rokanthemes/page_background</base_url>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field id="page_custom_style" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Style Background Image (CSS)</label>
+                    <comment><![CDATA[E.g.:<br/>
+                            <em>&nbsp;&nbsp;&nbsp;&nbsp;background-repeat: no-repeat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-size: cover;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-attachment: fixed;</em>
+                            ]]></comment>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+            </group>
+			<group id="newsletter" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Newsletter Popup</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Rokanthemes\Themeoption\Model\Config\Newsletter</source_model>
+                </field>
+                <field id="content" translate="label comment" type="textarea" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Content</label>
+                </field>
+                <field id="width" translate="label comment" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width (px)</label>
+                </field>
+                <field id="height" translate="label comment" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height (px)</label>
+                </field>
+                <field id="bg_color" translate="label comment" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Backgroud Color</label>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Validatetransparent</backend_model>
+                    <frontend_model>Rokanthemes\Themeoption\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+                <field id="bg_image" translate="label" type="image" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Image</label>
+                    <comment>Allowed file types:PNG, JPG, JPEG.</comment>
+                    <backend_model>Rokanthemes\Themeoption\Model\Config\Newsletterbackground</backend_model>
+                    <base_url type="media" scope_info="1">rokanthemes/newsletter/background</base_url>
+                </field>
+				<field id="bg_custom_style" translate="label comment" type="textarea" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Style Background Image(CSS)</label>
+                    <comment><![CDATA[E.g.:<br/>
+                            <em>&nbsp;&nbsp;&nbsp;&nbsp;background-repeat: no-repeat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-size: cover;<br/>&nbsp;&nbsp;&nbsp;&nbsp;background-attachment: fixed;</em>
+                            ]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

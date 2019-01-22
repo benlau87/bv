@@ -1,0 +1,102 @@
+<?php if($block->getConfig('enable') > 0){ ?>
+<div id="newsletter_pop_up" class="newsletterpopup">
+	<div href="javascript: void(0);" class="btn-close newletter_popup_close"><span></span></div>
+	<div class="row">
+		<div class="col-md-6"></div>
+		<div class="col-md-6">
+			<div class="content-popup"><?php echo $block->getConfig('content');?>
+				<form class="form subscribe"
+					novalidate
+					action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+					method="post"
+					data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+					id="newsletter-validate-popup">
+					<div class="field newsletter">
+						<div class="control">
+							<input name="email" type="email" id="newsletter-popup"
+										placeholder="<?php /* @escapeNotVerified */ echo __('Enter your email address') ?>"
+										data-validate="{required:true, 'validate-email':true}"/>
+						</div>
+					</div>
+
+					<div class="actions">
+						<button class="action subscribe primary" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+							<span><?php echo __('Subscribe'); ?></span>
+						</button>
+					</div>
+					<div class="subscribe-bottom">
+						<input type="checkbox" id="newsletter_popup_dont_show_again">
+						<label for="newsletter_popup_dont_show_again"><?php echo __("Do not show this popup again")?></label>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+<?php  
+	$top = 120; 
+	$speed= 500; 
+	$timeout = 1;
+?>
+<script type ="text/javascript">
+require(["jquery"], function($){
+	function setCookie(name,value,days)
+	{
+	  if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		  }
+		  else var expires = "";
+		  document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function getCookie(name)
+	{
+		  var nameEQ = name + "=";
+		  var ca = document.cookie.split(';');
+		  for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		  }
+		  return null;
+	}
+	$(document).ready(function(){
+		<?php if($block->getConfig('enable') == 1){ ?>
+        if($("body").hasClass("cms-index-index")) {
+		<?php } ?>
+			if(getCookie("shownewsletter") != 1){
+				var height_window = $(window).height();
+				var height_pupup = <?php echo $block->getConfig('height'); ?>;
+				var fixed_height = (height_window - height_pupup) / 2;
+				var pPopup = $('#newsletter_pop_up').bPopup({
+					position:['auto',fixed_height],
+					speed: <?php if($speed != '') echo $speed; else echo '450' ?>,
+					transition: 'slideDown',
+					onClose: function() {
+					}
+				});
+				$('.newletter_popup_close').on('click', function(){
+					pPopup.close();
+				}); 
+			}
+				
+			$( "#newsletter_pop_up form" ).submit(function( event ) {
+				setCookie("shownewsletter",'1',1);
+			});
+			
+			$('#newsletter_popup_dont_show_again').on('change', function(){
+				if(getCookie("shownewsletter") != 1){   
+					setCookie("shownewsletter",'1',1)
+				}else{
+					setCookie("shownewsletter",'0',1)
+				}
+			});
+		<?php if($block->getConfig('enable') == 1){ ?>
+        }
+		<?php } ?>
+	});
+ });	 
+</script>
+<?php } ?>

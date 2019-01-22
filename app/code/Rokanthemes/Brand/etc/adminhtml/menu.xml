@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Venustheme
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Venustheme.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.venustheme.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Venustheme
+ * @package    Rokanthemes_Brand
+ * @copyright  Copyright (c) 2014 Venustheme (http://www.venustheme.com/)
+ * @license    http://www.venustheme.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu> 
+		<add id="Rokanthemes_Brand::brand" title="Brand" module="Rokanthemes_Brand" sortOrder="40" resource="Rokanthemes_Brand::brand" parent="Rokanthemes_RokanBase::rokanbase" />  
+		<add id="Rokanthemes_Brand::brand_new" title="Add New Brand" module="Rokanthemes_Brand" sortOrder="10" parent="Rokanthemes_Brand::brand" action="rokanbrand/brand/new" resource="Rokanthemes_Brand::brand"/> 
+		<add id="Rokanthemes_Brand::brand_manage" title="Manage Brands" module="Rokanthemes_Brand" sortOrder="20" parent="Rokanthemes_Brand::brand" action="rokanbrand/brand/index" resource="Rokanthemes_Brand::brand"/> 
+		<add id="Rokanthemes_Brand::brand_group_add_new" title="Add New Group" module="Rokanthemes_Brand" sortOrder="30" parent="Rokanthemes_Brand::brand" action="rokanbrand/group/new" resource="Rokanthemes_Brand::group"/> 
+		<add id="Rokanthemes_Brand::brand_group_manage" title="Manage Groups" module="Rokanthemes_Brand" sortOrder="40" parent="Rokanthemes_Brand::brand" action="rokanbrand/group/index" resource="Rokanthemes_Brand::group"/> 
+        <add id="Rokanthemes_Brand::configuration" title="Configuration" module="Rokanthemes_Brand" sortOrder="50"
+            parent="Rokanthemes_Brand::brand" action="adminhtml/system_config/edit/section/rokanbrand" resource="Rokanthemes_Brand::config_brand"/>
+	</menu>
+</config>

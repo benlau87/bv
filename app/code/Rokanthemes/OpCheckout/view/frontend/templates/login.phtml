@@ -1,0 +1,219 @@
+<?php
+$minimumPasswordLength = $this->helper('Rokanthemes\OpCheckout\Helper\Config')->getMinimumPasswordLength();
+$requiredCharacterClassesNumber = $this->helper('Rokanthemes\OpCheckout\Helper\Config')->getRequiredCharacterClassesNumber();
+$canShowPasswordMeterValidate = $this->helper('Rokanthemes\OpCheckout\Helper\Config')->canShowPasswordMeterValidate();
+?>
+<div id="opcheckout-login-popup" style="display:none">
+    <div class="opcheckout-popup-wrapper">
+        <div class="opcheckout-popup-contents">
+            <div id="opcheckout-login-popup-contents-forgot" style="display: none;">
+                <h1><?php echo __('Forgot your password?'); ?></h1>
+                <p class="title-forgot">
+                    <?php echo __('Please enter your email below and we will send you a new password.'); ?>
+                </p>
+                <p class="close">
+                    <a href="javascript:void(0);"><?php echo __('X'); ?></a>
+                </p>
+                <form id="opcheckout-forgot-form">
+                    <div id="opcheckout-forgot-loading" style="display: none;" class="loading-ajax-login">
+                        &nbsp;</div>
+                    <div id="opcheckout-forgot-error" class="opcheckout-error" style="display: none;">
+                        &nbsp;</div>
+                    <div id="opcheckout-forgot-success" style="display: none;">
+                        <?php echo __('We have already sent a new password to your email address.'); ?>
+                    </div>
+                    <ul id="opcheckout-forgot-table">
+                        <li>
+                            <div class="input-box">
+								<label class="required" for="id_opcheckout_email">
+                                    <?php echo __('Email address'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input type="text" class="input-text required-entry validate-email"
+                                       name="opcheckout_email" id="id_opcheckout_email" required/>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <button id="opcheckout-forgot-button" type="submit">
+                                <?php echo __('Send password'); ?>
+                            </button>
+                            <div class="link-register-forgot">
+                                <p>
+                                    <a href="javascript:void(0);" id="opcheckout-return-login-link">
+                                        <?php echo __('Return to login'); ?>
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div id="opcheckout-login-popup-contents-login">
+                <h1><?php echo __('Login'); ?></h1>
+                <p class="close"><a href="javascript:void(0);"><?php echo __('X'); ?></a></p>
+                <form id="opcheckout-login-form" method="post">
+                    <div id="opcheckout-login-loading" style="display: none;" class="loading-ajax-login">
+                        &nbsp;</div>
+                    <div id="opcheckout-login-error" class="opcheckout-error" style="display: none;">
+                        &nbsp;</div>
+                    <ul id="opcheckout-login-table">
+                        <li class="email-icon">
+                            <div class="input-box">
+								<label class="required"
+                                       for="id_opcheckout_username"><?php echo __('Email address'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input tabindex="100" type="text" class="input-text required required-entry validate-email"
+                                       name="opcheckout_username" id="id_opcheckout_username" required />
+                            </div>
+                        </li>
+                        <li class="password-icon">
+                            <div class="input-box">
+								<label class="required" for="id_opcheckout_password">
+                                    <?php echo __('Password'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input type="password" tabindex="101" name="opcheckout_password"
+                                       class="input-text required required-entry"
+                                       data-validate="{required:true}"
+                                       id="id_opcheckout_password" required/>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <button tabindex="102" id="opcheckout-login-button"
+                                    type="submit"><?php echo __('Login'); ?></button>
+                            <div class="link-register-forgot">
+                                <p class="forgot-link">
+                                    <a href="javascript:void(0);"
+                                       id="opcheckout-forgot-password-link"><span>&nbsp;</span>
+                                        <?php echo __('Forgot your password?'); ?>
+                                    </a>
+                                </p>
+
+                                <p class="register-link">
+                                    <a href="javascript:void(0);" id="opcheckout-register-link"><span>&nbsp;</span>
+                                        <?php echo __('Create a new account'); ?>
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div id="opcheckout-login-popup-contents-register" style="display: none;">
+                <h1><?php echo __('Create a new account'); ?></h1>
+                <p class="title-register">
+                    <?php echo __('Please enter the following information to create a new account.'); ?>
+                </p>
+                <p class="close"><a href="javascript:void(0);"><?php echo __('X'); ?></a></p>
+                <form id="opcheckout-register-form">
+                    <div id="opcheckout-register-loading" style="display: none;" class="loading-ajax-login">
+                        &nbsp;</div>
+                    <div id="opcheckout-register-error" class="opcheckout-error" style="display: none;">
+                        &nbsp;</div>
+                    <ul id="opcheckout-register-table">
+                        <li>
+                            <div class="input-box">
+								<label class="required" for="id_opcheckout_firstname"><?php echo __('First Name'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input tabindex="100" type="text" class="input-text required-entry"
+                                       name="opcheckout_firstname" id="id_opcheckout_firstname" required/>                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+								<label class="required" for="id_opcheckout_lastname">
+                                    <?php echo __('Last Name'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input tabindex="100" type="text" class="input-text required-entry"
+                                       name="opcheckout_lastname" id="id_opcheckout_lastname" required/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input-box">
+								<label class="required"
+                                       for="id_opcheckout_register_username"><?php echo __('Email address'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input tabindex="100" type="text" class="input-text required-entry validate-email"
+                                       name="opcheckout_register_username"
+                                       id="id_opcheckout_register_username" required/>                                
+                            </div>
+                        </li>
+                        <li>
+                            <?php if ($canShowPasswordMeterValidate) {?>
+                            <div class="input-box" data-mage-init='{"passwordStrengthIndicator": {}}'>                                
+                                <label class="required" for="id_opcheckout_register_password">
+                                    <?php echo __('Password'); ?>
+                                    <em>*</em>
+                                </label>
+								<input type="password" tabindex="101" name="opcheckout_register_password"
+                                       class="input-text required-entry validate-password"
+                                       id="id_opcheckout_register_password"
+                                       data-password-min-length="<?php echo $minimumPasswordLength; ?>"
+                                       data-password-min-character-sets="<?php echo $requiredCharacterClassesNumber; ?>"
+                                       data-validate="{required:true, 'validate-customer-password':true}"
+                                       autocomplete="off"
+                                       required/>
+                                <div id="password-strength-meter-container" data-role="password-strength-meter" >
+                                    <div id="password-strength-meter" class="password-strength-meter">
+                                        <?php /* @escapeNotVerified */ echo __('Password Strength'); ?>:
+                                    <span id="password-strength-meter-label" data-role="password-strength-meter-label" >
+                                        <?php /* @escapeNotVerified */ echo __('No Password'); ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } else {?>
+                                <div class="input-box">
+									<label class="required" for="id_opcheckout_register_password">
+                                        <?php echo __('Password'); ?>
+                                        <em>*</em>
+                                    </label>
+                                    <input type="password" tabindex="101" name="opcheckout_register_password"
+                                           class="input-text required-entry validate-password"
+                                           id="id_opcheckout_register_password" required/>
+                                </div>
+                            <?php }?>
+
+                        </li>
+                        <li>
+                            <div class="input-box">
+								<label class="required"
+                                       for="id_opcheckout_register_confirm_password">
+                                    <?php echo __('Confirm Password'); ?>
+                                    <em>*</em>
+                                </label>
+                                <input type="password" tabindex="101" name="opcheckout_register_confirm_password"
+                                       class="input-text required-entry"
+                                       id="id_opcheckout_register_confirm_password"
+                                       data-validate="{required:true, equalTo:'#id_opcheckout_register_password'}"
+                                       autocomplete="off"/>
+                            </div>
+                        </li>
+
+                        <li class="last">
+                            <button tabindex="102" id="opcheckout-register-button" type="submit">
+                                <?php echo __('Register'); ?>
+                            </button>
+                            <div class="link-register-forgot">
+                                <p>
+                                    <a href="javascript:void(0);" id="opcheckout-return-login-link-2">
+                                        <?php echo __('Return to login'); ?>
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="control_overlay" style="display: none"></div>
+<script>
+    require(['jquery', 'Rokanthemes_OpCheckout/js/customer-login'], function ($) {
+        $('#opcheckout-login-popup').customerLogin([]);
+    });
+</script>
