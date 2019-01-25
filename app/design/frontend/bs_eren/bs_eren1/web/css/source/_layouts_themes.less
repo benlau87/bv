@@ -222,19 +222,13 @@ Benlau Header
 
 #algolia-autocomplete-container .aa-dropdown-menu {
   border-color: @maincolor !important;
+  width: 57.99% !important;
 }
 
 
 .header-container {
   margin-bottom: 25px;
   height: auto;
-
-  .top-menu-container {
-
-  }
-  .search-bar {
-
-  }
 
   .header .nav-toggle {
     top: 0;
@@ -4232,6 +4226,12 @@ body.page-layout-full-width {
   }
 }
 
+.checkout-index-index {
+  .company-homepage-link, .col-trust { display: none; }
+
+  .container { max-width: 1270px; }
+}
+
 .top-menu-container { padding-top: 30px; }
 
 .custommenu.navigation li > a > span,
@@ -4291,4 +4291,59 @@ body.page-layout-full-width {
 
 .navigation, .breadcrumbs, .page-header .header.panel, .header.content, .footer.content, .page-wrapper > .widget, .page-wrapper > .page-bottom, .block.category.event, .top-container, .page-main {
   max-width: 100%;
+}
+
+.account-nav .nav li { display:block; }
+
+
+@media (max-width: 1650px) {
+  .navigation .level0 > .level-top { padding: 25px 14px !important; }
+}
+
+
+@media (max-width: 1600px) {
+  .col-trust { display: none; }
+
+  .navigation > ul { float:right; }
+
+  .search-bar { margin-left: 25%; }
+
+  .service-icons { max-width: 33.333333%; flex: 0 0 33.333333% }
+
+  .header-container .header .col-menu { margin-left: 0; max-width: 83.333333%; flex: 0 0 83.333333%; padding-right: 45px; }
+}
+
+
+@media (min-width: 767px) and (max-width: 1280px) {
+  .company-homepage-link { display: none; }
+  .header-container .header .col-logo { height: 0 !important; }
+  .header-container .header .col-menu { width: 100% !important; max-width: 100%; flex: 0 0 100%; }
+  .logo { margin-left: 15px; }
+}
+
+@media (max-width: 767px) {
+
+  .company-homepage-link { display: none; }
+
+  .container { width: 100%; }
+
+  .top-bar-container { display: none; }
+
+  .header-container .header .col-logo { width: 100%; max-width: 100%; flex: 0 0 100%; }
+
+  .service-icons { top: -85px !important; }
+
+  .search-bar { margin: 0; max-width: 100% }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (max-width: 480px) {
+
+  .header-container .header .logo img { margin-top: -15px !important;}
+
 }

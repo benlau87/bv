@@ -13,7 +13,7 @@
             <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main container">
                 <container name="columns.top" label="Before Main Columns"/>
                 <container name="columns" htmlTag="div" htmlClass="columns layout layout-1-col row">
-                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="col-main col-lg-9 col-md-9 col-sm-9 col-xs-12" after="-"/>
+                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="col-main col-lg-9 col-md-9 col-sm-12 col-xs-12" after="-"/>
                 </container>
             </container>
             <container name="page.bottom.container" as="page_bottom_container" label="Before Page Footer Container" after="main.content" htmlTag="div" htmlClass="page-bottom"/>
@@ -27,7 +27,7 @@
         <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer footer default" />
     </referenceContainer>
     <referenceContainer name="columns">
-		<container name="col.left.sidebar" label="Col Left Sidebar" htmlTag="div" htmlClass="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+		<container name="col.left.sidebar" label="Col Left Sidebar" htmlTag="div" htmlClass="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 			<container name="div.sidebar.main" htmlTag="div" htmlClass="sidebar sidebar-main-1" before="main">
 				<container name="sidebar.main" as="sidebar_main" label="Sidebar Main"/>
 			</container>

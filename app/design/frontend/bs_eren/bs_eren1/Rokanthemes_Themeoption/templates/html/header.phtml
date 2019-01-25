@@ -5,7 +5,7 @@
     <div class="top-menu-container">
         <div class="container">
             <div class="row">
-                <div class="search-bar col-md-5 col-sm-6 col-md-offset-4 col-sm-offset-3"><?php echo $this->getChildHtml("top.search"); ?></div>
+                <div class="search-bar col-md-5 offset-xl-4 offset-sm-12"><?php echo $this->getChildHtml("top.search"); ?></div>
                 <div class="service-icons col-md-3 col-sm-3">
                     <?php echo $this->getChildHtml("minicart"); ?>
                     <?php echo $this->getChildHtml("top_link"); ?>
@@ -20,11 +20,11 @@
                     <?php echo $this->getChildHtml("logo"); ?>
                 </div>
 
-                <div class="col-md-2 col-sm-3 hidden-xs col-trust">
+                <div class="col-md-2 col-sm-3 hidden-lg-down col-trust">
                     <?php echo $this->getChildHtml("top_trust"); ?>
                 </div>
 
-                <div class="col-md-8 col-sm-6 col-xs-5 col-menu">
+                <div class="col-xl-8 col-lg-10 col-sm-6 col-xs-5 col-menu">
                     <?php /*echo $this->getChildHtml("minicart");*/ ?>
                     <?php echo $this->getChildHtml("top.navigation.sections"); ?>
                 </div>
