@@ -1,30 +1,24 @@
 <div class="top-content-home">
-    <div class="banner-top-home">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('category_listing_home')->toHtml(); ?>
-    </div>
-    <!--
-	<div class="box-sale">
-		<div class="container">
-			<div class="content-sale">
-				<?php //echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('box_sale')->toHtml();?>
-			</div>
-		</div>
-	</div>
-	-->
-
-
-    <div class="section-welcome">
-        <div class="container">
-            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_welcome')->toHtml(); ?>
-        </div>
-    </div>
-
     <div class="box-new">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-xs-12">
+                <div class="col-md-9 col-xs-9">
                     <?php echo $block->getLayout()->createBlock('Rokanthemes\Newproduct\Block\Newproduct')->setTemplate('Rokanthemes_Newproduct::newproduct.phtml')->toHtml(); ?>
                 </div>
+                <div class="col-md-3 col-xs-3" style="padding-top: 92px; text-align:right;">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_new_products')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-welcome">
+        <div class="container">
+            <div class="col-md-9 col-xs-9">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_welcome')->toHtml(); ?>
+            </div>
+            <div class="col-md-3 col-xs-3">
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_banner_home')->toHtml(); ?>
             </div>
         </div>
     </div>
@@ -35,51 +29,27 @@
         </div>
     </div>
 
-    <!--	<div class="box-featured">
-		<div class="container">
-			<div class="row">
-				<?php /*echo $block->getLayout()->createBlock('Rokanthemes\Featuredpro\Block\Featured')->setTemplate('Rokanthemes_Featuredpro::featured.phtml')->toHtml();*/ ?>
-			</div>
-		</div>
-	</div>-->
-    <!--	<div class="box-banner-middle">
-		<div class="container">
-			<?php /*echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle')->toHtml();*/ ?>
-		</div>
-	</div>-->
-    <!--	<div class="box-blog">
-		<div class="container">
-			<?php /*echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();*/ ?>
-		</div>
-	</div>-->
-
-    <!--	<div class="section-newsletter">
-		<div class="container">
-			<?php /*echo $block->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('Magento_Newsletter::subscribe.phtml')->toHtml();*/ ?>
-		</div>
-	</div>-->
-
-    <!--	<div class="section_testimonial">
-		<div class="container">
-			<?php /*echo $block->getLayout()->createBlock('Rokanthemes\Testimonial\Block\Testimonial')->setTemplate('Rokanthemes_Testimonial::testimonial.phtml')->toHtml();*/ ?>
-		</div>
-	</div>-->
-
-    <div class="section-services">
-        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_services')->toHtml(); ?>
+    <div class="group-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-xs-9">
+                    <?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_bestseller.phtml')->setCategoryId(146)->toHtml(); ?>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_besteller_products')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="group-product">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    <?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_bestseller.phtml')->setCategoryId(146)->toHtml(); ?>
-                </div>
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-9 col-xs-9">
                     <?php echo $block->getLayout()->createBlock('Rokanthemes\Onsaleproduct\Block\Onsaleproduct')->setTemplate('Rokanthemes_Onsaleproduct::onsaleproduct.phtml')->toHtml(); ?>
                 </div>
-                <div class="col-md-4 col-xs-12">
-                    <?php echo $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct')->setTemplate('Magento_Catalog::product/category_mostviewed.phtml')->setCategoryId(147)->toHtml(); ?>
+                <div class="col-md-3 col-xs-3">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_onsale_products')->toHtml(); ?>
                 </div>
             </div>
         </div>
@@ -87,20 +57,20 @@
 
     <div class="section-seo">
         <div class="container">
-            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_seo')->toHtml(); ?>
-        </div>
-    </div>
-
-    <div class="section-secure-payment">
-        <div class="container">
             <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_sicher_ist_sicher')->toHtml(); ?>
+                <div class="col-md-9 col-xs-9">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_seo')->toHtml(); ?>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_zahlungsarten')->toHtml(); ?>
+                <div class="col-md-3 col-xs-3">
+                    <div class="sidebar-free-callback" style="margin-bottom:30px; margin-top: 85px;">
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_free_callback')->toHtml(); ?>
+                    </div>
+                    <div class="sidebar-company-homepage">
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_company_homepage')->toHtml(); ?>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -109,5 +79,4 @@
             <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('section_brands')->toHtml(); ?>
         </div>
     </div>
-
 </div>

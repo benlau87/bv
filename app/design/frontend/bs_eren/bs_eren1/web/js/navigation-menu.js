@@ -20,8 +20,8 @@ define([
             topLevelSubmenu: '> .submenu',
             topLevelHoverClass: 'hover',
             expandedTopLevel: '.more',
-            hoverInTimeout: 300,
-            hoverOutTimeout: 500,
+            hoverInTimeout: 2300,
+            hoverOutTimeout: 5500,
             submenuAnimationSpeed: 200,
             collapsable: true,
             collapsableDropdownTemplate:

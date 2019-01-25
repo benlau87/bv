@@ -5,6 +5,7 @@
 		<referenceContainer name="page.wrapper">
             <block class="Rokanthemes\Themeoption\Block\Themeoption" name="toki_header" template="html/header.phtml" before="-">
 				<block class="Magento\Framework\View\Element\Template" name="top_link" template="Magento_Theme::html/toplink.phtml" />
+				<block class="Magento\Framework\View\Element\Template" name="top_trust" template="Magento_Theme::html/top_trust.phtml" />
                 <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
 				<block class="Magento\Framework\View\Element\Template" name="top.navigation.sections" template="Magento_Theme::html/sections.phtml">
 					<arguments>

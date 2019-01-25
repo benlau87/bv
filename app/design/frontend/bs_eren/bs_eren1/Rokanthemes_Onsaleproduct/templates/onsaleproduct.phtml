@@ -30,7 +30,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 			</div>
 		<?php else: ?>
 			<?php
-			$rows = $this->getConfig('items');
+			$rows = 1;
 			?>	
 			<ul class="owl">
 				<?php $_collectionSize = $_productCollection->count() ?>
@@ -66,9 +66,11 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 										<?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
 									</a>
 								</h3>
+                                <?php /*
 								<div class="product-ratting">
 									<?php echo $block->getProductDetailsHtml($_product); ?>
 								</div>
+                                */ ?>
                                 <?php #echo  $_helper->productAttribute($_product, $_product->getManufacturer(), 'manufacturer'); ?>
                                 <?php
                                 $_attributeValue =$_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product);
@@ -78,7 +80,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                 </div>
                                 <?php endif; ?>
 
-								<?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+								<?php #echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
 								<?php //if( $this->getConfig('show_price') ): ?>
 									 <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
 								<?php //endif; ?>
@@ -176,7 +178,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 					jQuery(".rokan-onsaleproduct .owl").owlCarousel({
 						lazyLoad: true,
 						autoPlay : false,
-						items : 1,
+						items : 4,
 						itemsDesktop : [1199,1],
 						itemsDesktopSmall : [980,1],
 						itemsTablet: [768,1],

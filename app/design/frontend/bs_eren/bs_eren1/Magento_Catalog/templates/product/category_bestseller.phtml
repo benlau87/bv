@@ -35,9 +35,9 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 	?>
     <div class="rokan-category-best">
 		<div class="rokan-product-heading rokan-category-best-heading"><h2><?php echo __('Bestseller')?></h2></div>
-        <?php $iterator = 1; 
+        <?php $iterator = 1;
 			$i = 0;
-			$rows = 3; ?>
+			$rows = 1; ?>
         <ul class="owl">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
@@ -78,12 +78,14 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                 <?php echo $_attributeValue; ?>
                             </div>
                         <?php endif; ?>
+                        <?php /*
 						<div class="product-ratting">
 							<?php echo $block->getProductDetailsHtml($_product); ?>
 						</div>
-						<?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                        */ ?>
+						<?php #echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
 						<?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
-						
+
                         <div class="addto-links-icons visible-onhover">
                             <div class="action-inner product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
                              <!--   <div class="actions-primary"<?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
@@ -154,7 +156,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
             }
         }
         </script>
-		
+
     <?php endif; ?>
 	<script type="text/javascript">
 		require([
@@ -167,7 +169,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 			jQuery(".rokan-category-best .owl").owlCarousel({
 				lazyLoad: true,
 				autoPlay : false,
-				items : 1,
+				items : 4,
 				itemsDesktop : [1199,1],
 				itemsDesktopSmall : [980,1],
 				itemsTablet: [768,1],
