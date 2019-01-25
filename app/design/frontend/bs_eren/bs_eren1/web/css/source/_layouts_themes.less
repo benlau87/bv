@@ -3660,6 +3660,8 @@ Benlau Header
       width: 360px;
     }
     .footer-static {
+      display: flex;
+      width: 100%;
       .logo-footer {
         a {
           margin-bottom: 50px;
@@ -4246,18 +4248,26 @@ body.page-layout-full-width {
 .footer-container {
   .footer-col-contact {
     width: 20%;
+    max-width: 20%;
+    flex: 0 0 20%;
   }
 
   .footer-col-account {
     width: 18%;
+    max-width: 18%;
+    flex: 0 0 18%;
   }
 
   .footer-col-info {
     width: 22%;
+    max-width: 22%;
+    flex: 0 0 22%;
   }
 
   .footer-col-payment {
     width: 25%;
+    max-width: 25%;
+    flex: 0 0 25%;
 
     ul.payment-methods li {
       float: left;
@@ -4271,6 +4281,8 @@ body.page-layout-full-width {
 
   .footer-col-secure {
     width: 15%;
+    max-width: 15%;
+    flex: 0 0 15%;
 
     ul.secure-symbols li {
       float: left;
@@ -4347,3 +4359,7 @@ body.page-layout-full-width {
   .header-container .header .logo img { margin-top: -15px !important;}
 
 }
+
+.hidden { display: none !important; }
+
+.brand-widget { margin-bottom: 0 !important; }
