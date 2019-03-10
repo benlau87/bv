@@ -8,19 +8,20 @@
         "AFL-3.0"
     ],
     "require": {
-        "magento/product-community-edition": "2.2.3",
+        "magento/product-community-edition": "2.2.4",
         "composer/composer": "@alpha",
         "magento/data-migration-tool": "2.2.2",
-        "splendidinternet/mage2-locale-de-de": "1.39.4",
+        "splendidinternet/mage2-locale-de-de": "1.46",
         "payone-gmbh/magento-2": "v2.1.0",
-        "amzn/amazon-payments-magento-2-plugin": "1.2.6",
+        "amzn/amazon-payments-magento-2-plugin": "2.0.16",
         "phpunit/phpunit": "6.0.0",
-        "iways/module-pay-pal-plus": "^1.1",
+        "iways/module-pay-pal-plus": "1.1.7",
         "smile/elasticsuite": "^2.5",
         "mageplaza/module-smtp": "^1.2",
-        "algolia/algoliasearch-magento-2": "1.7.2",
+        "algolia/algoliasearch-magento-2": "1.10.0",
         "mageside/multiple-custom-forms": "^1.4",
-        "google/recaptcha": "~1.1"
+        "google/recaptcha": "~1.1",
+        "vpietri/adm-quickdevbar": "^0.1.13"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "1.5.3",
@@ -75,6 +76,35 @@
         "magento-force": "override"
     },
     "replace": {
-        "magento/module-signifyd": "*"
+        "magento/module-dhl": "*",
+        "magento/module-fedex": "*",
+        "magento/module-marketplace": "*",
+        "magento/module-persistent": "*",
+        "magento/module-catalog-rule-configurable": "*",
+        "magento/module-authorizenet": "*",
+        "magento/module-google-adwords": "*",
+        "magento/module-sample-data": "*",
+        "magento/module-send-friend": "*",
+        "magento/module-tax-import-export": "*",
+        "magento/module-google-optimizer": "*",
+        "magento/module-ups": "*",
+        "magento/module-usps": "*",
+        "magento/module-braintree": "*",
+        "magento/module-weee": "*",
+        "magento/module-signifyd": "*",
+        "magento/module-analytics": "*",
+        "magento/module-catalog-analytics": "*",
+        "magento/module-customer-analytics": "*",
+        "magento/module-quote-analytics": "*",
+        "magento/module-review-analytics": "*",
+        "magento/module-sales-analytics": "*",
+        "magento/module-wishlist-analytics": "*",
+        "temando/module-shipping-m2": "*",
+        "dotmailer/dotmailer-magento2-extension": "*",
+        "shopialfb/facebook-module": "*",
+        "klarna/module-kp": "*",
+        "klarna/module-ordermanagement": "*",
+        "klarna/module-core": "*",
+        "vertex/module-tax": "*"
     }
 }

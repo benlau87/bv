@@ -73,12 +73,8 @@
 						<div class="product-item">
 							<div class="product-photo">
 								<a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-									<?php $productImageThumb = $block->getImage($_item, 'category_page_grid-1');?>
-									<span class="image0 image-switch">
+									<span class="image-switch">
 										<?php echo $productImage->toHtml(); ?>
-									</span>
-									<span class="image1 image-switch">
-										<?php echo $productImageThumb->toHtml(); ?>
 									</span>
 								</a>
 								

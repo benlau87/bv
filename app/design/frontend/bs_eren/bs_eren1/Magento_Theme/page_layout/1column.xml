@@ -21,6 +21,13 @@
             <container name="before.body.end" as="before_body_end" after="-" label="Page Bottom"/>
         </container>
     </container>
+    <container name="sidebar.additional" label="Sidebar Additional" htmlTag="div">
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="paypal.partner.right.logo" remove="true" />
+        <referenceBlock name="bml.right.logo" remove="true" />
+    </container>
     <referenceContainer name="page.wrapper">
         <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="header-container" before="main.content"/>
         <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>

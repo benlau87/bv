@@ -48,12 +48,8 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 								<?php // Product Image ?>
 								<div class="product-photo">
 									<a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-										<?php $productImageThumb = $block->getImage($_product, 'category_page_grid-1');?>
-										<span class="image0 image-switch">
+										<span class="image-switch">
 											<?php echo $productImage->toHtml(); ?>
-										</span>
-										<span class="image1 image-switch">
-											<?php echo $productImageThumb->toHtml(); ?>
 										</span>
 									</a>
 									<div class="addto-links-icons visible-onhover">

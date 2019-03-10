@@ -149,40 +149,6 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 						<?php if($i %$rows != 0) echo "</li>"; ?>                
 				</ul>
 			</div>
-		<?php if (!$block->isRedirectToCartEnabled()) : ?>
-			<script type="text/x-magento-init">
-			{
-				"[data-role=tocart-form], .form.map.checkout": {
-					"catalogAddToCart": {}
-				}
-			}
-			</script>
-		<?php endif; ?>
-			<script>
-				require([
-					'jquery',
-					'mage/mage',
-					'rokanthemes/owl'
-				], function ($) {
-					'use strict';
-
-					jQuery(".rokan-onsaleproduct .owl").owlCarousel({
-						autoPlay : false,
-						items : 4,
-						itemsDesktop : [1199,4],
-						itemsDesktopSmall : [980,3],
-						itemsTablet: [768,2],
-						itemsMobile : [479,1],
-						slideSpeed : 500,
-						paginationSpeed : 500,
-						rewindSpeed : 500,
-						navigation : true,
-						stopOnHover : true,
-						pagination :false,
-						scrollPerPage:true,
-					});
-				});
-			</script>
 	<?php endif; ?>
 	</div>
 <?php } ?>

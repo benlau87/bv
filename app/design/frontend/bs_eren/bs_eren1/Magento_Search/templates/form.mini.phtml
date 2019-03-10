@@ -24,8 +24,7 @@ echo $helper->getResultUrl() ?>" method="get">
                     "formSelector":"#search_mini_form",
                     "url":"<?php /* @escapeNotVerified */
                    echo $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]); ?>",
-                    "destinationSelector":"#search_autocomplete"}
-               }'
+                    "destinationSelector":"#search_autocomplete"}}'
                    type="text"
                    name="<?php /* @escapeNotVerified */
                    echo $helper->getQueryParamName() ?>"

@@ -33,6 +33,8 @@
 			</arguments>
 		</referenceBlock>
 		<referenceContainer name="content">
+			<referenceBlock name="breadcrumbs" template="Magento_Theme::html/breadcrumbs.phtml" />
+			<block class="Magento\Catalog\Block\Breadcrumbs" />
 			<container name="catalog.product.view" htmlTag="div" htmlClass="product-view" before="-">
 				<container name="product.row" htmlTag="div" htmlClass="view-product" before="-">
 					<!--<container name="product.container" htmlTag="div" htmlClass="container">-->
@@ -187,21 +189,6 @@
 														<block class="Magento\Catalog\Block\Product\View\Options"
 															   name="product.info.options" as="product_options"
 															   template="product/view/options.phtml">
-															<block class="Magento\Catalog\Block\Product\View\Options\Type\DefaultType"
-																   as="default"
-																   template="product/view/options/type/default.phtml"/>
-															<block class="Magento\Catalog\Block\Product\View\Options\Type\Text"
-																   as="text"
-																   template="product/view/options/type/text.phtml"/>
-															<block class="Magento\Catalog\Block\Product\View\Options\Type\File"
-																   as="file"
-																   template="product/view/options/type/file.phtml"/>
-															<block class="Magento\Catalog\Block\Product\View\Options\Type\Select"
-																   as="select"
-																   template="product/view/options/type/select.phtml"/>
-															<block class="Magento\Catalog\Block\Product\View\Options\Type\Date"
-																   as="date"
-																   template="product/view/options/type/date.phtml"/>
 														</block>
 														<block class="Magento\Framework\View\Element\Html\Calendar"
 															   name="html_calendar" as="html_calendar"

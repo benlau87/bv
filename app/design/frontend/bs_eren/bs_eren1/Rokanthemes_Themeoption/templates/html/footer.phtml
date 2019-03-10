@@ -21,4 +21,8 @@
     window.onload = function () {
         document.body.className += " preloaded";
     }
+
+    require(['jquery', 'main'], function($, main) {
+        main();
+    });
 </script>

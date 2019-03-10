@@ -48,7 +48,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
         <ol class="product-grid row">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
-                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item-inner col-sm-4 col-xs-4">' : '</li><li class="item-inner col-sm-4 col-xs-4">' ?>
+                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item-inner col-lg-3 col-md-4 col-xs-6">' : '</li><li class="item-inner col-lg-3 col-md-4 col-xs-6">' ?>
                 <div class="product-info" data-container="product-grid">
 				<div class="product-list-item">
                     <?php
@@ -61,12 +61,8 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                     <?php // Product Image ?>
 					<div class="product-photo">
 						<a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-							<?php $productImageThumb = $block->getImage($_product, 'category_page_grid-1');?>
-							<span class="image0 image-switch">
+							<span class="image-switch">
 								<?php echo $productImage->toHtml(); ?>
-							</span>
-							<span class="image1 image-switch">
-								<?php echo $productImageThumb->toHtml(); ?>
 							</span>
 						</a>
 					  	<div class="addto-links-icons visible-onhover">

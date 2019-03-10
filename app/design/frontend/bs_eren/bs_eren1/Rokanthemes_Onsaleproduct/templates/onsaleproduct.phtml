@@ -1,8 +1,9 @@
 <?php 
 use Magento\Framework\App\Action\Action;
-if($this->getConfig('enabled')){ // start enable module?>
-	<?php $_productCollection = $this->getProducts();
-$_helper = $this->helper('Magento\Catalog\Helper\Output');
+if($this->getConfig('enabled')){ // start enable module
+
+    $_productCollection = $this->getProducts();
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
 	?>
 	<div class="rokan-onsaleproduct">
 		
@@ -45,15 +46,11 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 									. 'top:' . $productImage->getHeight() . 'px;"';
 							}
 							?>
-							<div class="product-photo pull-left">
+							<div class="product-photo">
 								<?php // Product Image ?>
 								<a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-									<?php $productImageThumb = $block->getImage($_product, 'category_page_grid-1');?>
-									<span class="image0 image-switch">
+									<span class="image-switch">
 										<?php echo $productImage->toHtml(); ?>
-									</span>
-									<span class="image1 image-switch">
-										<?php echo $productImageThumb->toHtml(); ?>
 									</span>
 								</a>
 							</div>
@@ -66,12 +63,6 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 										<?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
 									</a>
 								</h3>
-                                <?php /*
-								<div class="product-ratting">
-									<?php echo $block->getProductDetailsHtml($_product); ?>
-								</div>
-                                */ ?>
-                                <?php #echo  $_helper->productAttribute($_product, $_product->getManufacturer(), 'manufacturer'); ?>
                                 <?php
                                 $_attributeValue =$_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product);
                                 if ($_attributeValue): ?>
@@ -80,75 +71,11 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                 </div>
                                 <?php endif; ?>
 
-								<?php #echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
-								<?php //if( $this->getConfig('show_price') ): ?>
-									 <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
-								<?php //endif; ?>
-								<!--<div class="addto-links-icons visible-onhover">
-									<div class="action-inner">
-										<?php if ($this->getConfig('addtocart')) { ?>
-										<div class="actions-primary"<?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
-											<?php if ($_product->isSaleable()): ?>
-												<?php $postParams = $block->getAddToCartPostParams($_product); ?>
-												<form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
-													<input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
-													<input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
-													<?php echo $block->getBlockHtml('formkey')?>
-													<button type="submit"
-															title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
-															class="action tocart primary">
-														<span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
-													</button>
-												</form>
-											<?php else: ?>
-												<?php if ($_product->getIsSalable()): ?>
-													<div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
-												<?php else: ?>
-													<div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
-												<?php endif; ?>
-											<?php endif; ?>
-										</div>
-										<?php }?>	
-										
-										<?php if( $this->getConfig('addtowishlist') || $this->getConfig('addtocompare') ){?>
-											<ul class="add-to-links">
-											<?php if( $this->getConfig('addtowishlist')): ?>
-													<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
-													<li>
-														<a href="#"
-														   class="action towishlist"
-														   title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-														   aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-														   data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
-														   data-action="add-to-wishlist"
-														   role="button">
-															<span><?php /* @escapeNotVerified */ echo __('Add to Wish List') ?></span>
-														</a>
-													</li>
-													<?php endif; ?>
-												<?php endif; ?>
-						
-											<?php if( $this->getConfig('addtocompare')): ?>
-											<?php
-												$compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
-												?>
-												<li><a href="#"
-												   class="action tocompare"
-												   title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
-												   aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
-												   data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>'
-												   role="button">
-													<span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
-													</a>
-												</li>
-											<?php endif; ?>
-											</ul>
-										<?php }?>
-									</div>
-								</div>-->
+                                <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
+
 								<?php if( $this->getConfig('description')){?>
 									<div class="ma-desc">
-										 <?php echo $block->getProductDetailsHtml($_product); ?>		                    
+										 <?php echo $block->getProductDetailsHtml($_product); ?>
 									</div>
 								<?php }?>
 							</div>
@@ -158,15 +85,6 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 				<?php endforeach; ?>
 					<?php if($i %$rows != 0) echo "</li>"; ?>                
 			</ul>
-		<?php if (!$block->isRedirectToCartEnabled()) : ?>
-			<script type="text/x-magento-init">
-			{
-				"[data-role=tocart-form], .form.map.checkout": {
-					"catalogAddToCart": {}
-				}
-			}
-			</script>
-		<?php endif; ?>
 			<script>
 				require([
 					'jquery',
