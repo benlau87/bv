@@ -2302,7 +2302,7 @@ Benlau Header
       background: #f1f1f1;
       border: 1px solid #cacaca;
       padding: 15px 20px 20px 20px;
-      float: left;
+      height: fit-content;
     }
     .price-box {
       margin-bottom: 0;
@@ -2375,6 +2375,52 @@ Benlau Header
     }
   }
 }
+
+.cart-container .form-cart .action.continue {
+  background: none;
+  color: @maincolor;
+  padding: 10px 10px 10px 0;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: normal;
+
+  &:hover, &:active, &:focus {
+  color: #333;
+  background: none;
+}
+
+  &:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 32px;
+    line-height: 16px;
+    color: inherit;
+    content: '\e617';
+    font-family: 'icons-blank-theme';
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+  }
+}
+
+button, a.action.primary, .cart.table-wrapper .actions-toolbar > .action, .cart.table-wrapper .action-gift {
+  border-radius: unset;
+  background: #f0f0f0;
+  color: #333;
+  text-transform: none;
+}
+
+.technical-data table { width: auto; }
+
+.header-container .top-menu-container span.cart-text { vertical-align: top; }
+
+.cart-totals .totals-tax-summary .amount .price:after, .opc-block-summary .table-totals .totals-tax-summary .amount .price:after { top: inherit; }
+
+.cart-summary .block > .title:after, .paypal-review-discount .block > .title:after { top: inherit; }
 
 .skonto {
   display: none;
@@ -3074,7 +3120,9 @@ Benlau Header
       span {
         text-transform: uppercase;
         color: #333;
-        font-family: @titlefont;
+        font-weight: 600;
+        font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        padding: 0 8px;
       }
       .cart-price {
         font-size: 15px;
@@ -3088,6 +3136,10 @@ Benlau Header
       }
     }
   }
+}
+
+.cart.table-wrapper .product-item-details {
+  text-align: left;
 }
 
 .cart-summary {
@@ -4226,8 +4278,8 @@ body.page-layout-full-width {
 }
 
 .company-homepage-link {
-  background: #666;
-  color: #fff !important;
+  background: #f0f0f0;
+  color: #666 !important;
   margin-top: 20px;
   display: block;
   width: 204px;
@@ -4237,7 +4289,7 @@ body.page-layout-full-width {
   padding: 5px 5px;
 
   &:hover {
-    color: #fff;
+    color: #fff !important;
     background: @maincolor;
   }
 }

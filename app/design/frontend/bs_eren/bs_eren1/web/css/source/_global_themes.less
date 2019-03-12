@@ -93,10 +93,11 @@ div.mage-error[generated]{ font-size: 12px;}
     border: none;
  }
  .checkout.action.primary {
-    background: @maincolor;
-    border-color: @maincolor;
+    background: @maincolor !important;
+    border-color: @maincolor !important;
+    color: #fff !important;
     &:hover {
-        opacity: 0.9
+        opacity: 0.8
     }
  }
  .abs-shopping-cart-items .action.continue:before, .block-cart-failed .action.continue:before, .cart-container .form-cart .action.continue:before{
@@ -669,7 +670,6 @@ div.mage-error[generated]{ font-size: 12px;}
 .paypal-review .block .actions-toolbar .action.primary:hover, 
 .cart-summary .actions-toolbar > .primary .cart.table-wrapper .actions-toolbar > .action:hover, 
 .cart-summary .actions-toolbar > .primary .cart.table-wrapper .action-gift:hover {
-    border: none;
     background: @maincolor;
     color: #fff;
 }
