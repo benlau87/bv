@@ -3360,8 +3360,8 @@ Benlau Header
     display: none !important;
   }
   .brand-widget {
-    padding-top: 30px;
-    /*border-top: 1px dashed @maincolor;*/
+    padding: 15px;
+
     .brand-image {
       opacity: 0.5;
       -webkit-transition: all .4s ease 0s;
@@ -4175,13 +4175,15 @@ body.page-layout-full-width {
   img {
     margin-right: 25px;
     display: inline-block;
+    width: 70px;
+    height: 70px;
   }
 
   .swap-on-hover {
     position: relative;
     margin: 0 auto;
-    max-width: 79px;
-    width: 79px;
+    max-width: 70px;
+    width: 70px;
     margin-right: 20px;
     display: inline-block;
   }
@@ -4191,8 +4193,8 @@ body.page-layout-full-width {
     top:0;
     left:0;
     overflow: hidden;
-    width: 79px;
-    height: 79px;
+    width: 70px;
+    height: 70px;
   }
 
   .swap-on-hover .swap-on-hover__front-image {
@@ -4209,23 +4211,23 @@ body.page-layout-full-width {
 .top-bar-container {
   background: @maincolor;
   color: #fff;
-  font-size: 14px;
-  padding-top: 11px;
-  padding-bottom: 9px;
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 4px;
   font-weight: 300;
   text-align: center;
   line-height: 1.4;
 
   p, a {
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
     padding: 0;
   }
 }
 
 .company-homepage-link {
-  background: @maincolor;
-  color: #fff;
+  background: #666;
+  color: #fff !important;
   margin-top: 20px;
   display: block;
   width: 204px;
@@ -4236,7 +4238,7 @@ body.page-layout-full-width {
 
   &:hover {
     color: #fff;
-    background: #333;
+    background: @maincolor;
   }
 }
 
@@ -4379,3 +4381,50 @@ body.page-layout-full-width {
 .hidden { display: none !important; }
 
 .brand-widget { margin-bottom: 0 !important; }
+
+.cart-summary #block-shipping { display: none; }
+
+.product-options-wrapper {
+  .options-list {
+    margin-top: 10px;
+  }
+
+  .fieldset>.field .choice input {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 4px;
+  }
+
+  label {
+    margin: 0 0 5px !important;
+    padding-bottom: 5px;
+  }
+}
+
+
+
+/**
+* Algoliasearch
+ */
+#algolia-autocomplete-container .aa-dropdown-menu .algoliasearch-autocomplete-price .promotion,
+#algolia_instant_selector .result .price .promotion {
+  color: @pricecolor !important;
+}
+
+#algolia-autocomplete-container .aa-dropdown-menu .algoliasearch-autocomplete-price,
+#algolia-autocomplete-container .aa-dropdown-menu .info-without-thumb .category-tag,
+#algolia_instant_selector .result .price {
+  color: @maincolor !important;
+}
+
+#algolia_instant_selector .instant-search-bar-label {
+  background: @maincolor !important;
+}
+
+#algolia_instant_selector #instant-search-bar {
+  border-color: @maincolor !important;
+}
+
+#algolia-right-container > .row > div { width: 100%; }
+
+.product-reviews-summary .rating-summary { display: none; }
