@@ -31,9 +31,8 @@
                 <div class="col-xl-9">
                     <?php echo $block->getLayout()->createBlock('Rokanthemes\PriceCountdown\Block\Pricecountdown')->setTemplate('Rokanthemes_PriceCountdown::pricecountdown.phtml')->toHtml(); ?>
                 </div>
-
                 <div class="col-xl-3">
-                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_besteller_products')->toHtml(); ?>
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sidebar_countdown_products')->toHtml(); ?>
                 </div>
             </div>
         </div>
