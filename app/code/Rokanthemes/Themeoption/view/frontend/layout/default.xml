@@ -7,7 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <head>
-		<script src="Rokanthemes_Themeoption::js/jquery.bpopup.min.js"/>
+		<!--<script src="Rokanthemes_Themeoption::js/jquery.bpopup.min.js"/>-->
 		<script src="Rokanthemes_Themeoption::js/custom.js"/>
 	</head>
 	<body>

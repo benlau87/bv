@@ -1,5 +1,4 @@
 require(["jquery"], function($){
-    console.log('benlau script up and running');
     $(document).ready(function() {
     $('.full-width-content').each(function () {
             if ($(this).find('.column_container').length > 1) {
@@ -22,21 +21,6 @@ require(["jquery"], function($){
                 }
 
             }
-        });
-
-        $('.section-services').find('.support-info').each(function() {
-            var $id = $(this).attr('id');
-            $(this).click(function() {
-               var bPopup = $('#'+$id+'-modal').bPopup();
-            });
-        });
-
-        if( $('#sd24-modal').length ) {
-            $('#sd24-modal').bPopup();
-        }
-
-        $('.modal_close').click(function(){
-            $(this).parent().bPopup().close();
         });
 
         function formatCustomPrice(price) {
