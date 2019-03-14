@@ -13,6 +13,7 @@ define(['jquery', 'mage/mage', 'rokanthemes/owl'], function($){
             lazyLoad: true,
             autoPlay: false,
             items: 4,
+            margin: 20,
             itemsDesktop: [1199, 4],
             itemsDesktopSmall: [980, 3],
             itemsTablet: [768, 2],
