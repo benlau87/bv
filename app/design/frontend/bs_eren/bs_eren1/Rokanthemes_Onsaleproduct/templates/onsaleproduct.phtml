@@ -85,32 +85,6 @@ if($this->getConfig('enabled')){ // start enable module
 				<?php endforeach; ?>
 					<?php if($i %$rows != 0) echo "</li>"; ?>                
 			</ul>
-			<script>
-				require([
-					'jquery',
-					'mage/mage',
-					'rokanthemes/owl'
-				], function ($) {
-					'use strict';
-
-					jQuery(".rokan-onsaleproduct .owl").owlCarousel({
-						lazyLoad: true,
-						autoPlay : false,
-						items : 4,
-						itemsDesktop : [1199,1],
-						itemsDesktopSmall : [980,1],
-						itemsTablet: [768,1],
-						itemsMobile : [479,1],
-						slideSpeed : 500,
-						paginationSpeed : 500,
-						rewindSpeed : 500,
-						navigation : true,
-						stopOnHover : true,
-						pagination :false,
-						scrollPerPage:true,
-					});
-				});
-			</script>
 	<?php endif; ?>
 	</div>
 <?php } ?>
