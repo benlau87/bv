@@ -316,7 +316,6 @@
             </arguments>
         </referenceBlock>
         <referenceContainer name="top_link" remove="true" />
-        <referenceContainer name="top_trust" remove="true" />
         <referenceContainer name="top.search" remove="true" />
         <referenceContainer name="top.navigation.sections" remove="true" />
         <referenceContainer name="minicart" remove="true" />

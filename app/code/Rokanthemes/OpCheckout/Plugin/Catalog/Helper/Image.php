@@ -30,7 +30,7 @@ class Image extends \Magento\Catalog\Helper\Image
     public function afterGetHeight(\Magento\Catalog\Helper\Image $subject, $result)
     {
         if ($this->getFullRequest() == 'checkout_index_index' && $this->_helperConfig->isEnabledOneStep()) {
-            return 270;
+            return 344;
         } else {
             return $result;
         }
