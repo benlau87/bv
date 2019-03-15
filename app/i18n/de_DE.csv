@@ -7702,10 +7702,10 @@ Payment,Payment,module,Rokanthemes_OpCheckout
 Product,Product,module,Rokanthemes_OpCheckout
 Qty,Qty,module,Rokanthemes_OpCheckout
 Subtotal,Subtotal,module,Rokanthemes_OpCheckout
-"Place order now","Place order now",module,Rokanthemes_OpCheckout
-"Continue to PayPal","Continue to PayPal",module,Rokanthemes_OpCheckout
-"Please wait, processing your order...","Please wait, processing your order...",module,Rokanthemes_OpCheckout
-"No Payment method available.","No Payment method available.",module,Rokanthemes_OpCheckout
+"Place order now","Zahlungspflichtig bestellen",module,Rokanthemes_OpCheckout
+"Continue to PayPal","Weiter zu PayPal",module,Rokanthemes_OpCheckout
+"Please wait, processing your order...","Ihre Bestellung wird verarbeitet...",module,Rokanthemes_OpCheckout
+"No Payment method available.","Keine Zahlungsmethoden verfügbar.",module,Rokanthemes_OpCheckout
 Apply,Apply,module,Rokanthemes_OpCheckout
 "Shipping Methods","Shipping Methods",module,Rokanthemes_OpCheckout
 "Sorry, no quotes are available for this order at this time","Sorry, no quotes are available for this order at this time",module,Rokanthemes_OpCheckout
