@@ -24,15 +24,7 @@
                 <width>270</width>
                 <height>344</height>
             </image>
-            <image id="category_page_grid-1" type="thumbnail">
-                <width>270</width>
-                <height>344</height>
-            </image>
 			 <image id="category_page_grid_m" type="small_image">
-                <width>90</width>
-                <height>115</height>
-            </image>
-            <image id="category_page_grid-1-m" type="thumbnail">
                 <width>90</width>
                 <height>115</height>
             </image>
@@ -41,12 +33,8 @@
                 <height>450</height>
             </image>
             <image id="count_down_thumb" type="small_image">
-                <width>470</width>
-                <height>600</height>
-            </image>
-            <image id="count_down_thumb-1" type="thumbnail">
-                <width>470</width>
-                <height>600</height>
+                <width>364</width>
+                <height>464</height>
             </image>
             <image id="customer_account_my_tags_tag_view" type="small_image">
                 <width>100</width>
@@ -274,7 +262,7 @@
         <var name="bundle_size">1MB</var>
     </vars>
     <exclude>
-        <item type="file">Lib::jquery/jquery-ui-1.9.2.js</item>
+        <!--<item type="file">Lib::jquery/jquery-ui-1.9.2.js</item>-->
         <item type="file">Lib::jquery/jquery.ba-hashchange.min.js</item>
         <item type="file">Lib::jquery/jquery.details.js</item>
         <item type="file">Lib::jquery/jquery.details.min.js</item>
