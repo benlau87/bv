@@ -21,7 +21,10 @@
         "algolia/algoliasearch-magento-2": "1.10.0",
         "mageside/multiple-custom-forms": "^1.4",
         "google/recaptcha": "~1.1",
-        "vpietri/adm-quickdevbar": "^0.1.13"
+        "vpietri/adm-quickdevbar": "^0.1.13",
+		"amzn/amazon-pay-and-login-with-amazon-core-module": "2.2.7",
+        "amzn/amazon-pay-module": "2.2.7",
+        "amzn/login-with-amazon-module": "2.2.7"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "1.5.3",
