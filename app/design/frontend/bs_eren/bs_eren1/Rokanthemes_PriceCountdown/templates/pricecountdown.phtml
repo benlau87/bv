@@ -25,12 +25,12 @@ if ($this->getConfig('enabled')) { // start enable module
         <?php
         if ($block->getMode() == 'grid') {
             $viewMode = 'grid';
-            $image = 'count_down_thumb-1';
+            $image = 'count_down_thumb';
             $showDescription = false;
             $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
         } else {
             $viewMode = 'list';
-            $image = 'count_down_thumb-1';
+            $image = 'count_down_thumb';
             $showDescription = true;
             $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
         }
