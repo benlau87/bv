@@ -246,7 +246,7 @@ div.loading-ajax,div.loading-ajax-login{height:50px;text-align:center;background
 #opcheckout-login-table p.forgot-link{padding:0; margin: 0;}
 #opcheckout-login-table p.forgot-link a:hover,#opcheckout-login-table p.register-link a:hover{text-decoration:none}
 .opcheckout-giftwrap label span{font-weight:700;color:#000}
-#one-step-checkout-form label{margin-bottom:10px;float: left;background:none;padding: 0!important;vertical-align: middle;}
+#one-step-checkout-form label{margin-bottom:10px;float: left;background:none;vertical-align: middle;}
 #opcheckout-login-popup label em,
 .one-step-checkout label em{color:red}
 .opcheckout-login-link{text-align: right; padding:15px 0}
