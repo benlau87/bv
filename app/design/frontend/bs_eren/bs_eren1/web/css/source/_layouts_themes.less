@@ -4537,8 +4537,29 @@ body.page-layout-full-width {
 
 #one-step-checkout-form label { margin-bottom: 5px !important; }
 
+.one-step-checkout {
+  p.terms {
+    font-size: 13px;
+    text-align: left;
+    margin: 0;
+    padding: 15px 0 0;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .field .control._with-tooltip { margin-top:0; }
+
+  #checkout-total-table {
+    .totals-tax-summary { display: none; }
+  }
+}
+
 .opc-payment {
   .payment-group {
+    .step-title { display: none; }
+
     .payment-method:last-of-type {
       margin-top: -35px;
 
