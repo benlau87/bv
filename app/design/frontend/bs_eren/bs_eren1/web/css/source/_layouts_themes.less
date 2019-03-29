@@ -4562,6 +4562,8 @@ body.page-layout-full-width {
 
     .payment-method:last-of-type {
       margin-top: -35px;
+      margin-bottom: 25px;
+      min-height: 64px;
 
       .payment-method-title {
         border: 0;
@@ -4573,12 +4575,14 @@ body.page-layout-full-width {
 
         label {
           width: 100%;
-          padding: 25px 0 25px 130px !important;
+          padding: 22px 0 22px 130px !important;
           display: block;
           cursor: pointer;
+          border-top: 1px solid #fff;
 
           &:hover {
-            background: #f9f9f9;
+            background: #f9f9f9 !important;
+            border-top: 1px solid #dfdfdf;
           }
 
           span {
@@ -4590,7 +4594,8 @@ body.page-layout-full-width {
     }
 
     .payment-method._active label {
-      background: #f9f9f9;
+      background: #f9f9f9 !important;
+      border-top: 1px solid #fff;
     }
 
   }
