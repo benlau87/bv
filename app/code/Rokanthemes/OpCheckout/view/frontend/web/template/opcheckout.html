@@ -64,9 +64,6 @@
                                     </div>
                                 </li>
                             </ol>
-                            <!-- ko foreach: getRegion('after-place-agreements') -->
-                            <!-- ko template: getTemplate() --><!-- /ko -->
-                            <!--/ko-->
                             <div id="control_overlay_payment"></div>
                         </div>
                     </div>
@@ -132,6 +129,12 @@
                         </div>
                         <div class="button-set clearfix button-opcheckout">
                             <div class="clear"></div>
+
+                            <p class="terms">
+                                Ich habe die <a href="https://www.brandvital.de/agb" target="_blank">Allgemeinen Geschäftsbedingungen</a> und <a href="https://www.brandvital.de/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und stimme diesen ausdrücklich zu.<br>
+                                Ich habe die <a href="https://www.brandvital.de/widerruf/" target="_blank">Widerrufsbelehrung</a> gelesen.
+                            </p>
+
                             <button id="opcheckout-button-place-order" type="button"
                                     class="btn-proceed-checkout opcheckout-btn-checkout opcheckout-place"
                                     data-bind="attr:{title:$t('Place Order')},click:prepareToPlaceOrder,enable:enableCheckout">

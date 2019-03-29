@@ -42,26 +42,6 @@
                                                             </item>
                                                         </item>
                                                     </item>
-
-                                                    <item name="after-place-agreements" xsi:type="array">
-                                                        <item name="component" xsi:type="string">uiComponent</item>
-                                                        <item name="displayArea" xsi:type="string">after-place-agreements</item>
-                                                        <item name="dataScope" xsi:type="string">before-place-order</item>
-                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
-                                                        <item name="config" xsi:type="array">
-                                                            <item name="template" xsi:type="string">Magento_Checkout/payment/before-place-order</item>
-                                                        </item>
-                                                        <item name="children" xsi:type="array">
-                                                            <item name="agreementss" xsi:type="array">
-                                                                <item name="component" xsi:type="string">Magento_CheckoutAgreements/js/view/checkout-agreements</item>
-                                                                <item name="sortOrder" xsi:type="string">100</item>
-                                                                <item name="displayArea" xsi:type="string">after-place-agreements</item>
-                                                                <item name="dataScope" xsi:type="string">checkoutAgreements</item>
-                                                                <item name="provider" xsi:type="string">checkoutProvider</item>
-                                                            </item>
-                                                        </item>
-                                                    </item>
-
                                                 </item>
                                             </item>
                                         </item>
