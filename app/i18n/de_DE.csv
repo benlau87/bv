@@ -286,12 +286,12 @@ Checkout,Checkout,module,Rokanthemes_OpCheckout
 "Use Default","Use Default",module,Rokanthemes_OpCheckout
 "STORE VIEW","STORE VIEW",module,Rokanthemes_OpCheckout
 "Forgot your password?","Forgot your password?",module,Rokanthemes_OpCheckout
-"Please enter your email below and we will send you a new password.","Please enter your email below and we will send you a new password.",module,Rokanthemes_OpCheckout
+"Please enter your email below and we will send you a new password.","Bitte geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen ein neues Passwort zu.",module,Rokanthemes_OpCheckout
 X,X,module,Rokanthemes_OpCheckout
 "We have already sent a new password to your email address.","We have already sent a new password to your email address.",module,Rokanthemes_OpCheckout
 "Email address","Email address",module,Rokanthemes_OpCheckout
-"Send password","Send password",module,Rokanthemes_OpCheckout
-"Return to login","Return to login",module,Rokanthemes_OpCheckout
+"Send password","Passwort senden",module,Rokanthemes_OpCheckout
+"Return to login","Zur+ck zum Login",module,Rokanthemes_OpCheckout
 Login,Login,module,Rokanthemes_OpCheckout
 Password,Password,module,Rokanthemes_OpCheckout
 "Create a new account","Create a new account",module,Rokanthemes_OpCheckout

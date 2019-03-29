@@ -25,5 +25,9 @@ define(['jquery', 'mage/mage', 'rokanthemes/owl'], function($){
             pagination: false,
             scrollPerPage: true
         });
+
+        $('.product-view .product-info-main .col-cart').mage('sticky', {
+            container: '#maincontent'
+        });
     }
 });

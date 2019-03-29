@@ -15,6 +15,65 @@
         <referenceBlock name="catalog.topnav" remove="true"/>
         <referenceContainer name="footer-container" remove="true"/>
 
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="payments-list" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-place-order" xsi:type="array">
+                                                                    <item name="componentDisabled" xsi:type="boolean">true</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="additional-payment-validators" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="agreements-validator" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_CheckoutAgreements/js/view/agreement-validation</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+
+                                                    <item name="after-place-agreements" xsi:type="array">
+                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                        <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                                                        <item name="dataScope" xsi:type="string">before-place-order</item>
+                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="template" xsi:type="string">Magento_Checkout/payment/before-place-order</item>
+                                                        </item>
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="agreementss" xsi:type="array">
+                                                                <item name="component" xsi:type="string">Magento_CheckoutAgreements/js/view/checkout-agreements</item>
+                                                                <item name="sortOrder" xsi:type="string">100</item>
+                                                                <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                                                                <item name="dataScope" xsi:type="string">checkoutAgreements</item>
+                                                                <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
         <referenceBlock name="checkout.cart.shipping">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
