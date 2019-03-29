@@ -4577,12 +4577,20 @@ body.page-layout-full-width {
           display: block;
           cursor: pointer;
 
+          &:hover {
+            background: #f9f9f9;
+          }
+
           span {
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
             font-size: 12px;
           }
         }
       }
+    }
+
+    .payment-method._active label {
+      background: #f9f9f9;
     }
 
   }
