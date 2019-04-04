@@ -82,7 +82,6 @@
         "magento/module-dhl": "*",
         "magento/module-fedex": "*",
         "magento/module-marketplace": "*",
-        "magento/module-persistent": "*",
         "magento/module-catalog-rule-configurable": "*",
         "magento/module-authorizenet": "*",
         "magento/module-google-adwords": "*",
