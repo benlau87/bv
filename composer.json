@@ -79,7 +79,6 @@
         "magento-force": "override"
     },
     "replace": {
-        "magento/module-dhl": "*",
         "magento/module-fedex": "*",
         "magento/module-marketplace": "*",
         "magento/module-catalog-rule-configurable": "*",
@@ -101,7 +100,6 @@
         "magento/module-review-analytics": "*",
         "magento/module-sales-analytics": "*",
         "magento/module-wishlist-analytics": "*",
-        "temando/module-shipping-m2": "*",
         "dotmailer/dotmailer-magento2-extension": "*",
         "shopialfb/facebook-module": "*",
         "klarna/module-kp": "*",
