@@ -39,7 +39,7 @@ require(["jquery"], function($){
 
                     if (final_price >= 50) {
                         var tax_details = jQuery(this).find('.tax-details').text();
-                        tax_details = tax_details.substring(0, tax_details.indexOf(",") - 1);
+                        tax_details = tax_details.substring(0, tax_details.indexOf(","));
                         jQuery(this).find('.tax-details').html(tax_details + ', <span class="freeshipping">versandkostenfrei</span>');
                     }
                 });
