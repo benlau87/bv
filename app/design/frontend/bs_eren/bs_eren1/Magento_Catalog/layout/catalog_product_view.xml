@@ -241,6 +241,7 @@
 										<argument name="css_class" xsi:type="string">description</argument>
 										<argument name="at_label" xsi:type="string">none</argument>
 										<argument name="title" translate="true" xsi:type="string">Details</argument>
+										<argument name="add_attribute" xsi:type="string">itemprop="description"</argument>
 									</arguments>
 								</block>
 
@@ -251,8 +252,6 @@
 										<argument name="at_code" xsi:type="string">technical_data</argument>
 										<argument name="css_class" xsi:type="string">technical_data</argument>
 										<argument name="at_label" xsi:type="string">technical_data</argument>
-										<argument name="add_attribute" xsi:type="string">itemprop="technical_data"
-										</argument>
 										<argument name="title" translate="true" xsi:type="string">Technische Daten
 										</argument>
 									</arguments>

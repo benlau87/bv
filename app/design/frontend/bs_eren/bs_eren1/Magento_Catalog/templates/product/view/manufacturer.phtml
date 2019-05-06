@@ -16,7 +16,7 @@
 $_product = $block->getProduct();
 $_attributeValue = $_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product);
 if ($_attributeValue): ?>
-    <div class="product-manufacturer" itemprop="manufacturer">
+    <div class="product-manufacturer" itemprop="brand">
         <?php echo $_attributeValue; ?>
     </div>
 <?php endif; ?>

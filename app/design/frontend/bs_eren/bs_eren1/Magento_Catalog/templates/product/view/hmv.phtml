@@ -14,6 +14,7 @@ $_attributeValue =$_product->getResource()->getAttribute($_code)->getFrontend()-
 <?php if ($_attributeValue): ?>
 
     <div class="product-info-stock-sku">
+        <link itemprop="availability" href="https://schema.org/InStock">
         <div class="stock available" title="<?php echo $_attributeLabel?>">
          <?php echo $_attributeLabel?> <span><?php echo $_attributeValue; ?></span>
         </div>
