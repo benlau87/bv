@@ -357,7 +357,7 @@ button.place-order-loader span{background:none transparent!important}
 .opcheckout-index-index #opcheckout-login-popup.absolute-box{position:absolute!important;top:10px!important; }
 .fix-possition-toc-popup,.opcheckout-index-index #opcheckout-toc-popup{position:fixed!important;top:3%!important}
 .opcheckout-index-index .osc-product-image{float:left;margin-right:20px}
-.opcheckout-index-index .item-options dt{clear:none;margin-top: 5px;}
+.opcheckout-index-index .item-options dt{clear:none;}
 .opcheckout-index-index .item-options dd{float:none}
 .opcheckout-index-index .osc-product-image,.opcheckout-index-index .osc-product-image img{width:75px;display: table-cell;float: none;vertical-align: top;}
 #one-step-checkout-form .checkout-review-load .data-table td .item-options-hasimage{margin-left:33%}
