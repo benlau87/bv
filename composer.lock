@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c24183263ec1c91d051e0af84e0c063c",
+    "content-hash": "e5e1c44c9c0a7ce272dba4eecdaa27c3",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -65,11 +65,6 @@
         {
             "name": "algolia/algoliasearch-magento-2",
             "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-magento-2.git",
-                "reference": "198eda5d1f13403b71a560a5b2dc4cbe4af8046e"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/algolia/algoliasearch-magento-2/zipball/198eda5d1f13403b71a560a5b2dc4cbe4af8046e",
@@ -675,16 +670,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "1.4.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573"
+                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/c7cb9a2095a074d131b65a8a0cd294479d785573",
-                "reference": "c7cb9a2095a074d131b65a8a0cd294479d785573",
+                "url": "https://api.github.com/repos/composer/semver/zipball/46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
+                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
                 "shasum": ""
             },
             "require": {
@@ -733,28 +728,27 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2016-08-30T16:08:34+00:00"
+            "time": "2019-03-19T17:25:45+00:00"
         },
         {
             "name": "composer/spdx-licenses",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "7a9556b22bd9d4df7cad89876b00af58ef20d3a2"
+                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/7a9556b22bd9d4df7cad89876b00af58ef20d3a2",
-                "reference": "7a9556b22bd9d4df7cad89876b00af58ef20d3a2",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
+                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.2 || ^7.0"
+                "php": "^5.3.2 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 7"
             },
             "type": "library",
             "extra": {
@@ -794,7 +788,7 @@
                 "spdx",
                 "validator"
             ],
-            "time": "2018-11-01T09:45:54+00:00"
+            "time": "2019-03-26T10:23:26+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -883,29 +877,31 @@
         },
         {
             "name": "elasticsearch/elasticsearch",
-            "version": "v5.4.0",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elastic/elasticsearch-php.git",
-                "reference": "d3c5b55ad94f5053ca76c48585b4cde2cdc6bc59"
+                "reference": "b237a37b2cdf23a5a17fd3576cdea771394ad00d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/d3c5b55ad94f5053ca76c48585b4cde2cdc6bc59",
-                "reference": "d3c5b55ad94f5053ca76c48585b4cde2cdc6bc59",
+                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/b237a37b2cdf23a5a17fd3576cdea771394ad00d",
+                "reference": "b237a37b2cdf23a5a17fd3576cdea771394ad00d",
                 "shasum": ""
             },
             "require": {
+                "ext-json": ">=1.3.7",
                 "guzzlehttp/ringphp": "~1.0",
-                "php": "^5.6|^7.0",
+                "php": "^7.0",
                 "psr/log": "~1.0"
             },
             "require-dev": {
                 "cpliakas/git-wrapper": "~1.0",
                 "doctrine/inflector": "^1.1",
                 "mockery/mockery": "0.9.4",
-                "phpunit/phpunit": "^4.7|^5.4",
-                "sami/sami": "~3.2",
+                "phpstan/phpstan-shim": "0.8.3",
+                "phpunit/phpunit": "6.3.0",
+                "squizlabs/php_codesniffer": "3.0.2",
                 "symfony/finder": "^2.8",
                 "symfony/yaml": "^2.8"
             },
@@ -934,7 +930,7 @@
                 "elasticsearch",
                 "search"
             ],
-            "time": "2019-01-08T18:57:00+00:00"
+            "time": "2019-01-08T18:53:46+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -3286,6 +3282,46 @@
             "description": "N/A"
         },
         {
+            "name": "magento/module-dhl",
+            "version": "100.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-dhl/magento-module-dhl-100.2.1.0.zip",
+                "shasum": "167e8e07f7cccbeba042c0b26f7286555c4da7c7"
+            },
+            "require": {
+                "lib-libxml": "*",
+                "magento/framework": "101.0.*",
+                "magento/module-backend": "100.2.*",
+                "magento/module-catalog": "102.0.*",
+                "magento/module-catalog-inventory": "100.2.*",
+                "magento/module-config": "101.0.*",
+                "magento/module-directory": "100.2.*",
+                "magento/module-quote": "101.0.*",
+                "magento/module-sales": "101.0.*",
+                "magento/module-shipping": "100.2.*",
+                "magento/module-store": "100.2.*",
+                "php": "7.0.2|7.0.4|~7.0.6|~7.1.0"
+            },
+            "suggest": {
+                "magento/module-checkout": "100.2.*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\Dhl\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
             "name": "magento/module-directory",
             "version": "100.2.3",
             "dist": {
@@ -4143,6 +4179,39 @@
             },
             "license": [
                 "proprietary"
+            ],
+            "description": "N/A"
+        },
+        {
+            "name": "magento/module-persistent",
+            "version": "100.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-persistent/magento-module-persistent-100.2.0.0.zip",
+                "shasum": "23ea6b81331e2c08b211544728753356df1091a2"
+            },
+            "require": {
+                "magento/framework": "101.0.*",
+                "magento/module-checkout": "100.2.*",
+                "magento/module-cron": "100.2.*",
+                "magento/module-customer": "101.0.*",
+                "magento/module-page-cache": "100.2.*",
+                "magento/module-quote": "101.0.*",
+                "magento/module-store": "100.2.*",
+                "php": "7.0.2|7.0.4|~7.0.6|~7.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\Persistent\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
             ],
             "description": "N/A"
         },
@@ -7907,20 +7976,20 @@
         },
         {
             "name": "smile/elasticsuite",
-            "version": "2.6.7",
+            "version": "2.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Smile-SA/elasticsuite.git",
-                "reference": "297cd274e5f48cb0fe3e9548f9c853d13224b6d5"
+                "reference": "566e5eb6d119ea15979ad94ea9c62551a2957a50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Smile-SA/elasticsuite/zipball/297cd274e5f48cb0fe3e9548f9c853d13224b6d5",
-                "reference": "297cd274e5f48cb0fe3e9548f9c853d13224b6d5",
+                "url": "https://api.github.com/repos/Smile-SA/elasticsuite/zipball/566e5eb6d119ea15979ad94ea9c62551a2957a50",
+                "reference": "566e5eb6d119ea15979ad94ea9c62551a2957a50",
                 "shasum": ""
             },
             "require": {
-                "elasticsearch/elasticsearch": "~5.1",
+                "elasticsearch/elasticsearch": "~5.1|~6.1",
                 "magento/framework": ">=101.0.0",
                 "magento/magento-composer-installer": "*",
                 "magento/module-backend": ">=100.2.0",
@@ -7929,6 +7998,7 @@
                 "magento/module-store": ">=100.2.0"
             },
             "replace": {
+                "smile/module-elasticsuite-admin-notification": "self.version",
                 "smile/module-elasticsuite-catalog": "self.version",
                 "smile/module-elasticsuite-catalog-optimizer": "self.version",
                 "smile/module-elasticsuite-catalog-rule": "self.version",
@@ -7956,6 +8026,7 @@
             "autoload": {
                 "files": [
                     "src/module-elasticsuite-core/registration.php",
+                    "src/module-elasticsuite-admin-notification/registration.php",
                     "src/module-elasticsuite-catalog/registration.php",
                     "src/module-elasticsuite-catalog-optimizer/registration.php",
                     "src/module-elasticsuite-catalog-rule/registration.php",
@@ -7966,6 +8037,7 @@
                 ],
                 "psr-4": {
                     "Smile\\ElasticsuiteCore\\": "src/module-elasticsuite-core",
+                    "Smile\\ElasticsuiteAdminNotification\\": "src/module-elasticsuite-admin-notification",
                     "Smile\\ElasticsuiteCatalog\\": "src/module-elasticsuite-catalog",
                     "Smile\\ElasticsuiteCatalogOptimizer\\": "src/module-elasticsuite-catalog-optimizer",
                     "Smile\\ElasticsuiteCatalogRule\\": "src/module-elasticsuite-catalog-rule",
@@ -7996,7 +8068,7 @@
                 "search",
                 "setup"
             ],
-            "time": "2019-03-01T16:19:06+00:00"
+            "time": "2019-03-28T09:39:18+00:00"
         },
         {
             "name": "splendidinternet/mage2-locale-de-de",
@@ -8091,7 +8163,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.4.23",
+            "version": "v3.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -8311,7 +8383,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.23",
+            "version": "v3.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -8360,16 +8432,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.10.0",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
+                "reference": "82ebae02209c21113908c229e9883c419720738a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
-                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
+                "reference": "82ebae02209c21113908c229e9883c419720738a",
                 "shasum": ""
             },
             "require": {
@@ -8381,7 +8453,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.11-dev"
                 }
             },
             "autoload": {
@@ -8414,20 +8486,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2019-02-06T07:57:58+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.10.0",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
                 "shasum": ""
             },
             "require": {
@@ -8439,7 +8511,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.11-dev"
                 }
             },
             "autoload": {
@@ -8473,7 +8545,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-09-21T13:07:52+00:00"
+            "time": "2019-02-06T07:57:58+00:00"
         },
         {
             "name": "symfony/process",
@@ -8571,17 +8643,69 @@
             "time": "2018-09-16T00:02:51+00:00"
         },
         {
+            "name": "temando/module-shipping-m2",
+            "version": "1.3.10",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/temando/module-shipping-m2/temando-module-shipping-m2-1.3.10.0.zip",
+                "shasum": "11e681a4bde0688ad3cf474229b12cf65b9ba89f"
+            },
+            "require": {
+                "magento/framework": "^101.0.0",
+                "magento/module-backend": "^100.2.0",
+                "magento/module-catalog": "^102.0.0",
+                "magento/module-checkout": "^100.2.0",
+                "magento/module-config": "^101.0.0",
+                "magento/module-customer": "^101.0.0",
+                "magento/module-directory": "^100.2.0",
+                "magento/module-eav": "^101.0.0",
+                "magento/module-integration": "^100.2.0",
+                "magento/module-multishipping": "^100.2.0",
+                "magento/module-quote": "^101.0.0",
+                "magento/module-sales": "^101.0.0",
+                "magento/module-shipping": "^100.2.0",
+                "magento/module-store": "^100.2.0",
+                "magento/module-tax": "^100.2.0",
+                "magento/module-ui": "^101.0.0",
+                "monolog/monolog": "^1.17.0",
+                "php": "7.0.2|7.0.4|~7.0.6|~7.1.0",
+                "psr/log": "~1.0",
+                "zendframework/zend-http": "^2.6.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Temando\\Shipping\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Aßmann",
+                    "email": "christoph.assmann@netresearch.de",
+                    "homepage": "https://www.netresearch.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Temando multi-carrier shipping extension for Magento 2"
+        },
+        {
             "name": "theseer/tokenizer",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b"
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/cb2f008f3f05af2893a87208fe6a6c4985483f8b",
-                "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/1c42705be2b6c1de5904f8afacef5895cab44bf8",
+                "reference": "1c42705be2b6c1de5904f8afacef5895cab44bf8",
                 "shasum": ""
             },
             "require": {
@@ -8608,7 +8732,7 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
-            "time": "2017-04-07T12:08:54+00:00"
+            "time": "2019-04-04T09:56:43+00:00"
         },
         {
             "name": "tubalmartin/cssmin",
@@ -11203,7 +11327,7 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v3.4.23",
+            "version": "v3.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
