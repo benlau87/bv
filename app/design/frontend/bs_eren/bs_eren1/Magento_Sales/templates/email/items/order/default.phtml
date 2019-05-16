@@ -42,6 +42,7 @@ $_attributeValue = $_product->getResource()->getAttribute($_code)->getFrontend()
         <?= $block->escapeHtml($_item->getDescription()) ?>
     </td>
     <td class="item-qty"><?= /* @escapeNotVerified */  $_item->getQtyOrdered() * 1 ?></td>
+    <td class="item-tax"><?php echo number_format($_item->getTaxPercent()) . '%' ?></td>
     <td class="item-price">
         <?= /* @escapeNotVerified */  $block->getItemPrice($_item) ?>
     </td>
