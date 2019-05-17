@@ -109,7 +109,7 @@ td.footer {
 }
 
 table.email-items {
-  tr.grand_total th, tr.grand_total td, th.item-info, th.item-qty, th.item-price, th.item-subtotal {
+  tr.grand_total th, tr.grand_total td, th.item-info, th.item-qty, th.item-tax, th.item-price, th.item-subtotal {
     background-color: @maincolor;
     color: #fff;
   }
@@ -117,6 +117,8 @@ table.email-items {
 
 table.order-details {
   margin-top: 10px;
+
+  .totals-tax-summary { display: none; }
 }
 
 table.message-info {
