@@ -38,9 +38,9 @@
 <?php endif;?>
 
 <?php if ($block->displayFullSummary() && $_fullInfo && !$block->getIsPlaneMode()): ?>
-<tr class="totals-tax-summary" style="display:none">
+<tr class="totals-tax-summary">
 <?php elseif ($block->displayFullSummary() && $_fullInfo && $block->getIsPlaneMode()): ?>
-<tr class="totals-tax-summary plane" style="display:none">
+<tr class="totals-tax-summary plane">
 <?php else: ?>
 <tr class="totals-tax">
 <?php endif; ?>
