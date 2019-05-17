@@ -7,9 +7,9 @@
 // @codingStandardsIgnoreFile
 
 ?>
-<?php $_invoice = $block->getInvoice() ?>
-<?php $_order   = $block->getOrder() ?>
-<?php if ($_invoice && $_order): ?>
+<?php $_shipment = $block->getShipment() ?>
+<?php $_order    = $block->getOrder() ?>
+<?php if ($_shipment && $_order): ?>
     <table class="email-items">
         <thead>
             <tr>
@@ -22,20 +22,14 @@
                 <th class="item-tax">
                     <?= /* @escapeNotVerified */  __('inkl. MwSt.') ?>
                 </th>
-                <th class="item-subtotal">
-                    <?= /* @escapeNotVerified */  __('Subtotal') ?>
-                </th>
             </tr>
         </thead>
-        <?php foreach ($_invoice->getAllItems() as $_item): ?>
+        <?php foreach ($_shipment->getAllItems() as $_item): ?>
             <?php if (!$_item->getOrderItem()->getParentItem()) : ?>
                 <tbody>
                     <?= $block->getItemHtml($_item) ?>
                 </tbody>
             <?php endif; ?>
         <?php endforeach; ?>
-        <tfoot class="order-totals">
-            <?= $block->getChildHtml('invoice_totals') ?>
-        </tfoot>
     </table>
 <?php endif; ?>

@@ -7,9 +7,9 @@
 // @codingStandardsIgnoreFile
 
 ?>
-<?php $_invoice = $block->getInvoice() ?>
-<?php $_order   = $block->getOrder() ?>
-<?php if ($_invoice && $_order): ?>
+<?php $_creditmemo = $block->getCreditmemo() ?>
+<?php $_order      = $block->getOrder() ?>
+<?php if ($_creditmemo && $_order): ?>
     <table class="email-items">
         <thead>
             <tr>
@@ -27,15 +27,15 @@
                 </th>
             </tr>
         </thead>
-        <?php foreach ($_invoice->getAllItems() as $_item): ?>
-            <?php if (!$_item->getOrderItem()->getParentItem()) : ?>
+        <?php foreach ($_creditmemo->getAllItems() as $_item): ?>
+            <?php if (!$_item->getOrderItem()->getParentItem())  : ?>
                 <tbody>
                     <?= $block->getItemHtml($_item) ?>
                 </tbody>
             <?php endif; ?>
         <?php endforeach; ?>
         <tfoot class="order-totals">
-            <?= $block->getChildHtml('invoice_totals') ?>
+            <?= $block->getChildHtml('creditmemo_totals') ?>
         </tfoot>
     </table>
 <?php endif; ?>
