@@ -23,7 +23,7 @@
                 $title      = $info['title'];
             ?>
             <tr class="totals tax details details-<?= /* @escapeNotVerified */ $taxIter ?> <?= ($block->getIsPlaneMode()) ? ' plane' : '' ?>">
-                <td <?= /* @escapeNotVerified */ $block->getLabelProperties() ?>>
+                <td colspan="3">
                     <?= $block->escapeHtml($title) ?>
                     <?php if (!is_null($percent)): ?>
                         (<?= (float)$percent ?>%)
@@ -40,9 +40,9 @@
 <?php if ($block->displayFullSummary() && $_fullInfo && !$block->getIsPlaneMode()): ?>
 <tr class="totals-tax-summary">
 <?php elseif ($block->displayFullSummary() && $_fullInfo && $block->getIsPlaneMode()): ?>
-<tr class="totals-tax-summary plane">
+<tr class="totals-tax-summary plane" style="display:none">
 <?php else: ?>
-<tr class="totals-tax" style="display:none">
+<tr class="totals-tax">
 <?php endif; ?>
     <th <?= /* @escapeNotVerified */ $block->getLabelProperties() ?> scope="row">
         <?php if ($block->displayFullSummary()): ?>
