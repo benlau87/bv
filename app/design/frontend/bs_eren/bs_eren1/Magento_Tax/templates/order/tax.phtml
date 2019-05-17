@@ -44,7 +44,7 @@
 <?php else: ?>
 <tr class="totals-tax">
 <?php endif; ?>
-    <th <?= /* @escapeNotVerified */ $block->getLabelProperties() ?> scope="row">
+    <th colspan="3" scope="row">
         <?php if ($block->displayFullSummary()): ?>
             <div class="detailed"><?= /* @escapeNotVerified */ __('Tax') ?></div>
         <?php else: ?>
