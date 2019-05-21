@@ -934,6 +934,7 @@ ol, ul {
 .opcheckout-shipping-method-section .sp-methods dt,
 .opcheckout-shipping-method-section .sp-methods .radioparent label .col-price{
     font-weight: 700;
+    display: none !important;
 }
 
 .grandtotal {
