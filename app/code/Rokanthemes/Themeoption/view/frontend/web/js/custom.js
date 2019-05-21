@@ -63,9 +63,7 @@ require(["jquery"], function($){
                 clearTimeout(wto);
                 wto = setTimeout(function() {
                     var productId = $('.price-box').attr('data-product-id');
-                    var final_price = $('.price-box.price-final_price span.price').html();
-                    final_price = final_price.substring(0, final_price.indexOf("&")-3);
-                    final_price = final_price.replace(/\./g,'');
+                    var final_price = $('.price-box .price-final_price meta[itemprop="price"]').attr("content");
 
                     var skontoPrice = final_price * 0.98;
                     var skontoPriceSavings = final_price - (final_price * 0.98);
