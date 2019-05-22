@@ -28,6 +28,6 @@
         <meta <?php echo $block->getSchema() ? 'itemprop="price"' : '' ?> content="<?php echo $block->getDisplayValue(); ?>" />
         <meta itemprop="priceCurrency" content="<?php /* @escapeNotVerified */ echo $block->getDisplayCurrencyCode()?>" />
         <link itemprop="availability" href="https://schema.org/InStock">
-        <meta itemprop="url" content="<?= /* @escapeNotVerified */ $block->getViewFileUrl(); ?>" />
+        <meta itemprop="url" content="<?= /* @escapeNotVerified */ $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]); ?>" />
     <?php endif; ?>
 </span>
