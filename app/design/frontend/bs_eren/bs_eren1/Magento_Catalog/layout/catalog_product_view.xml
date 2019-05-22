@@ -99,17 +99,10 @@
 															   template="product/view/attribute.phtml"
 															   after="product.info.type">
 															<arguments>
-																<argument name="at_call" xsi:type="string">getSku
-																</argument>
-																<argument name="at_code" xsi:type="string">sku
-																</argument>
-																<argument name="css_class" xsi:type="string">sku
-																</argument>
-																<argument name="at_label" xsi:type="string">default
-																</argument>
-																<argument name="add_attribute" xsi:type="string">
-																	itemprop="sku"
-																</argument>
+																<argument name="at_call" xsi:type="string">getSku</argument>
+																<argument name="at_code" xsi:type="string">sku</argument>
+																<argument name="css_class" xsi:type="string">sku</argument>
+																<argument name="at_label" xsi:type="string">default</argument>
 															</arguments>
 														</block>
 													</container>
@@ -124,14 +117,34 @@
 														<argument name="at_code" xsi:type="string">hmv</argument>
 														<argument name="css_class" xsi:type="string">hmv</argument>
 														<argument name="at_label" xsi:type="string">HMV-Nr.</argument>
-														<argument name="add_attribute" xsi:type="string">
-															itemprop="hmv"
-														</argument>
 													</arguments>
 												</block>
 
-															<!--<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.freeshipping" template="product/view/freeshipping.phtml" before="product.info.review"/>-->
+												<block class="Magento\Catalog\Block\Product\View\Description"
+													   name="product.info.ean" template="product/view/ean.phtml"
+													   after="product.info.hmv">
+													<arguments>
+														<argument name="at_call" xsi:type="string">getEAN</argument>
+														<argument name="at_code" xsi:type="string">ean</argument>
+														<argument name="css_class" xsi:type="string">ean</argument>
+														<argument name="at_label" xsi:type="string">EAN</argument>
+														<argument name="add_attribute" xsi:type="string">itemprop="gtin13"</argument>
+													</arguments>
+												</block>
 
+												<block class="Magento\Catalog\Block\Product\View\Description"
+													   name="product.info.ppu" template="product/view/ppu.phtml"
+													   after="product.info.ean">
+													<arguments>
+														<argument name="at_call" xsi:type="string">getPPU</argument>
+														<argument name="at_code" xsi:type="string">ppu</argument>
+														<argument name="css_class" xsi:type="string">ppu</argument>
+														<argument name="at_label" xsi:type="string">PPU-Nr.</argument>
+														<argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+													</arguments>
+												</block>
+
+												<!--<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.freeshipping" template="product/view/freeshipping.phtml" before="product.info.review"/>-->
 
 												<block class="Magento\Catalog\Block\Product\View\Description"
 													   name="product.info.deliverytime"
