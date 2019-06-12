@@ -11,10 +11,7 @@
             <container name="move.category.view.container" htmlTag="div" htmlClass="category-view-move" before="-"></container>
         </referenceContainer>
         <move element="category.image" destination="move.category.view.container"/>
-<!--
         <move element="category.description" destination="move.category.view.container"/>
--->
-        <move element="category.description" destination="content.bottom" />
         <move element="category.cms" destination="move.category.view.container"/>
         <referenceBlock name="page.main.title" remove="true"/>
         <referenceContainer name="sidebar.main">
