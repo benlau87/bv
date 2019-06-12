@@ -17,10 +17,9 @@
 <?php if (!$block->isContentMode() || $block->isMixedMode()): ?>
     <?php echo $block->getProductListHtml() ?>
 <?php endif; ?>
-    <div class="category-description">
+
 <?php if ($_description = $block->getCurrentCategory()->getDescription()): ?>
-
+    <div class="category-description">
         <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
-
-<?php endif; ?>
     </div>
+<?php endif; ?>
