@@ -9,6 +9,7 @@
     <body>
         <referenceContainer name="columns.top">
             <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>
                 <block class="Magento\Catalog\Block\Category\View" name="category.description" template="Magento_Catalog::category/description.phtml"/>
                 <block class="Magento\Catalog\Block\Category\View" name="category.short.description" template="Magento_Catalog::category/short-description.phtml"/>
             </container>
