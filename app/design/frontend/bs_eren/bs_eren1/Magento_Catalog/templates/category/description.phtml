@@ -18,11 +18,13 @@
 // get current page
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $request = $objectManager->get('Magento\Framework\App\Request\Http');
-$currentPage = $request->getParam('p');
+$currentPage = $request->getParam('p') ? $request->getParam('p') : 1;
 
 // only show description on first category page (if available)
-if ($_description = $block->getCurrentCategory()->getDescription() && ($currentPage === false || $currentPage == 1)): ?>
+if ($currentPage == 1) :
+    if ($_description = $block->getCurrentCategory()->getDescription()): ?>
     <div class="category-description">
         <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
     </div>
+<?php endif; ?>
 <?php endif; ?>
