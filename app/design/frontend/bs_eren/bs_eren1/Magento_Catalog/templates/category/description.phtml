@@ -14,7 +14,12 @@
  * @var $block \Magento\Catalog\Block\Category\View
  */
 ?>
-<?php if ($_description = $block->getCurrentCategory()->getDescription()): ?>
+<?php
+// get current page
+$currentPage = $this->request->getParam('p');
+
+// only show description on first category page (if available)
+if ($_description = $block->getCurrentCategory()->getDescription() && $currentPage === false): ?>
     <div class="category-description">
         <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
     </div>
