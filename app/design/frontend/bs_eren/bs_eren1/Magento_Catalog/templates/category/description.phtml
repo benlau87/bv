@@ -19,7 +19,7 @@
 $currentPage = $this->request->getParam('p');
 
 // only show description on first category page (if available)
-if ($_description = $block->getCurrentCategory()->getDescription() && $currentPage === false): ?>
+if ($_description = $block->getCurrentCategory()->getDescription() && ($currentPage === false || $currentPage == 1)): ?>
     <div class="category-description">
         <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
     </div>
