@@ -16,7 +16,9 @@
 ?>
 <?php
 // get current page
-$currentPage = $this->request->getParam('p');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('Magento\Framework\App\Request\Http');
+$currentPage = $request->getParam('p');
 
 // only show description on first category page (if available)
 if ($_description = $block->getCurrentCategory()->getDescription() && ($currentPage === false || $currentPage == 1)): ?>
