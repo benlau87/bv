@@ -30,8 +30,10 @@ define(['jquery', 'mage/mage', 'rokanthemes/owl'], function($){
             container: '#maincontent'
         });
 
-        var colcartHeight = $('.col-cart').outerHeight();
-
-        $('.view-product').css('min-height', colcartHeight + 50);
+        $(document).ready(function() {
+            var colcartHeight = $('.col-cart').outerHeight();
+            $('.view-product').css('min-height', colcartHeight + 50);
+        });
+        
     }
 });
