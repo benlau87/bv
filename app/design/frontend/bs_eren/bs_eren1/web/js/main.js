@@ -29,5 +29,9 @@ define(['jquery', 'mage/mage', 'rokanthemes/owl'], function($){
         $('.product-view .product-info-main .col-cart').mage('sticky', {
             container: '#maincontent'
         });
+
+        var colcartHeight = $('.col-cart').outerHeight();
+
+        $('.view-product').css('min-height', colcartHeight + 50);
     }
 });
