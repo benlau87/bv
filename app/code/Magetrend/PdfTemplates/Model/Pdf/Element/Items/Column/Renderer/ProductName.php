@@ -66,6 +66,14 @@ class ProductName extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column
             $this->moduleHelper->toPoint($fontSize2)
         );
 
+        $hmv = $this->getItemHMV();
+        $productHMV = $this->element->splitStringToLines(
+            $hmv,
+            $columnWidth,
+            $fontCode2,
+            $this->moduleHelper->toPoint($fontSize2)
+        );
+
         $productName = $this->element->splitStringToLines(
             $item->getName(),
             $columnWidth,

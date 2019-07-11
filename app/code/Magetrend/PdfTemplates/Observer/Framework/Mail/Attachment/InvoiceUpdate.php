@@ -48,6 +48,6 @@ class InvoiceUpdate extends \Magetrend\PdfTemplates\Observer\Framework\Mail\Atta
 
         $invoice = $this->getInvoice($observer);
         $pdf = $this->getPdf([$invoice]);
-        $this->attachFile($observer, $pdf, __('invoice_%1.pdf', $invoice->getIncrementId()));
+        $this->attachFile($observer, $pdf, __('Rechnung_%1.pdf', $invoice->getIncrementId()));
     }
 }

@@ -178,7 +178,6 @@ class DefaultRenderer
 
     public function getFormatedItemOptions()
     {
-
         $result = $this->getItemOptions();
         if (empty($result)) {
             return '';
@@ -189,6 +188,25 @@ class DefaultRenderer
         }
 
         return rtrim($optionsString, ', ');
+    }
+
+    public function getHMV()
+    {
+        $hmv = $this->getItem()->getCustomAttribute('hmv')->getValue();
+
+        if (empty($hmv)) {
+            return '';
+        } else {
+            return $hmv;
+        }
+    }
+
+    public function getFormatedHMV()
+    {
+        // Benlau 11.07.2019: get HMV-Nr.
+        $hmv = $this->getHMV();
+
+        return $hmv;
     }
 
     public function getOrderItem($item)

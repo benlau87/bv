@@ -118,7 +118,7 @@ class PrintInvoice
         if ($this->orderAuthorization->canView($order)) {
             if (isset($invoice)) {
                 $pdf = $this->pdfInvoice->getPdf([$invoice]);
-                $fileName = sprintf('invoice_%s.pdf', $this->moduleHelper->prepareFileName($invoice->getIncrementId()));
+                $fileName = sprintf('Rechnung_%s.pdf', $this->moduleHelper->prepareFileName($invoice->getIncrementId()));
             } else {
                 $invoiceCollection = $order->getInvoiceCollection();
                 if ($invoiceCollection->getSize() > 0) {
