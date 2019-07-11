@@ -82,7 +82,7 @@ class ProductName extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column
         );
 
         $rowHeight = $padding[0] + count($productName) * $lineHeight
-            + count($productOptions) * $lineHeight2 + $padding[2];
+            + count($productOptions + $productHMV) * $lineHeight2 + $padding[2];
 
         $data =  [
             'height' => $rowHeight,
@@ -97,6 +97,13 @@ class ProductName extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column
                 ],
                 'product_option' => [
                     'text' => $productOptions,
+                    'font' => $fontCode2,
+                    'font_size' => $fontSize2,
+                    'line_height' => $lineHeight2,
+                    'color' => $color2
+                ],
+                'product_hmv' => [
+                    'text' => $productHMV,
                     'font' => $fontCode2,
                     'font_size' => $fontSize2,
                     'line_height' => $lineHeight2,
