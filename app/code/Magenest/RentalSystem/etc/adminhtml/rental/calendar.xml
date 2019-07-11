@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="months" translate="months" type="text" sortOrder="100" showInDefault="1" showInStore="1" showInWebsite="1" >
+        <label>Day and Month Labels</label>
+        <field id="daysOfWeek" translate="days of week" type="text" sortOrder="0" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>Days of Week Labels</label>
+            <config_path>rental_system/locale/daysOfWeek</config_path>
+            <frontend_model>Magenest\RentalSystem\Block\Adminhtml\System\Config\DaysOfWeek</frontend_model>
+            <validate>letters-only</validate>
+            <comment><![CDATA[Labels for days of week, <b style="color:red">from Sunday to Saturday</b><br>
+                            Day labels should not exceed <b>4</b> characters <br>
+                            Default labels: Su, Mo, Tu, We, Th, Fr, Sa]]></comment>
+        </field>
+        <field id="january" translate="january" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>January</label>
+            <config_path>rental_system/month/m1</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="february" translate="february" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>February</label>
+            <config_path>rental_system/month/m2</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="march" translate="march" type="text" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>March</label>
+            <config_path>rental_system/month/m3</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="april" translate="April" type="text" sortOrder="40" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>April</label>
+            <config_path>rental_system/month/m4</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="may" translate="may" type="text" sortOrder="50" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>May</label>
+            <config_path>rental_system/month/m5</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="june" translate="june" type="text" sortOrder="60" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>June</label>
+            <config_path>rental_system/month/m6</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="july" translate="july" type="text" sortOrder="70" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>July</label>
+            <config_path>rental_system/month/m7</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="august" translate="august" type="text" sortOrder="80" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>August</label>
+            <config_path>rental_system/month/m8</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="september" translate="september" type="text" sortOrder="90" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>September</label>
+            <config_path>rental_system/month/m9</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="october" translate="october" type="text" sortOrder="100" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>October</label>
+            <config_path>rental_system/month/m10</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="november" translate="november" type="text" sortOrder="110" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>November</label>
+            <config_path>rental_system/month/m11</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+        <field id="december" translate="december" type="text" sortOrder="120" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+            <label>December</label>
+            <config_path>rental_system/month/m12</config_path>
+            <validate><!--validate-alphanum-with-spaces--> validate-length maximum-length-20</validate>
+        </field>
+    </group>
+</include>

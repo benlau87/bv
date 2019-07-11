@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rental_system>
+            <general>
+                <pattern_code>[A2][N1][A1]Magenest[N3][A2]</pattern_code>
+                <google_api_key>AIzaSyCpi0fGkOSmkv1u_02poRTMB480GlscrwY</google_api_key>
+            </general>
+            <rental>
+                <max_advance_duration>30</max_advance_duration>
+                <max_duration>30</max_duration>
+                <days_off>7</days_off>
+                <work_hours>0,23</work_hours>
+            </rental>
+            <locale>
+                <firstDay>0</firstDay>
+                <daysOfWeek>Su,Mo,Tu,We,Th,Fr,Sa</daysOfWeek>
+                <dateformat>MM/DD</dateformat>
+                <applyLabel>Select</applyLabel>
+                <cancelLabel>Clear</cancelLabel>
+            </locale>
+            <month>
+                <m1>January</m1>
+                <m2>February</m2>
+                <m3>March</m3>
+                <m4>April</m4>
+                <m5>May</m5>
+                <m6>June</m6>
+                <m7>July</m7>
+                <m8>August</m8>
+                <m9>September</m9>
+                <m10>October</m10>
+                <m11>November</m11>
+                <m12>December</m12>
+            </month>
+            <policy>
+                <confirmation>I have read and accept the {{rental policy}}.</confirmation>
+                <errormsg>Please read and accept our rental policy</errormsg>
+            </policy>
+        </rental_system>
+    </default>
+</config>
