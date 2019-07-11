@@ -161,13 +161,7 @@ class DefaultRenderer
         $result = [];
         $item = $this->getItem();
         $options = $this->getOrderItem($item)->getProductOptions();
-
-        $hmv = $this->getItem()->getCustomAttribute('hmv')->getValue();
-
         if ($options) {
-            if (isset($hmv)) {
-                $result = array_merge($result, $hmv);
-            }
             if (isset($options['options'])) {
                 $result = array_merge($result, $options['options']);
             }
@@ -176,10 +170,6 @@ class DefaultRenderer
             }
             if (isset($options['attributes_info'])) {
                 $result = array_merge($result, $options['attributes_info']);
-            }
-        } else {
-            if (isset($hmv)) {
-                $result = array_merge($result, $hmv);
             }
         }
 
