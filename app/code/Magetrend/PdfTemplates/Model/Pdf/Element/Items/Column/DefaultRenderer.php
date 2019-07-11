@@ -173,17 +173,6 @@ class DefaultRenderer extends \Magento\Framework\DataObject
         return $this->getItemRenderer()->getFormatedItemOptions();
     }
 
-    /**
-     * Returns item HMV
-     *
-     * @param $item
-     * @return string
-     */
-    public function getItemHMV()
-    {
-        return $this->getItemRenderer()->getFormatedHMV();
-    }
-
     public function getItemImage()
     {
         $item = $this->getItem();
