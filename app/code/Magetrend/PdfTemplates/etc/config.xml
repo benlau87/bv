@@ -57,6 +57,25 @@
                         </is_active>
                     </sku>
 
+                    <hmv>
+                        <label>Hmv</label>
+                        <renderer>Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Hmv</renderer>
+                        <sort_order>10</sort_order>
+                        <default>
+                            <item_1>MJ01</item_1>
+                            <item_2>MJ11</item_2>
+                            <item_3>24-WB04</item_3>
+                            <item_4>WH05</item_4>
+                            <item_5>24-UG0</item_5>
+                        </default>
+                        <is_active>
+                            <order>1</order>
+                            <invoice>1</invoice>
+                            <creditmemo>1</creditmemo>
+                            <shipment>0</shipment>
+                        </is_active>
+                    </hmv>
+
                     <price>
                         <label>Price</label>
                         <renderer>Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Price</renderer>
