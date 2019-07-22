@@ -25,7 +25,7 @@
     </container>
     <referenceContainer name="page.wrapper">
         <container name="header.nav" as="header_container" label="Page Header Container"  htmlTag="nav" htmlClass="navigation" before="main.content">
-            <container name="header.container" htmlTag="section" htmlId="header" htmlClass=""/>
+            <container name="header.container" htmlTag="section" htmlId="header" htmlClass="header-container"/>
         </container>
         <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
         <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="footer" />
