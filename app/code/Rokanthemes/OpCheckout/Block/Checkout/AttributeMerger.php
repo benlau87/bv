@@ -33,7 +33,7 @@ class AttributeMerger extends \Magento\Checkout\Block\Checkout\AttributeMerger
         parent::__construct($addressHelper, $customerSession, $customerRepository, $directoryHelper);
     }
 
-    protected function getDefaultValue($attributeCode)
+    protected function getDefaultValue($attributeCode): ?string
     {
         if ($this->_oneStepConfig->getFullRequest() == 'checkout_index_index') {
             switch ($attributeCode) {

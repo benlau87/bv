@@ -48,14 +48,14 @@ class Delete extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::manage_slider');
+        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::slider');
     }
 	protected function _initAction()
     {
         // load layout, set active menu and breadcrumbs
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('Rokanthemes_SlideBanner::manage_slider');
+        $resultPage->setActiveMenu('Rokanthemes_SlideBanner::slider');
         return $resultPage;
     }
     /**

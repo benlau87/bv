@@ -1,0 +1,103 @@
+<?php
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magenest\RentalSystem\Block\Order\History */ ?>
+
+<?php $_rents = $block->getRents(); ?>
+<?php echo $block->getChildHtml('info'); ?>
+<?php if ($_rents && count($_rents)): ?>
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history">
+            <thead>
+            <tr>
+                <th scope="col" class="col id"><?= /* @escapeNotVerified */
+                    __('Order #') ?></th>
+                <th scope="col" class="col retal_product"><?= /* @escapeNotVerified */
+                    __('Rental Product') ?></th>
+                <th scope="col" class="col price"><?= /* @escapeNotVerified */
+                    __('Price') ?></th>
+                <th scope="col" class="col from"><?= /* @escapeNotVerified */
+                    __('From') ?></th>
+                <th scope="col" class="col to"><?= /* @escapeNotVerified */
+                    __('To') ?></th>
+                <th scope="col" class="col option"><?= /* @escapeNotVerified */
+                    __('Options') ?></th>
+                <th scope="col" class="col delivery"><?= /* @escapeNotVerified */
+                    __('Delivery') ?></th>
+                <th scope="col" class="col status"><?= /* @escapeNotVerified */
+                    __('Status') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($_rents as $rent): ?>
+                <tr>
+                    <td data-th="<?= $block->escapeHtml(__('Order #')) ?>" class="col id">
+                        <a href="<?= /* @escapeNotVerified */
+                        $block->getOrderUrl($rent['order_id']) ?>" class="action view">
+                            <span><?= /* @escapeNotVerified */
+                                $rent['order_increment_id'] ?></span>
+                        </a>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Rental Product')) ?>" class="col retal_product">
+                        <a href="<?= /* @escapeNotVerified */
+                        $block->getProductUrl($block->getProductId($rent['rental_id'])) ?>" class="action view">
+                            <span><?= /* @escapeNotVerified */
+                                $rent['title'] ?></span>
+                        </a>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Price')) ?>" class="col from"><?= /* @escapeNotVerified */
+                        $block->getFormattedPrice($rent['price']) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('From')) ?>" class="col from"><?= /* @escapeNotVerified */
+                        $block->getLocateTime($rent['start_time']) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('To')) ?>" class="col to"><?= /* @escapeNotVerified */
+                        $block->getLocateTime($rent['end_time']) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('Options')) ?>" class="col option">
+                        <?php echo /* @escapeNotVerified */
+                        $rent['information']; ?>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Delivery')) ?>" class="col delivery">
+                        <?php
+                        $delivery = $block->getDeliveryType($rent['rental_id'], $rent['type']);
+                        if (!empty($delivery)) {
+                            if ($rent['type'] == 0) {
+                                $delivery = __('Lead time') . ': ' . $delivery . '(' . __('days') . ')';
+                            } elseif ($rent['type'] == 1) {
+                                $delivery = __('Address') . ': ' . $delivery;
+                            }
+                        }
+                        ?>
+
+                        <?php echo /* @escapeNotVerified */
+                        $delivery ?>
+                    </td>
+                    <td data-th="<?= $block->escapeHtml(__('Status')) ?>" class="col status">
+                        <?php if ($rent['status'] == 0) {
+                            $status = __('Pending');
+                        } elseif ($rent['status'] == 1) {
+                            $status = __('Delivered');
+                        } elseif ($rent['status'] == 2) {
+                            $status = __('Returned');
+                        } ?>
+                        <?= /* @escapeNotVerified */
+                        $status ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom custom-pager"><?php echo $block->getPagerHtml(); ?></div>
+        <style>
+            .order-products-toolbar .limiter {
+                float: right;
+            }
+        </style>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */
+            echo __('You have not rented any products.'); ?></span></div>
+<?php endif ?>

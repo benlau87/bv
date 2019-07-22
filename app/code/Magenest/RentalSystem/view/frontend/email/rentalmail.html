@@ -1,0 +1,17 @@
+<!--@subject Your rental receipt from {{var store.getFrontendName()}} @-->
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "Your rental order from %store_name." store_name=$store.getFrontendName()}}</p>
+<ul>
+    <li><strong>{{trans "Product: "}}</strong> <em> {{var title}}</em></li>
+    <li><strong>{{trans "Order: "}}</strong> {{var order_id}}</li>
+    <li><strong>{{trans "Customer: "}}</strong> {{var customer_name}}</li>
+    <li><strong>{{trans "Code: "}}</strong> {{var rental_code}}</li>
+    <li><strong>{{trans "Rent From: "}}</strong> {{var start_time}}</li>
+    <li><strong>{{trans "Rent To: "}}</strong> {{var end_time}}</li>
+    <li><strong>{{trans "Qty: "}}</strong> {{var qty}}</li>
+    <li><strong>{{trans "Delivery type: "}}</strong> {{var rent_type}</li>
+    <li><strong>{{trans "Additional Option: "}}</strong> {{var additional_options}}</li>
+</ul>
+
+{{template config_path="design/email/footer_template"}}

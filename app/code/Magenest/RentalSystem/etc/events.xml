@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_item_qty_set_after">
+        <observer name="option_rental_qty" instance="Magenest\RentalSystem\Observer\QuantityValidator"/>
+    </event>
+    <event name="sales_order_item_save_commit_after">
+        <observer name="create_rental_record" instance="Magenest\RentalSystem\Observer\Order\CreateRecord"/>
+    </event>
+    <!--<event name="sales_order_place_after">-->
+        <!--<observer name="rental_controller_success_action" instance="Magenest\Ticket\Observer\PlaceOrder"  />-->
+    <!--</event>-->
+</config>

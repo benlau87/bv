@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_RentalSystem::css/daterangepicker.css"/>
+    </head>
+    <body>
+        <referenceBlock name="product.info.options.wrapper">
+            <block class="Magenest\RentalSystem\Block\Product\Rental"
+                    name="product.info.options.rental"
+                    as="rental_options"
+                    before="-"
+                    template="catalog/product/rental.phtml" />
+        </referenceBlock>
+        <referenceBlock name="product.info.details">
+            <block class="Magenest\RentalSystem\Block\Product\Tab\Policy"
+                    template="Magenest_RentalSystem::catalog/product/tab/policy.phtml"
+                    name="policy.tab"
+                    group="detailed_info">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Policy</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** @var $block \Magento\Checkout\Block\Cart\Item\Renderer\Actions\Edit */
+?>
+<?php
+$data = $block->getItem()->getProduct()->getTypeId();
+?>
+<?php if ($block->isProductVisibleInSiteVisibility()): ?>
+    <a class="action action-edit"
+       href="<?php /* @escapeNotVerified */ echo $block->getConfigureUrl() ?>"
+       title="<?php echo $block->escapeHtml(__('Edit item parameters')); ?>"
+       style="display: none;" >
+        <span>
+            <?php /* @escapeNotVerified */ echo __('Edit') ?>
+        </span>
+    </a>
+<?php endif ?>

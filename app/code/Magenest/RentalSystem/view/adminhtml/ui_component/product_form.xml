@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="rental">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Rental</item>
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="dataScope" xsi:type="string">data.rental</item>
+                <item name="sortOrder" xsi:type="number">0</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <fieldset name="rental_price">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Rental Price</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="opened" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <container name="header-options">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string"/>
+                        <item name="template" xsi:type="string">ui/form/components/complex</item>
+                        <item name="content" xsi:type="string" translate="true">
+                            <![CDATA[
+                            <ul>
+                            <li>- If <b>Additional Block</b> is set, extra durations <b style="color:red">outside of first Base Block</b> will use <b>Additional Price</b> and <b>Additional Block</b> for calculation</li>
+                            <li>- If <b>Additional Block</b> is not set, all durations will use <b>Base Price</b> and <b>Base Block</b>.</li>
+                            </ul>
+                            ]]>
+                        </item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
+                </argument>
+            </container>
+            <dynamicRows name="row">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>
+                        <item name="dataScope" xsi:type="string"/>
+                        <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                        <item name="addButton" xsi:type="boolean">false</item>
+                        <!--<item name="deleteProperty" xsi:type="string">is_delete</item>-->
+                        <!--<item name="deleteValue" xsi:type="number">0</item>-->
+                        <!--<item name="renderDefaultRecord" xsi:type="boolean">true</item>-->
+                        <item name="defaultRecord" xsi:type="boolean">true</item>
+                    </item>
+                </argument>
+                <container name="record">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/record</item>
+                            <item name="is_collection" xsi:type="boolean">true</item>
+                            <item name="isTemplate" xsi:type="boolean">true</item>
+                        </item>
+                    </argument>
+                    <field name="base_price">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Base Price</item>
+                                <item name="dataScope" xsi:type="string">base_price</item>
+                                <item name="sortOrder" xsi:type="number">10</item>
+                                <item name="formElement" xsi:type="string">input</item>
+                                <item name="validation" xsi:type="array">
+                                    <item name="validate-greater-than-zero" xsi:type="boolean">true</item>
+                                    <item name="validate-number" xsi:type="boolean">true</item>
+                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                        </argument>
+                    </field>
+                    <field name="base_period">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Base Block</item>
+                                <item name="dataScope" xsi:type="string">base_period</item>
+                                <item name="sortOrder" xsi:type="number">20</item>
+                                <item name="formElement" xsi:type="string">input</item>
+                                <item name="required" xsi:type="boolean">false</item>
+                                <item name="validation" xsi:type="array">
+                                    <item name="validate-greater-than-zero" xsi:type="boolean">true</item>
+                                    <item name="validate-digits" xsi:type="boolean">true</item>
+                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                </item>
+                            </item>
+                        </argument>
+                    </field>
+                    <field name="base_period_unit">
+                        <argument name="data" xsi:type="array">
+                            <item name="options" xsi:type="object">Magenest\RentalSystem\Ui\Component\Rental\PeriodType\Options</item>
+                            <item name="config" xsi:type="array">
+                                <item name="componentType" xsi:type="string">field</item>
+                                <item name="dataScope" xsi:type="string">base_period_unit</item>
+                                <item name="formElement" xsi:type="string">select</item>
+                                <item name="dataType" xsi:type="string">string</item>
+                                <item name="sortOrder" xsi:type="number">25</item>
+                                <item name="required" xsi:type="boolean">true</item>
+                                <item name="default" xsi:type="string">h</item>
+                            </item>
+                        </argument>
+                    </field>
+                    <field name="additional_price">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Additional Price (optional)</item>
+                                <item name="dataScope" xsi:type="string">additional_price</item>
+                                <item name="sortOrder" xsi:type="number">30</item>
+                                <item name="formElement" xsi:type="string">input</item>
+                                <item name="dataType" xsi:type="string">string</item>
+                                <item name="required" xsi:type="boolean">false</item>
+                                <item name="validation" xsi:type="array">
+                                    <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                                    <item name="required-entry" xsi:type="boolean">false</item>
+                                    <!--<item name="validate-number" xsi:type="boolean">true</item>-->
+                                </item>
+                            </item>
+                        </argument>
+                    </field>
+                    <field name="additional_period">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Additional Block (optional)</item>
+                                <item name="dataScope" xsi:type="string">additional_period</item>
+                                <item name="formElement" xsi:type="string">input</item>
+                                <item name="dataType" xsi:type="string">string</item>
+                                <item name="required" xsi:type="boolean">false</item>
+                                <item name="sortOrder" xsi:type="number">40</item>
+                                <item name="validation" xsi:type="array">
+                                    <item name="validate-digits" xsi:type="boolean">true</item>
+                                    <item name="validate-greater-than-zero" xsi:type="boolean">true</item>
+                                    <item name="required-entry" xsi:type="boolean">false</item>
+                                </item>
+                            </item>
+                        </argument>
+                    </field>
+                    <field name="additional_period_unit">
+                        <argument name="data" xsi:type="array">
+                            <item name="options" xsi:type="object">Magenest\RentalSystem\Ui\Component\Rental\PeriodType\Options</item>
+                            <item name="config" xsi:type="array">
+                                <item name="componentType" xsi:type="string">field</item>
+                                <item name="dataScope" xsi:type="string">additional_period_unit</item>
+                                <item name="formElement" xsi:type="string">select</item>
+                                <item name="dataType" xsi:type="string">string</item>
+                                <item name="sortOrder" xsi:type="number">45</item>
+                                <item name="default" xsi:type="string">h</item>
+                            </item>
+                        </argument>
+                    </field>
+                    <!--<actionDelete name="is_delete">-->
+                    <!--<argument name="data" xsi:type="array">-->
+                    <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="fit" xsi:type="boolean">true</item>-->
+                    <!--<item name="componentType" xsi:type="string">actionDelete</item>-->
+                    <!--</item>-->
+                    <!--</argument>-->
+                    <!--</actionDelete>-->
+                </container>
+            </dynamicRows>
+        </fieldset>
+        <fieldset name="rental_delivery_type">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Delivery Type</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="opened" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <field name="max_duration">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Maximum Rent Duration(days)</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="notice" xsi:type="string" translate="true">Leave as 0 to use universal duration limit</item>
+                        <item name="collapsible" xsi:type="boolean">false</item>
+                        <item name="dataScope" xsi:type="string">max_duration</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                            <item name="validate-number" xsi:type="boolean">true</item>
+                            <item name="validate-digits" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                </argument>
+
+            </field>
+            <field name="type">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">Magenest\RentalSystem\Ui\Component\Rental\DeliveryType\Options</item>
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Delivery Type</item>
+                        <item name="component" xsi:type="string">Magenest_RentalSystem/js/form/element/delivery_type_options</item>
+                        <item name="componentType" xsi:type="string">field</item>
+                        <item name="dataScope" xsi:type="string">type</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="sortOrder" xsi:type="number">5</item>
+                        <item name="required" xsi:type="boolean">false</item>
+                        <!--<item name="default" xsi:type="string">shipping</item>-->
+                    </item>
+                </argument>
+            </field>
+            <field name="lead_time">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string">Lead time(days)</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="collapsible" xsi:type="boolean">false</item>
+                        <item name="dataScope" xsi:type="string">lead_time</item>
+                        <item name="required" xsi:type="boolean">false</item>
+                        <!--<item name="visible" xsi:type="boolean">true</item>-->
+                        <item name="visibleValue" xsi:type="string">shipping</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="validate-zero-or-greater" xsi:type="boolean">true</item>
+                            <item name="validate-digits" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                </argument>
+            </field>
+            <field name="pickup_address">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string">Address</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="collapsible" xsi:type="boolean">false</item>
+                        <item name="dataScope" xsi:type="string">pickup_address</item>
+                        <item name="required" xsi:type="boolean">false</item>
+                        <!--<item name="visible" xsi:type="boolean">false</item>-->
+                        <item name="visibleValue" xsi:type="string">local_pickup</item>
+                        <item name="validation" xsi:type="array">
+                            <!--<item name="alphanumeric" xsi:type="boolean">true</item>-->
+                        </item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+        <fieldset name="rental_template">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Email Setting</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="opened" xsi:type="boolean">true</item>
+                    <!--<item name="dataScope" xsi:type="string">emailtemplate</item>-->
+                </item>
+            </argument>
+            <field name="email_template">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">Magenest\RentalSystem\Model\Config\Mail\Template</item>
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Receipt Email Template</item>
+                        <item name="dataScope" xsi:type="string">email_template</item>
+                        <item name="componentType" xsi:type="string">field</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="sortOrder" xsi:type="number">20</item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+        <fieldset name="rental_additional_options">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Additional Options</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <container name="header-options">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string"/>
+                        <item name="template" xsi:type="string">ui/form/components/complex</item>
+                        <item name="content" xsi:type="string" translate="true">
+                            <![CDATA[<h2>Configure Rental Options</h2>
+                            Option price can be set as 0 (free option)
+                            ]]>
+                        </item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
+                </argument>
+                <container name="add-option-event">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Add Option</item>
+                            <item name="component" xsi:type="string">Magento_Ui/js/form/components/button</item>
+                            <item name="actions" xsi:type="array">
+                                <item name="0" xsi:type="array">
+                                    <item name="targetName" xsi:type="string">ns = ${ $.ns }, index = additional_options</item>
+                                    <item name="actionName" xsi:type="string">processingAddChild</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </container>
+            </container>
+            <dynamicRows name="additional_options">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="addButtonLabel" xsi:type="string">New Option</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>
+                        <item name="template" xsi:type="string">ui/dynamic-rows/templates/collapsible</item>
+                        <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                        <item name="addButton" xsi:type="boolean">false</item>
+                        <item name="deleteProperty" xsi:type="string">is_delete</item>
+                        <item name="deleteValue" xsi:type="number">1</item>
+                        <!--<item name="defaultRecord" xsi:type="boolean">true</item>-->
+                        <item name="columnsHeader" xsi:type="boolean">false</item>
+                        <item name="collapsibleHeader" xsi:type="boolean">true</item>
+                    </item>
+                </argument>
+                <container name="record">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="headerLabel" xsi:type="string" translate="true">New Option</item>
+                            <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/record</item>
+                            <item name="is_collection" xsi:type="boolean">true</item>
+                            <item name="isTemplate" xsi:type="boolean">true</item>
+                        </item>
+                    </argument>
+                    <fieldset name="additional_options">
+                        <argument name="data" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="label" xsi:type="string"/>
+                                <item name="opened" xsi:type="boolean">true</item>
+                            </item>
+                        </argument>
+                        <container name="general_option_child">
+                            <argument name="data" xsi:type="array">
+                                <item name="config" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
+                                    <item name="breakLine" xsi:type="boolean">false</item>
+                                    <item name="showLabel" xsi:type="boolean">false</item>
+                                    <item name="additionalClasses" xsi:type="string">admin__field-group-columns admin__control-group-equal</item>
+                                </item>
+                            </argument>
+                            <field name="id_option">
+                                <argument name="data" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="dataType" xsi:type="string">text</item>
+                                        <item name="formElement" xsi:type="string">input</item>
+                                        <item name="dataScope" xsi:type="string">id_option</item>
+                                        <item name="component" xsi:type="string">Magento_Catalog/js/form/element/input</item>
+                                        <item name="visible" xsi:type="boolean">false</item>
+                                        <item name="additionalClasses" xsi:type="array">
+                                            <item name="_hidden" xsi:type="boolean">true</item>
+                                        </item>
+                                    </item>
+                                </argument>
+                            </field>
+                            <field name="option_title">
+                                <argument name="data" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">Label</item>
+                                        <item name="dataScope" xsi:type="string">option_title</item>
+                                        <item name="component" xsi:type="string">Magento_Catalog/component/static-type-input</item>
+                                        <item name="formElement" xsi:type="string">input</item>
+                                        <item name="validation" xsi:type="array">
+                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                        </item>
+                                    </item>
+                                </argument>
+                            </field>
+                            <field name="type">
+                                <argument name="data" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">Price Type</item>
+                                        <item name="options" xsi:type="array">
+                                            <item name="0" xsi:type="array">
+                                                <item name="value" xsi:type="number">0</item>
+                                                <item name="label" xsi:type="string">Option</item>
+                                                <item name="optgroup" xsi:type="array">
+                                                    <item name="0" xsi:type="array">
+                                                        <item name="label" xsi:type="string">Fixed</item>
+                                                        <item name="value" xsi:type="string">fixed</item>
+                                                    </item>
+                                                    <item name="1" xsi:type="array">
+                                                        <item name="label" xsi:type="string">Per Hour</item>
+                                                        <item name="value" xsi:type="string">per_hour</item>
+                                                    </item>
+                                                    <item name="2" xsi:type="array">
+                                                        <item name="label" xsi:type="string">Per Day</item>
+                                                        <item name="value" xsi:type="string">per_day</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="dataScope" xsi:type="string">type</item>
+                                        <item name="component" xsi:type="string">Magento_Catalog/js/custom-options-type</item>
+                                        <item name="selectType" xsi:type="string">optgroup</item>
+                                        <item name="formElement" xsi:type="string">select</item>
+                                        <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                                        <item name="selecType" xsi:type="string">optgroup</item>
+                                        <item name="additionalClasses" xsi:type="string">admin__field-group-columns
+                                            admin__control-group-equal
+                                        </item>
+                                        <item name="disableLabel" xsi:type="boolean">true</item>
+                                        <item name="multiple" xsi:type="boolean">false</item>
+                                        <item name="selectedPlaceholders" xsi:type="array">
+                                            <item name="defaultPlaceholder" xsi:type="string">-- Please select --</item>
+                                        </item>
+                                        <item name="validation" xsi:type="array">
+                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                        </item>
+                                        <item name="groupsConfig" xsi:type="array">
+                                            <item name="select" xsi:type="array">
+                                                <item name="values" xsi:type="array">
+                                                    <item name="0" xsi:type="string">fixed</item>
+                                                    <item name="1" xsi:type="string">per_hour</item>
+                                                    <item name="2" xsi:type="string">per_day</item>
+                                                </item>
+                                                <item name="indexes" xsi:type="array">
+                                                    <item name="0" xsi:type="string">row</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </argument>
+                            </field>
+                            <field name="is_required">
+                                <argument name="data" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">Required</item>
+                                        <item name="dataScope" xsi:type="string">is_required</item>
+                                        <item name="componentType" xsi:type="string">field</item>
+                                        <item name="dataType" xsi:type="string">text</item>
+                                        <item name="formElement" xsi:type="string">checkbox</item>
+                                        <item name="valueMap" xsi:type="array">
+                                            <item name="true" xsi:type="string">1</item>
+                                            <item name="false" xsi:type="string">0</item>
+                                        </item>
+                                        <item name="default" xsi:type="string">0</item>
+                                    </item>
+                                </argument>
+                            </field>
+                        </container>
+                        <dynamicRows name="row">
+                            <argument name="data" xsi:type="array">
+                                <item name="config" xsi:type="array">
+                                    <item name="addButtonLabel" xsi:type="string">New Option</item>
+                                    <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>
+                                    <item name="dataScope" xsi:type="string"/>
+                                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                                    <item name="deleteProperty" xsi:type="string">is_delete</item>
+                                    <item name="deleteValue" xsi:type="number">1</item>
+                                    <item name="renderDefaultRecord" xsi:type="boolean">false</item>
+                                </item>
+                            </argument>
+                            <container name="record">
+                                <argument name="data" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/record</item>
+                                        <item name="is_collection" xsi:type="boolean">true</item>
+                                        <item name="isTemplate" xsi:type="boolean">true</item>
+                                    </item>
+                                </argument>
+                                <field name="id_type">
+                                    <argument name="data" xsi:type="array">
+                                        <item name="config" xsi:type="array">
+                                            <item name="dataType" xsi:type="string">text</item>
+                                            <item name="formElement" xsi:type="string">input</item>
+                                            <item name="dataScope" xsi:type="string">id_type</item>
+                                            <item name="component" xsi:type="string">Magento_Catalog/js/form/element/input</item>
+                                            <item name="visible" xsi:type="boolean">false</item>
+                                            <item name="additionalClasses" xsi:type="array">
+                                                <item name="_hidden" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                    </argument>
+                                </field>
+                                <field name="option">
+                                    <argument name="data" xsi:type="array">
+                                        <item name="config" xsi:type="array">
+                                            <item name="label" xsi:type="string" translate="true">Option</item>
+                                            <item name="dataScope" xsi:type="string">option</item>
+                                            <item name="formElement" xsi:type="string">input</item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                    </argument>
+                                </field>
+                                <field name="price">
+                                    <argument name="data" xsi:type="array">
+                                        <item name="config" xsi:type="array">
+                                            <item name="label" xsi:type="string" translate="true">Price</item>
+                                            <item name="dataScope" xsi:type="string">price</item>
+                                            <item name="formElement" xsi:type="string">input</item>
+                                            <item name="validation" xsi:type="array">
+                                                <item name="validate-number" xsi:type="boolean">true</item>
+                                                <item name="required-entry" xsi:type="boolean">true</item>
+                                            </item>
+                                        </item>
+                                    </argument>
+                                </field>
+                                <actionDelete name="is_delete">
+                                    <argument name="data" xsi:type="array">
+                                        <item name="config" xsi:type="array">
+                                            <item name="fit" xsi:type="boolean">true</item>
+                                            <item name="componentType" xsi:type="string">actionDelete</item>
+                                        </item>
+                                    </argument>
+                                </actionDelete>
+                            </container>
+                        </dynamicRows>
+                    </fieldset>
+                </container>
+            </dynamicRows>
+        </fieldset>
+    </fieldset>
+</form>

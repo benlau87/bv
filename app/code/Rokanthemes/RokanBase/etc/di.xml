@@ -7,6 +7,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Checkout\Controller\Cart\Add" type="Rokanthemes\RokanBase\Controller\Checkout\Cart\Add" />
-	<preference for="Magento\Catalog\Controller\Product\Compare\Add" type="Rokanthemes\RokanBase\Controller\Catalog\Product\Compare\Add" />
-	<preference for="Magento\Store\Model\StoreManager" type="Rokanthemes\RokanBase\Model\Rewrite\Store\StoreManager" />
+	<!-- <preference for="Magento\Catalog\Controller\Product\Compare\Add" type="Rokanthemes\RokanBase\Controller\Catalog\Product\Compare\Add" /> -->
+	<!--<preference for="Magento\Store\Model\StoreManager" type="Rokanthemes\RokanBase\Model\Rewrite\Store\StoreManager" />-->
 </config>

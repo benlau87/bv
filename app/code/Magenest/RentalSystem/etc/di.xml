@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magenest\RentalSystem\Model\ResourceModel\Rental\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_rental_product</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\RentalSystem\Model\ResourceModel\Rental</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magenest\RentalSystem\Model\ResourceModel\RentalOrder\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_rental_order</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\RentalSystem\Model\ResourceModel\RentalOrder</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="rentalsystem_product_listing_data_source" xsi:type="string">Magenest\RentalSystem\Model\ResourceModel\Rental\Grid\Collection</item>
+                <item name="rentalsystem_order_listing_data_source" xsi:type="string">Magenest\RentalSystem\Model\ResourceModel\RentalOrder\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="rentalprice1" type="\Magenest\RentalSystem\Plugin\RentalPrice" sortOrder="100"/>
+    </type>
+    <type name="Magento\CatalogSearch\Block\SearchResult\ListProduct">
+        <plugin name="rentalprice2" type="\Magenest\RentalSystem\Plugin\RentalPrice" sortOrder="110"/>
+    </type>
+    <type name="Magenest\RentalSystem\Controller\Order\History">
+        <plugin name="authentication" type="Magento\Sales\Controller\Order\Plugin\Authentication"/>
+    </type>
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="orderFormToolbarReorder" type="Magenest\RentalSystem\Block\Widget\Button\Toolbar" sortOrder="100" />
+    </type>
+    <preference for="Magento\Checkout\CustomerData\DefaultItem" type="Magenest\RentalSystem\CustomerData\DefaultItem" />
+    <preference for="Magento\Checkout\Controller\Cart\Add" type="Magenest\RentalSystem\Controller\Cart\Add" />
+    <preference for="Magento\Sales\Helper\Reorder" type="Magenest\RentalSystem\Helper\Reorder"/>
+    <preference for="Magento\Wishlist\Helper\Data" type="Magenest\RentalSystem\Helper\Wishlist"/>
+</config>

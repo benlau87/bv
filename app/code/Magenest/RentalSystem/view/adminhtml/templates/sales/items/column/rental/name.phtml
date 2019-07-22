@@ -1,0 +1,89 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * @var $block \Magenest\RentalSystem\Block\Adminhtml\Sales\Items\Column\Rental\Name
+ * @see \Magento\Sales\Block\Adminhtml\Items\Column\Name
+ */
+?>
+
+<?php if ($_item = $block->getItem()): ?>
+
+    <div id="order_item_<?= $block->escapeHtml($_item->getId()) ?>_title"
+         class="product-title">
+        <?= $block->escapeHtml($_item->getName()) ?>
+    </div>
+    <div class="product-sku-block">
+        <span><?= $block->escapeHtml(__('SKU')) ?>:</span> <?= implode('<br />', $this->helper('Magento\Catalog\Helper\Data')->splitSku($block->escapeHtml($block->getSku()))) ?>
+    </div>
+    <br>
+    <div>
+        <?php $buyRequest = $_item->getBuyRequest()->getData(); ?>
+        <?php if (array_key_exists('additional_options', $buyRequest)): ?>
+            <?php $data = $buyRequest['additional_options'] ?>
+            <?php if (!empty($data['options'])) { ?>
+                <?php foreach ($data['options'] as $key => $value): ?>
+                    <?php if (!empty($value)) : ?>
+                        <?php $optionTitleAndPrice = $block->getOptionTitleAndPrice($value) ?>
+                        <span><?php echo $optionTitleAndPrice['option_title'] . ": "; ?><?php echo $optionTitleAndPrice['option_type_title']; ?></span>
+                        <br>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php } ?>
+            <?php if (!empty($data['rental_from']) && !empty($data['rental_to'])) { ?>
+                <span><?php echo "From: " ?><?= /* @escapeNotVerified */
+                    $block->getLocateTime(date('Y-m-d H:i:s', $data['rental_from'])) ?></span><br>
+                <span><?php echo "To: " ?><?= /* @escapeNotVerified */
+                    $block->getLocateTime(date('Y-m-d H:i:s', $data['rental_to'])) ?></span><br>
+            <?php } ?>
+        <?php endif; ?>
+    </div>
+    <?php if ($block->getOrderOptions()): ?>
+        <dl class="item-options">
+            <?php foreach ($block->getOrderOptions() as $_option): ?>
+                <dt><?= $block->escapeHtml($_option['label']) ?>:</dt>
+                <dd>
+                    <?php if (isset($_option['custom_view']) && $_option['custom_view']): ?>
+                        <?= /* @escapeNotVerified */
+                        $block->getCustomizedOptionValue($_option) ?>
+                    <?php else: ?>
+                        <?php $_option = $block->getFormattedOption($_option['value']); ?>
+                        <?php $dots = 'dots' . uniqid(); ?>
+                        <?= $block->escapeHtml($_option['value']) ?><?php if (isset($_option['remainder']) && $_option['remainder']): ?>
+                            <span id="<?= /* @noEscape */
+                            $dots; ?>"> ...</span>
+                        <?php $id = 'id' . uniqid(); ?>
+                            <span id="<?= /* @noEscape */
+                            $id; ?>"><?= $block->escapeHtml($_option['remainder']) ?></span>
+                            <script>
+                                require(['prototype'], function () {
+                                    $('<?= /* @noEscape */ $id; ?>').hide();
+                                    $('<?= /* @noEscape */ $id; ?>').up().observe('mouseover', function () {
+                                        $('<?= /* @noEscape */ $id; ?>').show();
+                                    });
+                                    $('<?= /* @noEscape */ $id; ?>').up().observe('mouseover', function () {
+                                        $('<?= /* @noEscape */ $dots; ?>').hide();
+                                    });
+                                    $('<?= /* @noEscape */ $id; ?>').up().observe('mouseout', function () {
+                                        $('<?= /* @noEscape */ $id; ?>').hide();
+                                    });
+                                    $('<?= /* @noEscape */ $id; ?>').up().observe('mouseout', function () {
+                                        $('<?= /* @noEscape */ $dots; ?>').show();
+                                    });
+                                });
+                            </script>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </dd>
+            <?php endforeach; ?>
+        </dl>
+    <?php endif; ?>
+    <?= $block->escapeHtml($_item->getDescription()) ?>
+<?php endif; ?>

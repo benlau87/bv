@@ -1,33 +1,27 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Venustheme
+ * Blueskytechco
  * 
  * NOTICE OF LICENSE
  * 
- * This source file is subject to the Venustheme.com license that is
+ * This source file is subject to the Blueskytechco.com license that is
  * available through the world-wide-web at this URL:
- * http://www.venustheme.com/license-agreement.html
+ * http://www.blueskytechco.com/license-agreement.html
  * 
  * DISCLAIMER
  * 
  * Do not edit or add to this file if you wish to upgrade this extension to newer
  * version in the future.
  * 
- * @category   Venustheme
+ * @category   Blueskytechco
  * @package    Rokanthemes_Blog
- * @copyright  Copyright (c) 2014 Venustheme (http://www.venustheme.com/)
- * @license    http://www.venustheme.com/LICENSE-1.0.html
+ * @copyright  Copyright (c) 2014 Blueskytechco (http://www.blueskytechco.com/)
+ * @license    http://www.blueskytechco.com/LICENSE-1.0.html
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<head>
 		<css src="Rokanthemes_Brand::css/styles.css" />
 	</head>
-	<update handle="editor"/>
-	<body>
-		<referenceContainer name="js">
-			<block class="Magento\Framework\View\Element\Template" template="Rokanthemes_Brand::wysiwyg/js.phtml" name="rokan.brand.wysiwyg.js"/>
-		</referenceContainer>
-	</body>
 </page>

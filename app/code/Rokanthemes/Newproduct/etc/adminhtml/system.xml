@@ -11,7 +11,7 @@
             <class>separator-top</class>
             <label>New Product</label>
             <tab>rokanthemes</tab>
-			<resource>Magento_Catalog::config_newproduct</resource>
+			<resource>Rokanthemes_Newproduct::rokanbase_newproduct</resource>
             <group id="newproduct_config" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>New Product Config</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
@@ -25,11 +25,11 @@
 				<field id="title" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>Title:</label>
 					<comment>Block Title</comment>
-				</field>
-				<field id="subtitle" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Untertitel:</label>
-					<comment>Untertitel</comment>
-				</field>
+				</field>	
+				<field id="description" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Description:</label>
+					<comment>Description</comment>
+				</field>			
 				<field id="show_price" translate="label comment" type="select" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>Show Price:</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -41,11 +41,7 @@
 				<field id="addtowishlist" translate="label comment" type="select" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>Show Add to Wishlist:</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-				</field>				
-				<field id="addtocompare" translate="label comment" type="select" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Show Add to Compare:</label>
-					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-				</field>				
+				</field>							
 				<field id="review" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1">
 					<label>Show Review Rating:</label>
 					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -54,17 +50,23 @@
 					<label>Qty Of Products:</label>
 				</field>		
 				<field id="items_show" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Number Product Show:</label>
-				</field>	
-				<field id="item_width" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Width Of Item:</label>
-				</field>	
-				<field id="width_thumbnail" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Width Of Thumbnail:</label>
+					<label>Number Row Show:</label>
 				</field>
-				<field id="height_thumbnail" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
-					<label>Height Of Thumbnail:</label>
-				</field>
+				<field id="itemsDefault" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items Default:</label>
+                </field>
+				<field id="itemsDesktop" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items On Desktop:</label>
+                </field>
+				<field id="itemsDesktopSmall" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items On Desktop Small:</label>
+                </field>
+				<field id="itemsTablet" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items On Tablet:</label>
+                </field>
+				<field id="itemsMobile" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Items On Mobile:</label>
+                </field>	
 				<field id="next_back" translate="label comment" type="select" sortOrder="130"  showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Next/Back control:</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

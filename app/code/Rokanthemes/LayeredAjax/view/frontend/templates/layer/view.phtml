@@ -20,12 +20,17 @@
                         <div data-role="content" class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></div>
                     </div>
                     <?php
-                        $activeArray[] = $activeKey;
+						if($this->helper('Rokanthemes\LayeredAjax\Helper\Data')->isOpenAllTab()){
+							$activeArray[] = $activeKey;
+						}
                         $activeKey++;
                     ?>
                 <?php endif; ?>
             <?php endforeach; ?>
             <?php if ($wrapOptions): ?>
+                </div>
+                <div class="banner_left_2">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_left2_home1')->toHtml();?>
                 </div>
 				<script type="text/x-magento-init">
 					{
@@ -33,7 +38,7 @@
 							"accordion": {
 								"openedState": "active",
 								"collapsible": true,
-							<?php /*	"active": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($activeArray); ?>, */ ?>
+								"active": <?php echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($activeArray); ?>,
 								"multipleCollapsible": true
 							},
 							"Rokanthemes_LayeredAjax/js/layeredajax": {}

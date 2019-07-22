@@ -48,7 +48,7 @@ class Save extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::manage_slide');
+        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::slide');
     }
 	protected function _initAction()
     {

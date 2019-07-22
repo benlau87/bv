@@ -12,7 +12,7 @@
             <class>separator-top</class>
             <label>Testimonial Slider</label>
             <tab>rokanthemes</tab>
-            <resource>Rokanthemes_Testimonial::config_testimonial</resource>
+            <resource>Rokanthemes_Testimonial::settings</resource>
             <group id="general" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="enable_frontend" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
@@ -25,6 +25,12 @@
                 </field>
 				<field id="des" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Des</label>             
+                </field>
+				<field id="bg_image_testimonal" translate="label" type="image" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Image</label>
+                    <comment>Allowed file types:PNG, JPG, JPEG.</comment>
+                    <backend_model>Rokanthemes\Testimonial\Model\Config\Backend\Testimonialbackground</backend_model>
+                    <base_url type="media" scope_info="1">rokanthemes/testimonialbackground</base_url>
                 </field>
 				<field id="auto" translate="label comment" type="select" sortOrder="4"  showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Auto slide:</label>

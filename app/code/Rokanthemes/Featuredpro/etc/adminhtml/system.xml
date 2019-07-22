@@ -11,7 +11,7 @@
             <class>separator-top</class>
             <label>Feature Product</label>
             <tab>rokanthemes</tab>
-			<resource>Magento_Catalog::config_featureproduct</resource>
+			<resource>Rokanthemes_Featuredpro::rokanbase_featuredpro</resource>
             <group id="featuredproduct_config" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Feature Slider Config</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="0"  showInDefault="1" showInWebsite="1" showInStore="1">
@@ -25,6 +25,10 @@
 				<field id="title" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title:</label>
                     <comment>Block Title</comment>
+                </field>
+                <field id="subdescription" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description:</label>
+                    <comment>Description</comment>
                 </field>
 				<field id="speed" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Slideshow Speed:</label>
@@ -42,21 +46,9 @@
                     <label>Show Add to Wishlist:</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>	
-				<field id="addtocompare" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Show Add to Compare:</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
 				<field id="review" translate="label comment" type="select" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Review Rating:</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-				<field id="description" translate="label comment" type="select" sortOrder="90"  showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Show Short Description:</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-				<field id="maxlength" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Short Description Max Length:</label>
-                    <comment>Empty for display all short description.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
                 </field>
 				<field id="qty" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Qty of Product:</label>
