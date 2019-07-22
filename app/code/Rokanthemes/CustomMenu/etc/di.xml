@@ -18,5 +18,5 @@
         </arguments>
     </virtualType>
 	<preference for="Magento\Catalog\Model\Category\DataProvider" type="Rokanthemes\CustomMenu\Model\Category\DataProvider" />
-	<preference for="Magento\Cms\Model\Wysiwyg\Config" type="Rokanthemes\CustomMenu\Model\Wysiwyg\Config" />
+	<!--<preference for="Magento\Cms\Model\Wysiwyg\Config" type="Rokanthemes\CustomMenu\Model\Wysiwyg\Config" />-->
 </config>

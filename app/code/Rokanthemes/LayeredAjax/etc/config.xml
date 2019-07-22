@@ -5,6 +5,7 @@
             <general>
                 <enable>1</enable>
                 <price_slider>1</price_slider>
+                <open_all_tab>0</open_all_tab>
             </general>
         </layered_ajax>
 	</default>

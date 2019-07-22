@@ -34,6 +34,6 @@ abstract class Testimo extends \Magento\Backend\App\Action {
 	 * @return bool
 	 */
 	protected function _isAllowed() {
-		return $this->_authorization->isAllowed('Rokanthemes_Testimonial::testimonial');
+		return $this->_authorization->isAllowed('Rokanthemes_Testimonial::testimonial_testimonial');
 	}
 }

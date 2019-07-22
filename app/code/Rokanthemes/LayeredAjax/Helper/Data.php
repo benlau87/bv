@@ -42,4 +42,12 @@ class Data extends AbstractHelper
 			$storeId
 		);
 	}
+	public function isOpenAllTab($storeId = null)
+	{
+		return $this->scopeConfig->getValue(
+			'layered_ajax/general/open_all_tab',
+			ScopeInterface::SCOPE_STORE,
+			$storeId
+		);
+	}
 }

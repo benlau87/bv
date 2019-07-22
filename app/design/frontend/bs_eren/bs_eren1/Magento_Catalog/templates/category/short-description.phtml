@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php if ($block->getCurrentCategory()->getLevel() == "3" || $block->getCurrentCategory()->getLevel() == "4") : ?>
+
+    <div class="category-banner"><h1><?php echo $block->getCurrentCategory()->getName(); ?></h1></div>
+
+<?php endif; ?>
+
+
+<?php if ($_short_description = $block->getCurrentCategory()->getData('category_shortdescription')): ?>
+    <div class="category-short-description">
+        <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_short_description, 'description') ?>
+    </div>
+<?php endif; ?>

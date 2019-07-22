@@ -5,7 +5,7 @@
  */
 namespace Magento\Update;
 
-class StatusTest extends \PHPUnit_Framework_TestCase
+class StatusTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var \Magento\Update\Status
@@ -16,6 +16,11 @@ class StatusTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     protected $statusFilePath;
+
+    /**
+     * @var string
+     */
+    private $statusScrubbedFilePath;
 
     /**
      * @var string
@@ -37,10 +42,16 @@ class StatusTest extends \PHPUnit_Framework_TestCase
      */
     protected $updateErrorFlagFilePath;
 
+    /**
+     * @var string
+     */
+    private $somePath = '/someDir/someFile.ext';
+
     protected function setUp()
     {
         parent::setUp();
         $this->statusFilePath = __DIR__ . '/_files/update_status.txt';
+        $this->statusScrubbedFilePath = __DIR__ . '/_files/update_status_scrubbed.txt';
         $this->tmpStatusFilePath = TESTS_TEMP_DIR . '/update_status.txt';
         $this->tmpStatusLogFilePath = TESTS_TEMP_DIR . '/update.log';
         $this->updateInProgressFlagFilePath = TESTS_TEMP_DIR . '/update_in_progress.flag';
@@ -75,11 +86,24 @@ class StatusTest extends \PHPUnit_Framework_TestCase
 
     public function testGet()
     {
-        $status = new \Magento\Update\Status($this->statusFilePath);
+        $tmpFileStatus = TESTS_TEMP_DIR . 'tmpStatus.txt';
+
+        $statusContent = file_get_contents($this->statusFilePath);
+        $statusContent .= PHP_EOL . MAGENTO_BP . $this->somePath;
+        file_put_contents($tmpFileStatus, $statusContent);
+
+        $status = new \Magento\Update\Status($tmpFileStatus);
         $actualStatusText = $status->get();
         /** Ensure that actual status text is correct */
-        $statusArray = file_get_contents($this->statusFilePath);
-        $this->assertEquals($statusArray, $actualStatusText);
+        $statusContent = file_get_contents($this->statusFilePath);
+        $statusScrubbedContent = file_get_contents($this->statusScrubbedFilePath);
+        $statusScrubbedContent .= PHP_EOL . '{magento_root}' . $this->somePath;
+        $this->assertNotEquals($statusContent, $actualStatusText);
+        $this->assertEquals($statusScrubbedContent, $actualStatusText);
+
+        if (file_exists($tmpFileStatus)) {
+            unlink($tmpFileStatus);
+        }
     }
 
     public function testGetFileDoesNotExixt()

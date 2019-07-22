@@ -53,7 +53,7 @@ class Index extends Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::manage_slider');
+        return $this->_authorization->isAllowed('Rokanthemes_SlideBanner::slider');
     }
     /**
      * @return void
@@ -67,7 +67,7 @@ class Index extends Action
         
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('Rokanthemes_SlideBanner::manage_slider');
+        $resultPage->setActiveMenu('Rokanthemes_SlideBanner::slider');
         $resultPage->getConfig()->getTitle()->prepend(__('Manage Slider'));
  
         return $resultPage;

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright  2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_RentalSystem extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package  Magenest_RentalSystem
+ * @author   Magenest JSC
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magenest" translate="label" sortOrder="200">
+            <label>Magenest</label>
+        </tab>
+        <section id="rental_system" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                showInStore="0">
+            <class>separator-top</class>
+            <label>Rental System</label>
+            <tab>magenest</tab>
+            <resource>Magenest_RentalSystem::config_rental</resource>
+            <group id="general" translate="general" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                    showInStore="1">
+                <label>General Settings</label>
+                <field id="pattern_code" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pattern To Generate Code</label>
+                    <validate>no-whitespace</validate>
+                    <tooltip><![CDATA[Pattern when generate code</br>
+                    <ol><li>[A2] : Random 2 characters</li>
+                    <li>[N3] : Random 3 numbers</li>
+                    <li>Magenest : Fixed characters</li>
+                    </ol>
+                    Example:
+                    <ol><li>[A2][N1]Magenest[N3][A2] => Ah3Magenest368ot</li>
+                    <li>[N2][A2]ecommerce[N1][A2] => 54Phecommerce2mA</li>
+                    </ol>
+                    ]]></tooltip>
+                    <comment><![CDATA[Unique code for rental receipts]]></comment>
+                </field>
+                <field id="google_api_key" translate='Google API' sortOrder="20" type="text" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Google Maps API Key</label>
+                    <comment><![CDATA[Default key: AIzaSyCpi0fGkOSmkv1u_02poRTMB480GlscrwY]]></comment>
+                </field>
+            </group>
+            <group id="rental" translate="rental" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <label>Rental Settings</label>
+                <field id="max_advance_duration" translate='Advance Reservation Period(days)' sortOrder="0" type="text" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Advance Reservation Period(days)</label>
+                    <comment><![CDATA[Maximum period from now can a rent start.]]></comment>
+                    <validate>validate-greater-than-zero validate-digits</validate>
+                </field>
+                <field id="max_duration" translate='Maximum Rent Duration' sortOrder="10" type="text" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Maximum Rent Duration(days)</label>
+                    <comment><![CDATA[Default maximum duration setting. Products can override this setting.]]></comment>
+                    <validate>validate-greater-than-zero validate-digits</validate>
+                </field>
+                <field id="days_off" translate='Days Off' sortOrder="20" type="multiselect" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Days Off</label>
+                    <source_model>Magenest\RentalSystem\Model\Config\Source\DaysOff</source_model>
+                    <attribute type="readonly">readonly</attribute>
+                    <comment><![CDATA[Use <b>CTRL+click</b> to select multiple days.]]></comment>
+                </field>
+                <field id="work_hours" translate="Work Hours" sortOrder="30" type="select" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Opening Hours</label>
+                    <comment><![CDATA[Customers can only set start/end rent durations within opening hours.]]></comment>
+                    <frontend_model>Magenest\RentalSystem\Block\Adminhtml\System\Config\DaysOff</frontend_model>
+                </field>
+                <field id="default_address" translate="Default Pickup Address" type="text" sortOrder="50" showInStore="1" showInWebsite="1" showInDefault="1" >
+                    <label>Default Pickup Address</label>
+                </field>
+            </group>
+            <group id="locale" translate="locale" type="text" sortOrder="40" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>Calendar Settings</label>
+                <field id="firstDay" translate="first day" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1">
+                    <label>First Day of Week</label>
+                    <source_model>Magenest\RentalSystem\Model\Config\Source\FirstDay</source_model>
+                </field>
+                <field id="dateformat" translate="date format" type="select" sortOrder="20" showInStore="1" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Date Format</label>
+                    <source_model>Magenest\RentalSystem\Model\Config\Source\DateFormat</source_model>
+                </field>
+                <field id="applyLabel" translate="apply button label" type="text" sortOrder="30" showInWebsite="1" showInDefault="1" showInStore="1" canRestore="1">
+                    <label>Select Date Button Text</label>
+                    <validate>validate-length minimum-length-2 maximum-length-6</validate>
+                </field>
+                <field id="cancelLabel" translate="clear button label" type="text" sortOrder="40" showInWebsite="1" showInDefault="1" showInStore="1" canRestore="1">
+                    <label>Clear Date Button Text</label>
+                    <validate>validate-length minimum-length-2 maximum-length-6</validate>
+                </field>
+                <include path="Magenest_RentalSystem::rental/calendar.xml"/>
+            </group>
+            <group id="policy" translate="policy" type="text" sortOrder="50" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>Policy Settings</label>
+                <field id="policy" translate="Policy" type="editor" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Policy</label>
+                    <frontend_model>Magenest\RentalSystem\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <comment><![CDATA[Rental policy will be displayed for all rental products. If left empty, policy tab will be hidden]]></comment>
+                </field>
+                <field id="required" translate="required" sortOrder="20" type="select" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Policy Confirmation Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="confirmation" translate="confirmation" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Confirmation Message</label>
+                    <comment><![CDATA[Message displayed at policy confirmation check. Text inside double bracket {{ }} will open to policy tab]]></comment>
+                    <depends>
+                        <field id="required">1</field>
+                    </depends>
+                </field>
+                <field id="errormsg" translate="error message" sortOrder="40" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Error message</label>
+                    <comment><![CDATA[Message if customer did not confirm policy.]]></comment>
+                    <depends>
+                        <field id="required">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

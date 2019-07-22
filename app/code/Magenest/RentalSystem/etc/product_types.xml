@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="rental" label="Rental Product" modelInstance="Magenest\RentalSystem\Model\Product\Type\Rental"
+            composite="false" isQty="true" canUseQtyDecimals="false" sortOrder="80">
+        <priceModel instance="Magenest\RentalSystem\Model\Product\Type\Price"/>
+        <customAttributes>
+            <attribute name="refundable" value="true"/>
+            <attribute name="is_real_product" value="true"/>
+            <attribute name="taxable" value="true"/>
+        </customAttributes>
+    </type>
+</config>
