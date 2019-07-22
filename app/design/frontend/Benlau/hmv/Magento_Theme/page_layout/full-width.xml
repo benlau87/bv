@@ -9,7 +9,7 @@
     <update handle="fullwidth"/>
     <container name="root">
         <container name="after.body.start" as="after.body.start" before="-" label="Page Top"/>
-        <container name="page.wrapper" as="page_wrapper" htmlTag="div" htmlClass="page-wrapper">
+        <container name="page.wrapper" as="page_wrapper" htmlTag="div" htmlClass="wrapper">
            <!-- <container name="global.notices" as="global_notices" before="-"/>-->
             <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="full-width">
                 <!--<container name="columns.top" label="Before Main Columns"/>-->
