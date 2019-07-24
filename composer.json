@@ -81,7 +81,6 @@
         "magento/module-authorizenet": "*",
         "magento/module-google-adwords": "*",
         "magento/module-sample-data": "*",
-        "magento/module-send-friend": "*",
         "magento/module-tax-import-export": "*",
         "magento/module-google-optimizer": "*",
         "magento/module-ups": "*",
