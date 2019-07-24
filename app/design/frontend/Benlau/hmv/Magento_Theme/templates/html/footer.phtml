@@ -1,0 +1,36 @@
+<div id="back-top" class="hidden-xs"><i class="fa fa-angle-double-up"></i></div>
+<div class="footer-container">
+    <div class="footer-static-container">
+        <div class="container">
+            <div class="row">
+                <?php echo $this->getChildHtml("footer_static"); ?>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <?php echo $this->getChildHtml("copyright"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        document.body.className += " preloaded";
+    }
+
+    require(['jquery', 'main'], function($, main) {
+        main();
+    });
+</script>
+<script src="https://widgets.shopvote.de/js/badget-98x98.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+        var myShopID = 13619;
+        var myBadgetType = 1;
+        var mySrc = ('https:' === document.location.protocol ? 'https' : 'http');
+        createBadget(myShopID, myBadgetType, mySrc); });
+</script>

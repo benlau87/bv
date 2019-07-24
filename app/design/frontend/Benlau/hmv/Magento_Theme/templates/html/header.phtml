@@ -1,0 +1,27 @@
+<div class="header-container">
+    <div class="top-menu-container">
+        <div class="container">
+            <div class="row">
+                <div class="search-bar col-md-5 offset-xl-4 offset-sm-12"><?php echo $this->getChildHtml("top.search"); ?></div>
+                <div class="service-icons col-md-3 col-sm-3">
+                    <?php echo $this->getChildHtml("minicart"); ?>
+                    <?php echo $this->getChildHtml("top_link"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <div class="row" style="position:relative;">
+                <div class="col-md-2 col-sm-3 col-xs-7 col-logo">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+
+                <div class="col-xl-8 col-lg-10 col-sm-6 col-xs-5 col-menu">
+                    <?php /*echo $this->getChildHtml("minicart");*/ ?>
+                    <?php echo $this->getChildHtml("top.navigation.sections"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
