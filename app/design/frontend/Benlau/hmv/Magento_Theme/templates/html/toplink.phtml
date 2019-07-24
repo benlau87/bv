@@ -1,7 +1,10 @@
 <ul id="topnav" class="sf-menu">
-	<?php if($this->helper('Rokanthemes\Themeoption\Helper\Data')->isLoggedIn()): ?>
-	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/'); ?>"><span><?php echo __('Mein Konto') ?></span></a></li>
+    <li><a href="#">Lieferung verfolgen</a></li>
+    <li><a href="#">Kundenservice</a></li>
+
+	<?php if($this->helper('Benlau\Themeoption\Helper\Data')->isLoggedIn()): ?>
+	<li><a href="<?php echo $this->helper('Benlau\Themeoption\Helper\Data')->getBaseUrl('customer/account/'); ?>" rel="nofollow"><?php echo __('Mein Konto') ?></a></li>
 	<?php else: ?>
-	<li><a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/login/'); ?>"><span><?php echo __('Mein Konto') ?></span></a></li>
+	<li><a href="<?php echo $this->helper('Benlau\Themeoption\Helper\Data')->getBaseUrl('customer/account/login/'); ?>" rel="nofollow"><?php echo __('Anmelden') ?></a></li>
 	<?php endif ?>
 </ul>
