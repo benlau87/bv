@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bef7fa6bd396fa0fca7e1a837b5dee9a",
+    "content-hash": "ddebbc26c80feabdd7b52daebf782866",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -65,11 +65,6 @@
         {
             "name": "algolia/algoliasearch-magento-2",
             "version": "1.11.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-magento-2.git",
-                "reference": "19d2026828d5cb9403fc4998ea299b89baf457e7"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/algolia/algoliasearch-magento-2/zipball/19d2026828d5cb9403fc4998ea299b89baf457e7",
@@ -1076,16 +1071,16 @@
         },
         {
             "name": "elasticsearch/elasticsearch",
-            "version": "v6.7.1",
+            "version": "v6.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elastic/elasticsearch-php.git",
-                "reference": "7be453dd36d1b141b779f2cb956715f8e04ac2f4"
+                "reference": "9ba89f905ebf699e72dacffa410331c7fecc8255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/7be453dd36d1b141b779f2cb956715f8e04ac2f4",
-                "reference": "7be453dd36d1b141b779f2cb956715f8e04ac2f4",
+                "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/9ba89f905ebf699e72dacffa410331c7fecc8255",
+                "reference": "9ba89f905ebf699e72dacffa410331c7fecc8255",
                 "shasum": ""
             },
             "require": {
@@ -1132,7 +1127,7 @@
                 "elasticsearch",
                 "search"
             ],
-            "time": "2019-05-20T14:15:55+00:00"
+            "time": "2019-07-19T14:48:24+00:00"
         },
         {
             "name": "endroid/qr-code",
@@ -7699,6 +7694,38 @@
             "description": "Security management module"
         },
         {
+            "name": "magento/module-send-friend",
+            "version": "100.3.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-send-friend/magento-module-send-friend-100.3.2.0.zip",
+                "shasum": "f4278e800da400f0dde83f9e66981be600a6c3c9"
+            },
+            "require": {
+                "magento/framework": "102.0.*",
+                "magento/module-authorization": "100.3.*",
+                "magento/module-captcha": "100.3.*",
+                "magento/module-catalog": "103.0.*",
+                "magento/module-customer": "102.0.*",
+                "magento/module-store": "101.0.*",
+                "php": "~7.1.3||~7.2.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\SendFriend\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
             "name": "magento/module-send-friend-graph-ql",
             "version": "100.3.1",
             "dist": {
@@ -9643,16 +9670,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.10.0",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee"
+                "reference": "5115fa44886d1c2785d2f135ef4626db868eac4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/228a9fc64cf4ba84c7967c1076d94209db03e0ee",
-                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/5115fa44886d1c2785d2f135ef4626db868eac4b",
+                "reference": "5115fa44886d1c2785d2f135ef4626db868eac4b",
                 "shasum": ""
             },
             "require": {
@@ -9721,7 +9748,7 @@
                 "secret-key cryptography",
                 "side-channel resistant"
             ],
-            "time": "2019-05-13T16:04:50+00:00"
+            "time": "2019-07-12T16:36:59+00:00"
         },
         {
             "name": "paypal/rest-api-sdk-php",
@@ -9968,16 +9995,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.20",
+            "version": "2.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "d6819a55b05e123db1e881d8b230d57f912126be"
+                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d6819a55b05e123db1e881d8b230d57f912126be",
-                "reference": "d6819a55b05e123db1e881d8b230d57f912126be",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/9f1287e68b3f283339a9f98f67515dd619e5bf9d",
+                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d",
                 "shasum": ""
             },
             "require": {
@@ -10056,7 +10083,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-06-23T16:33:11+00:00"
+            "time": "2019-07-12T12:53:49+00:00"
         },
         {
             "name": "psr/container",
@@ -10427,16 +10454,16 @@
         },
         {
             "name": "smile/elasticsuite",
-            "version": "2.8.0",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Smile-SA/elasticsuite.git",
-                "reference": "afa1a40a792fbba570afb0ef982b3c684979b45c"
+                "reference": "b46ddb7f9f01495f77016e2c564fdc7b03b1d076"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Smile-SA/elasticsuite/zipball/afa1a40a792fbba570afb0ef982b3c684979b45c",
-                "reference": "afa1a40a792fbba570afb0ef982b3c684979b45c",
+                "url": "https://api.github.com/repos/Smile-SA/elasticsuite/zipball/b46ddb7f9f01495f77016e2c564fdc7b03b1d076",
+                "reference": "b46ddb7f9f01495f77016e2c564fdc7b03b1d076",
                 "shasum": ""
             },
             "require": {
@@ -10533,7 +10560,7 @@
                 "search",
                 "setup"
             ],
-            "time": "2019-04-30T13:40:59+00:00"
+            "time": "2019-07-08T13:46:35+00:00"
         },
         {
             "name": "splendidinternet/mage2-locale-de-de",
