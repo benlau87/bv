@@ -16,13 +16,13 @@
             </container>
         </container>
     </container>
-    <container name="sidebar.additional" label="Sidebar Additional" htmlTag="div">
+<!--    <container name="sidebar.additional" label="Sidebar Additional" htmlTag="div">
         <referenceBlock name="wishlist_sidebar" remove="true"/>
         <referenceBlock name="sale.reorder.sidebar" remove="true"/>
         <referenceBlock name="catalog.compare.sidebar" remove="true" />
         <referenceBlock name="paypal.partner.right.logo" remove="true" />
         <referenceBlock name="bml.right.logo" remove="true" />
-    </container>
+    </container>-->
     <referenceContainer name="page.wrapper">
         <container name="header.nav" as="header_container" label="Page Header Container"  htmlTag="nav" htmlClass="navigation" before="main.content">
             <container name="header.container" htmlTag="section" htmlId="header" htmlClass="header-container"/>

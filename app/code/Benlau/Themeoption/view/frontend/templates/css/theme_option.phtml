@@ -1,0 +1,163 @@
+/**
+ * custom theme <?php echo date("Y-m-d H:i:s"); ?>
+ */
+
+<?php
+    $data = $block->getConfig($this->_coreRegistry->registry('css_store'));
+    $_helper = $this->helper('Rokanthemes\Themeoption\Helper\Themeconfig');
+?>
+<?php
+if(isset($data['header']['sticky_enable']) && $data['header']['sticky_enable']==1 && isset($data['header']['sticky_select_bg_color']) && $data['header']['sticky_select_bg_color']=='custom'&&isset($data['header']['sticky_bg_color_custom']) && $data['header']['sticky_bg_color_custom']!=''){
+?>
+.header-wrapper-sticky.enable-sticky{
+	background: <?php if (strlen($data['header']['sticky_bg_color_custom']) == 6): echo "#"; endif; ?><?php echo $data['header']['sticky_bg_color_custom']; ?> none repeat scroll 0 0 !important;
+}
+<?php } ?>
+#newsletter_pop_up{
+<?php
+    if($data['newsletter']['width'] != ''){
+        echo "width: ".$data['newsletter']['width']."px;";
+    }
+    if($data['newsletter']['height'] != ''){
+        echo "height: ".$data['newsletter']['height']."px;";
+    }
+    if($data['newsletter']['bg_color'] != ''){
+        echo "background-color: #".$data['newsletter']['bg_color'].";";
+    }
+	if($data['newsletter']['bg_image'] != ''){
+        $folderName = \Rokanthemes\Themeoption\Model\Config\Newsletterbackground::UPLOAD_DIR;
+        $path = $folderName . '/' . $data['newsletter']['bg_image'];
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+		$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+		$imageUrl = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA).$path;
+		echo "background-image: url(".$imageUrl.");";
+    }
+	if($data['newsletter']['bg_image'] != '' && $data['newsletter']['bg_custom_style'] != ''){
+        echo trim($data['newsletter']['bg_custom_style']);
+    }
+?>
+}
+<?php
+if(isset($data['font']['custom']) && $data['font']['custom']==1){
+?>
+html, body { 
+<?php
+    if(isset($data['font']['font_size']) && $data['font']['font_size']){
+?>
+    font-size: <?php echo $data['font']['font_size']; ?>; 
+<?php
+    }
+    if(isset($data['font']['font_family']) && $data['font']['font_family'] == 'google'){
+?>
+	font-family: <?php echo $data['font']['google_font_family']; ?>;
+<?php
+    }
+    elseif (isset($data['font']['font_family']) && $data['font']['font_family'] == 'custom') {
+        if($data['font']['custom_font_family']) {
+?>
+	font-family: <?php echo $data['font']['custom_font_family']; ?>;
+<?php
+        }
+    }
+    else {
+?>
+	font-family: <?php echo $data['font']['font_family']; ?>;
+<?php
+    }
+?>
+}
+<?php
+}
+?>
+<?php if(isset($data['colors']['custom']) && $data['colors']['custom']==1){ ?>
+<?php if(isset($data['colors']['text_color']) && $data['colors']['text_color']){ ?>
+html,body{
+	color:<?php if (strlen($data['colors']['text_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['text_color']; ?>;
+}
+<?php } ?>
+<?php if(isset($data['colors']['link_color']) && $data['colors']['link_color']){ ?>
+a, a:focus {
+	color:<?php if (strlen($data['colors']['link_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['link_color']; ?>;
+}
+<?php } ?>
+<?php if(isset($data['colors']['link_hover_color']) && $data['colors']['link_hover_color']){ ?>
+a:hover{
+	color:<?php if (strlen($data['colors']['link_hover_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['link_hover_color']; ?>;
+}
+<?php } ?>
+.btn, .action.primary, .block-cart-failed .action.continue, .cart-container .form-cart .action.continue, .cart.table-wrapper .action-gift, .cart.table-wrapper .actions-toolbar>.action, .review-form .action.submit.primary, button{
+	<?php if(isset($data['colors']['button_bg_color']) && $data['colors']['button_bg_color']){ ?>
+	background-color:<?php if (strlen($data['colors']['button_bg_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_bg_color']; ?>;
+    border-color:<?php if (strlen($data['colors']['button_bg_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_bg_color']; ?>;
+	<?php } ?>
+	<?php if(isset($data['colors']['button_text_color']) && $data['colors']['button_text_color']){ ?>
+	color:<?php if (strlen($data['colors']['button_text_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_text_color']; ?>;
+	<?php } ?>
+}
+.btn:hover, .action.primary:hover, .block-cart-failed .action.continue:hover, .cart-container .form-cart .action.continue:hover, .cart.table-wrapper .action-gift:hover, .cart.table-wrapper .actions-toolbar>.action:hover, .review-form .action.submit.primary:hover, button:hover{
+	<?php if(isset($data['colors']['button_hover_bg_color']) && $data['colors']['button_hover_bg_color']){ ?>
+	background-color:<?php if (strlen($data['colors']['button_hover_bg_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_hover_bg_color']; ?>;
+    border-color:<?php if (strlen($data['colors']['button_hover_bg_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_hover_bg_color']; ?>;
+	<?php } ?>
+	<?php if(isset($data['colors']['button_hover_text_color']) && $data['colors']['button_hover_text_color']){ ?>
+	color:<?php if (strlen($data['colors']['button_hover_text_color']) == 6): echo "#"; endif; ?><?php echo $data['colors']['button_hover_text_color']; ?>;
+	<?php } ?>
+}
+<?php } ?>
+<?php
+if(isset($data['main']['custom']) && $data['main']['custom']==1){
+?>
+.page-main, .content-top-home {
+<?php
+    if(isset($data['main']['main_bgcolor']) && $data['main']['main_bgcolor']) {
+?>
+	background-color:<?php if (strlen($data['main']['main_bgcolor']) == 6): echo "#"; endif; ?><?php echo $data['main']['main_bgcolor']; ?>;
+<?php
+    }
+    if(isset($data['main']['main_bg_image']) && $data['main']['main_bg_image']){
+?>
+	background-image:url(<?php echo str_replace("https://","//",str_replace("http://","//",$_helper->getBaseMediaUrl()))."rokanthemes/main_background/".$data['main']['main_bg_image']; ?>);
+<?php
+    }
+    if(isset($data['main']['main_bg_image']) && $data['main']['main_bg_image'] && isset($data['main']['main_custom_style']) && $data['main']['main_custom_style']){
+?>
+<?php echo trim($data['main']['main_custom_style']); ?>
+<?php
+    }
+?>
+}
+<?php
+}
+if(isset($data['page']['custom']) && $data['page']['custom']==1){
+?>
+.page-wrapper {
+<?php
+    if(isset($data['page']['page_bgcolor']) && $data['page']['page_bgcolor']) {
+?>
+	background-color:<?php if (strlen($data['page']['page_bgcolor']) == 6): echo "#"; endif; ?><?php echo $data['page']['page_bgcolor']; ?>;
+<?php
+    }
+    if(isset($data['page']['page_bg_image']) && $data['page']['page_bg_image']){
+?>
+	background-image:url(<?php echo str_replace("https://","//",str_replace("http://","//",$_helper->getBaseMediaUrl()))."rokanthemes/page_background/".$data['page']['page_bg_image']; ?>);
+<?php
+    }
+    if(isset($data['page']['page_bg_image']) && $data['page']['page_bg_image'] && isset($data['page']['page_custom_style']) && $data['page']['page_custom_style']){
+?>
+<?php echo trim($data['page']['page_custom_style']); ?>
+<?php
+    }
+?>
+}
+<?php
+}
+?>
+<?php
+if(isset($data['general']['layout']) && $data['general']['layout'] != ''){
+	 if($data['general']['layout'] == "full_width") {
+        echo 'body .page-wrapper {width: 100%; margin: auto;}';
+    } else {
+        echo 'body .page-wrapper {width: '.$data['general']['layout'].'px; margin: auto;}';
+    }
+}
+?>
