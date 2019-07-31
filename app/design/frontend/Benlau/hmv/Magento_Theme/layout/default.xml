@@ -42,11 +42,15 @@
                         <argument name="block_id" xsi:type="string">footer-cta</argument>
                     </arguments>
                 </block>
+                <block class="Magento\Cms\Block\Block" name="copyright-hmv">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">copyright-hmv</argument>
+                    </arguments>
+                </block>
             </block>
         </referenceContainer>
         <move element="footer_links" destination="hmv_footer" />
         <move element="store_switcher" destination="hmv_footer" />
-        <move element="copyright-hmw" destination="hmv_footer" />
         <referenceContainer name="report.bugs" remove="1"/>
         <referenceContainer name="form.subscribe" remove="1"/>
     </body>
