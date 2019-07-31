@@ -462,6 +462,11 @@ a.cta:hover {
     display:none;
 }
 
+#maincontent {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
 
 #bestsellers {
     background: #f7f8fa;
