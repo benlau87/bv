@@ -34,6 +34,42 @@
 @modal-popup-image-box-preview__max-width: @modal-popup-image-box-preview-image__max-height + (2 * 2rem);
 @modal-popup-image-box-preview-image__max-height: 54rem;
 
+
+//
+//  Add any css property
+//  ---------------------------------------------
+
+.lib-css(
+  @_property,
+  @_value,
+  @_prefix: 0
+) when (@_prefix = 1)
+  and not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+  -webkit-@{_property}: @_value;
+  -moz-@{_property}: @_value;
+  -ms-@{_property}: @_value;
+}
+
+.lib-css(
+  @_property,
+  @_value,
+  @_prefix: 0
+) when not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+    @{_property}: @_value;
+}
+
 //
 //  Utilities
 //  ---------------------------------------------
