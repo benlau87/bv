@@ -49,6 +49,7 @@
                 </block>
             </block>
         </referenceContainer>
+        <referenceContainer name="footer_links" remove="true"/>
         <referenceContainer name="copyright" remove="true"/>
         <move element="store_switcher" destination="hmv_footer" />
         <referenceContainer name="report.bugs" remove="1"/>
