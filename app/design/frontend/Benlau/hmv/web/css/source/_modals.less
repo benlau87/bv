@@ -71,6 +71,27 @@
 }
 
 //
+//  Flex layout
+//  ---------------------------------------------
+
+.lib-vendor-prefix-display(
+  @_value: flex
+) {
+  display: ~"-webkit-@{_value}";
+  display: ~"-ms-@{_value}box";
+  display: @_value;
+}
+
+.lib-vendor-prefix-flex-direction (
+  @_value: column
+) {
+  -webkit-flex-direction: @_value;
+  -ms-flex-direction: @_value;
+  flex-direction: @_value;
+}
+
+
+//
 //  Utilities
 //  ---------------------------------------------
 
