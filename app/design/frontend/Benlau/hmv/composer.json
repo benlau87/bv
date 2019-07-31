@@ -1,13 +1,12 @@
 {
   "name": "Benlau/hmv",
-  "description": "N/A",
+  "description": "Hilfsmittelverleih Theme by benlau",
   "config": {
     "sort-packages": true
   },
   "require": {
     "php": "~7.1.3||~7.2.0",
-    "magento/framework": "*",
-    "magento/theme-frontend-blank": "*"
+    "magento/framework": "*"
   },
   "type": "magento2-theme",
   "license": [
