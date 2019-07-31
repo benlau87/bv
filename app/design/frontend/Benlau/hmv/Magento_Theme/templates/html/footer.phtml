@@ -1,22 +1,24 @@
-<div id="back-top" class="hidden-xs"><i class="fa fa-angle-double-up"></i></div>
-<div class="footer-container">
-    <div class="footer-static-container">
+<footer class="footer">
+    <section id="footer-top">
         <div class="container">
             <div class="row">
-                <?php echo $this->getChildHtml("footer_static"); ?>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <?php echo $this->getChildHtml("copyright"); ?>
+                <div class="column">
+                    <?php echo $this->getChildHtml("footer-cta-text"); ?>
+                </div>
+                <div class="column text-right">
+                    <?php echo $this->getChildHtml("footer-cta"); ?>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <section id="copyright">
+        <div class="container">
+            <p><?php echo $this->getChildHtml("copyright-hmv"); ?></p>
+        </div>
+    </section>
+</footer>
+
 <script>
     window.onload = function () {
         document.body.className += " preloaded";
