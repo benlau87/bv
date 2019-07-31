@@ -30,8 +30,7 @@
         <referenceContainer name="header.panel" remove="true"/>
         <referenceContainer name="header-wrapper" remove="true"/>
         <referenceContainer name="navigation.sections" remove="true"/>
-        <move element="page.main.title" destination="breadcrumbs"/>
-
+        <move element="page.main.title" destination="breadcrumbs" before="-" />
         <referenceContainer name="footer-container">
             <block class="Magento\Framework\View\Element\Template" name="hmv_footer" template="Magento_Theme::html/footer.phtml">
                 <block class="Magento\Cms\Block\Block" name="footer-cta-text">
