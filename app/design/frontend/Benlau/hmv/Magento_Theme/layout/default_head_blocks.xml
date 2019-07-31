@@ -9,10 +9,7 @@
     <head>
 		<link src="Magento_Theme::favicon_bv.png" rel="icon" sizes="16x16" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<css src="css/milligram.css" />
-		<css src="css/helpers.css" />
-		<css src="css/icons.css" />
-		<css src="css/main.css" />
+
 		<css src="css/themes.css" />
 <!--
 		<link src="http://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600%2C700&amp;subset=latin" rel="stylesheet" type="text/css" src_type="url" />
