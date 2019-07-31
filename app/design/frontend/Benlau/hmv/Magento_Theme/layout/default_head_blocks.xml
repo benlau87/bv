@@ -9,7 +9,7 @@
     <head>
 		<link src="Magento_Theme::favicon_bv.png" rel="icon" sizes="16x16" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<css src="css/miligram.css" />
+		<css src="css/milligram.css" />
 		<css src="css/helpers.css" />
 		<css src="css/icons.css" />
 		<css src="css/main.css" />
