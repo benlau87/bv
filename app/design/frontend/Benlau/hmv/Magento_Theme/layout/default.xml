@@ -32,21 +32,21 @@
         <referenceContainer name="navigation.sections" remove="true"/>
         <referenceContainer name="footer-container">
             <block class="Magento\Framework\View\Element\Template" name="hmv_footer" template="Magento_Theme::html/footer.phtml">
-                <block class="Magento\Cms\Block\Block" name="footer_static">
+                <block class="Magento\Cms\Block\Block" name="footer-cta-text">
                     <arguments>
-                        <argument name="block_id" xsi:type="string">footer_static</argument>
+                        <argument name="block_id" xsi:type="string">footer-cta-text</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Cms\Block\Block" name="social_block">
+                <block class="Magento\Cms\Block\Block" name="footer-cta">
                     <arguments>
-                        <argument name="block_id" xsi:type="string">social_block</argument>
+                        <argument name="block_id" xsi:type="string">footer-cta</argument>
                     </arguments>
                 </block>
             </block>
         </referenceContainer>
         <move element="footer_links" destination="hmv_footer" />
         <move element="store_switcher" destination="hmv_footer" />
-        <move element="copyright" destination="hmv_footer" />
+        <move element="copyright-hmw" destination="hmv_footer" />
         <referenceContainer name="report.bugs" remove="1"/>
         <referenceContainer name="form.subscribe" remove="1"/>
     </body>
