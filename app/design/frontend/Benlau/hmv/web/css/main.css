@@ -445,7 +445,11 @@ a.cta:hover {
 
 .breadcrumbs ul.items li {
     list-style: none;
-    float: left;
+    display: inline-block;
+}
+
+.breadcrumbs ul.items li a {
+    color: #fff;
 }
 
 .breadcrumbs ul.items li:after {
