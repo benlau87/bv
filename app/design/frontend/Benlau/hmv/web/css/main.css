@@ -426,6 +426,39 @@ a.cta:hover {
     font-size: 1.5rem;
 }
 
+.breadcrumbs {
+    background: #5ab031;
+    color: #fff;
+    overflow: auto;
+}
+
+.breadcrumbs h1.page-title {
+    padding-top: 60px;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.breadcrumbs ul.items {
+    margin-bottom: 4rem;
+}
+
+.breadcrumbs ul.items li {
+    list-style: none;
+    float: left;
+}
+
+.breadcrumbs ul.items li:after {
+    content: "/";
+    display: inline;
+    padding: 0 15px 0 10px;
+}
+
+.breadcrumbs ul.items li:last-child:after {
+    display:none;
+}
+
+
 #bestsellers {
     background: #f7f8fa;
 }

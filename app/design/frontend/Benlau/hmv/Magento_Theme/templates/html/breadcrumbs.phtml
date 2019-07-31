@@ -10,7 +10,7 @@
 <?php if ($crumbs && is_array($crumbs)) : ?>
 <div class="breadcrumbs">
 	<div class="container">
-        <h1 class="page-title"><?php echo $block->getChildHtml('page.main.title'); ?></h1>
+        <?php echo $block->getChildHtml('page.main.title'); ?>
 		<ul class="items">
 			<?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
 				<li class="item <?php /* @escapeNotVerified */ echo $crumbName ?>">
