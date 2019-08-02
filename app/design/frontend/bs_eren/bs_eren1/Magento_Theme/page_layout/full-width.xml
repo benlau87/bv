@@ -7,6 +7,7 @@
 -->
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
     <update handle="fullwidth"/>
+    <move element="breadcrumbs" destination="page.wrapper" before="main.content"/>
     <container name="root">
         <container name="after.body.start" as="after.body.start" before="-" label="Page Top"/>
         <container name="page.wrapper" as="page_wrapper" htmlTag="div" htmlClass="page-wrapper">
