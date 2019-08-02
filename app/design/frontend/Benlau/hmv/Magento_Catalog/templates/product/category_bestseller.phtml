@@ -1,0 +1,100 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+?>
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+?>
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+<?php else: ?>
+    <?php
+        $viewMode = 'grid';
+        $image = 'category_page_grid';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+   /*Grid*/
+		/**
+		 * Position for actions regarding image size changing in vde if needed
+		 */
+		$pos = $block->getPositioned();
+	?>
+
+    <div class="column inner">
+        <div class="box">
+            <a href="" class="box-link"></a>
+            <img src="https://placeholder.pics/svg/300x350">
+            <h4>Rollator</h4>
+        </div>
+    </div>
+    <div class="column inner">
+        <div class="box">
+            <a href="" class="box-link"></a>
+            <img src="https://placeholder.pics/svg/300x350">
+            <h4>Rollstuhl</h4>
+        </div>
+    </div>
+    <div class="column inner">
+        <div class="box">
+            <a href="" class="box-link"></a>
+            <img src="https://placeholder.pics/svg/300x350">
+            <h4>Elektromobil</h4>
+        </div>
+    </div>
+
+        <?php $iterator = 1;
+			$i = 0;
+			$rows = 1; ?>
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+                <div class="column inner">
+                    <div class="box">
+                        <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="box-link"></a>
+
+                    <?php
+                    $productImage = $block->getImage($_product, $image);
+                    if ($pos != null) {
+                        $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                            . 'top:' . $productImage->getHeight() . 'px;"';
+                    }
+                    echo $productImage->toHtml();
+                    ?>
+                    <div class="product-info">
+						<?php
+							$_productNameStripped = $block->stripTags($_product->getName(), null, true);
+						?>
+						<h3 class="product-name">
+							<a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
+								<?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+							</a>
+						</h3>
+                        <?php
+                        $_attributeValue =$_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product);
+                        if ($_attributeValue): ?>
+                            <div class="product-manufacturer">
+                                <?php echo $_attributeValue; ?>
+                            </div>
+                        <?php endif; ?>
+						<?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
+
+                    </div>
+                </div>
+                <?php if($i == $rows || $i == count($_productCollection)) echo '</li>'; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
