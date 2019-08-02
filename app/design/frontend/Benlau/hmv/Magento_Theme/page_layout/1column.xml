@@ -13,6 +13,9 @@
             <container name="global.notices" as="global_notices" before="-"/>
             <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main container">
                 <container name="columns.top" label="Before Main Columns"/>
+                <container name="columns" htmlTag="div" htmlClass="row">
+                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="col-main" after="-"/>
+                </container>
             </container>
         </container>
     </container>
