@@ -33,6 +33,8 @@ define(['jquery', 'mage/mage', 'rokanthemes/owl'], function($){
         $(document).ready(function() {
             var colcartHeight = $('.col-cart').outerHeight();
             $('.view-product').css('min-height', colcartHeight + 150);
+
+            $('select[name="field_31[day]"]:nth-of-type(1), select[name="field_31[month]"]:nth-of-type(3)').remove();
         });
         
     }

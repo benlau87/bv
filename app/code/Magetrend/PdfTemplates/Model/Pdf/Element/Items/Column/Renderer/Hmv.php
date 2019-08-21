@@ -24,8 +24,13 @@ class Hmv extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Default
 {
     public function getRowValue()
     {
-        $hmv = $this->getItem()->getCustomAttribute('hmv')->getValue();
-
-        return $hmv;
+		$item =  $this->getItem();
+			
+		$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+		$_product = $objectManager->get('Magento\Catalog\Model\Product')->load($item->getProductId());
+		$hmv = $_product->getData('hmv');
+		
+		return $hmv;
+        
     }
 }

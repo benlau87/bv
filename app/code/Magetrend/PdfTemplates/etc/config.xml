@@ -60,7 +60,7 @@
                     <hmv>
                         <label>Hmv</label>
                         <renderer>Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Hmv</renderer>
-                        <sort_order>10</sort_order>
+                        <sort_order>15</sort_order>
                         <default>
                             <item_1>MJ01</item_1>
                             <item_2>MJ11</item_2>
@@ -72,7 +72,7 @@
                             <order>1</order>
                             <invoice>1</invoice>
                             <creditmemo>1</creditmemo>
-                            <shipment>0</shipment>
+                            <shipment>1</shipment>
                         </is_active>
                     </hmv>
 
