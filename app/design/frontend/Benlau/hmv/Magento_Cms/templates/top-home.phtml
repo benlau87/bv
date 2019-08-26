@@ -17,30 +17,7 @@
 <section id="bestsellers">
     <div class="container">
         <div class="row p-t-80 p-b-80">
-            <div class="column inner">
-                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_bestsellers')->toHtml(); ?>
-            </div>
-            <div class="column inner">
-                <div class="box">
-                    <a href="/rollator" class="box-link"></a>
-                    <img src="https://placeholder.pics/svg/300x350">
-                    <h4>Rollator</h4>
-                </div>
-            </div>
-            <div class="column inner">
-                <div class="box">
-                    <a href="/rollstuhl" class="box-link"></a>
-                    <img src="https://placeholder.pics/svg/300x350">
-                    <h4>Rollstuhl</h4>
-                </div>
-            </div>
-            <div class="column inner">
-                <div class="box">
-                    <a href="/elektromobil" class="box-link"></a>
-                    <img src="https://placeholder.pics/svg/300x350">
-                    <h4>Elektromobil</h4>
-                </div>
-            </div>
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_bestsellers')->toHtml(); ?>
         </div>
     </div>
 </section>
