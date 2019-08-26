@@ -357,7 +357,8 @@ a.cta:hover {
 }
 
 #header {
-
+    position: relative;
+    z-index: 2;
 }
 
 #topbar {
@@ -372,6 +373,12 @@ a.cta:hover {
 #navbar {
     background-color: #aeb0b4;
 }
+
+.cms-index-index #navbar {
+    background-color: rgba(84,176,31,.6);
+    background-color: rgba(155,183,151,.6);
+}
+
 
 #topnav {
 
@@ -401,7 +408,9 @@ a.cta:hover {
 }
 
 #slider {
-    margin-top: -70px;
+    margin-top: -152px;
+    z-index: 1;
+    position: relative;
 }
 
 #slider-bottom i {
