@@ -62,7 +62,7 @@ $priceFormat    = $block->getPriceFormatArray();
     <div class="rental-time block-content" id="rental-time">
         <label style="display: inline-block; width: 245px;">
             <input id="rentfrom" type="text"
-                   placeholder="<?php echo __('Select date')?>"
+                   placeholder="Select date"
                    style="background: url('<?php echo $this->getViewFileUrl('Magenest_RentalSystem::images/calendar.png') ?>') no-repeat scroll 4px 4px;
                            background-size: 22px 22px;
                            padding-left:30px;"
@@ -71,7 +71,7 @@ $priceFormat    = $block->getPriceFormatArray();
         </label>
         <label style="display: inline-block; width: 245px;">
             <input id="rentto" type="text"
-                   placeholder="<?php echo __('Select date')?>"
+                   placeholder="Select date"
                    style="background: url('<?php echo $this->getViewFileUrl('Magenest_RentalSystem::images/calendar.png') ?>') no-repeat scroll 4px 4px;
                            background-size: 22px 22px;
                            padding-left:30px;"
@@ -254,10 +254,10 @@ $priceFormat    = $block->getPriceFormatArray();
             minDate: minDate,
             maxDate: maxDate,
             timePickerIncrement: 60,
-            timePicker24Hour: false,
+            timePicker24Hour: true,
             startHour: startHour,
             endHour: endHour,
-            singleDatePicker: false,
+            singleDatePicker: true,
             locale: {
                 format: timeFormat,
                 cancelLabel: cancelLabel,
