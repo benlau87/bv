@@ -641,6 +641,63 @@ a.cta:hover {
     margin: 0
 }
 
+.product.attribute.overview {
+    padding-bottom: 25px;
+}
+
+
+.product-info-main .product-info-price {
+    color: #575757;
+    border-bottom: 1px solid #c1c1c1;
+    display: table;
+    margin-bottom: 15px;
+    width: 100%
+}
+
+.product-info-main .product-info-price .price-box {
+    display: table-cell;
+    vertical-align: top;
+    width: 1px
+}
+
+.product-info-main .product-info-price .price-box .price-container>span {
+    display: block;
+    margin-bottom: 5px
+}
+
+.product-info-main .product-info-price .price-box .price-container>span:last-child {
+    margin-bottom: 0
+}
+
+.product-info-main .product-info-price .price-including-tax+.price-excluding-tax,.product-info-main .product-info-price .weee+.price-excluding-tax,.product-info-main .product-info-price .weee {
+    font-size: 1.4rem
+}
+
+.product-info-main .product-info-price .price-including-tax+.price-excluding-tax .price,.product-info-main .product-info-price .weee+.price-excluding-tax .price,.product-info-main .product-info-price .weee .price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 16px
+}
+
+.product-info-main .product-info-price .price-wrapper .price {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 22px
+}
+
+.product-info-main .product-info-price .old-price .price-wrapper .price {
+    font-size: 2rem;
+    font-weight: 300
+}
+
+.product-info-main .product-info-price .special-price .price-label:after {
+    content: ': '
+}
+
+.product-info-main .product-info-price .price {
+    white-space: nowrap
+}
+
 @media (min-width: 768px) {
     .product-info-main {
         float: right;
