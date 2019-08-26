@@ -246,17 +246,13 @@ $priceFormat    = $block->getPriceFormatArray();
 
         dateto.attr('disabled', true);
 
-        var timeFormat = dateFormat + showTime;
+        var timeFormat = dateFormat;
 
         datefrom.daterangepicker({
             timePicker: timePicker,
             autoUpdateInput: false,
             minDate: minDate,
             maxDate: maxDate,
-            timePickerIncrement: 60,
-            timePicker24Hour: true,
-            startHour: startHour,
-            endHour: endHour,
             singleDatePicker: true,
             locale: {
                 format: timeFormat,
@@ -292,10 +288,6 @@ $priceFormat    = $block->getPriceFormatArray();
                 autoUpdateInput: false,
                 minDate: minDateTo,
                 maxDate: maxDateTo,
-                timePickerIncrement: 60,
-                timePicker24Hour: true,
-                startHour: startHour,
-                endHour: endHour,
                 singleDatePicker: true,
                 cancelClass: 'btn-clearTo',
                 locale: {
