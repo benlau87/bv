@@ -246,13 +246,17 @@ $priceFormat    = $block->getPriceFormatArray();
 
         dateto.attr('disabled', true);
 
-        var timeFormat = dateFormat;
+        var timeFormat = dateFormat + showTime;
 
         datefrom.daterangepicker({
             timePicker: timePicker,
             autoUpdateInput: false,
             minDate: minDate,
             maxDate: maxDate,
+            timePickerIncrement: 60,
+            timePicker24Hour: true,
+            startHour: startHour,
+            endHour: endHour,
             singleDatePicker: true,
             locale: {
                 format: timeFormat,
@@ -274,7 +278,7 @@ $priceFormat    = $block->getPriceFormatArray();
 
         /*generate end date dateto dynamically */
         datefrom.on('apply.daterangepicker', function (ev, picker) {
-            $(this).val(picker.startDate.format(dateFormat));
+            $(this).val(picker.startDate.format(dateFormat + showTime));
             var minDateTo = new Date(picker.startDate.valueOf());
             var maxDateTo = new Date(minDateTo.getTime() + 1000 * 60 * 60 * 24 * (maxDuration - parseInt(leadTime)));
             productRentalStart.value = picker.startDate.valueOf();
@@ -288,6 +292,10 @@ $priceFormat    = $block->getPriceFormatArray();
                 autoUpdateInput: false,
                 minDate: minDateTo,
                 maxDate: maxDateTo,
+                timePickerIncrement: 60,
+                timePicker24Hour: true,
+                startHour: startHour,
+                endHour: endHour,
                 singleDatePicker: true,
                 cancelClass: 'btn-clearTo',
                 locale: {
