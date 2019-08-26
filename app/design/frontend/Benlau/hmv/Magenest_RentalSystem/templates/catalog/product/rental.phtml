@@ -198,7 +198,7 @@ $priceFormat    = $block->getPriceFormatArray();
         var productRentalHour = document.getElementById("product_rental_hour");
         var hasTime = document.getElementById("product_rental_showTime");
         var moment = require('moment');
-        var timePicker = true;
+        var timePicker = false;
         var showTime = ' hh:mm A';
         var duration = 0;
         var optionPriceTotal = 0;
@@ -254,10 +254,10 @@ $priceFormat    = $block->getPriceFormatArray();
             minDate: minDate,
             maxDate: maxDate,
             timePickerIncrement: 60,
-            timePicker24Hour: false,
+            timePicker24Hour: true,
             startHour: startHour,
             endHour: endHour,
-            singleDatePicker: false,
+            singleDatePicker: true,
             locale: {
                 format: timeFormat,
                 cancelLabel: cancelLabel,
