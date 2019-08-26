@@ -274,7 +274,7 @@ $priceFormat    = $block->getPriceFormatArray();
 
         /*generate end date dateto dynamically */
         datefrom.on('apply.daterangepicker', function (ev, picker) {
-            $(this).val(picker.startDate.format(dateFormat + showTime));
+            $(this).val(picker.startDate.format(dateFormat));
             var minDateTo = new Date(picker.startDate.valueOf());
             var maxDateTo = new Date(minDateTo.getTime() + 1000 * 60 * 60 * 24 * (maxDuration - parseInt(leadTime)));
             productRentalStart.value = picker.startDate.valueOf();
