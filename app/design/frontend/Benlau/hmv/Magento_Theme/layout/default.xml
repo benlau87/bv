@@ -15,22 +15,6 @@
             </block>
         </referenceContainer>
 
-        <move element="header" destination="hmv_header"/>
-        <move element="header.links" destination="hmv_header" />
-        <move element="logo" destination="hmv_header"/>
-        <move element="minicart" destination="hmv_header"/>
-        <move element="top.links" destination="hmv_header" />
-        <move element="custom.topnav" destination="top.navigation.sections" />
-
-        <referenceContainer name="store_language" remove="true"/>
-        <referenceContainer name="store_switcher" remove="true"/>
-        <referenceContainer name="currency" remove="true"/>
-        <referenceContainer name="top.search" remove="true"/>
-        <referenceContainer name="header.container" remove="true"/>
-        <referenceContainer name="header.panel" remove="true"/>
-        <referenceContainer name="header-wrapper" remove="true"/>
-        <referenceContainer name="navigation.sections" remove="true"/>
-        <move element="page.main.title" destination="breadcrumbs" before="-" />
         <referenceContainer name="footer-container">
             <block class="Magento\Framework\View\Element\Template" name="hmv_footer" template="Magento_Theme::html/footer.phtml">
                 <block class="Magento\Cms\Block\Block" name="footer-cta-text">
@@ -50,17 +34,35 @@
                 </block>
             </block>
         </referenceContainer>
+
+        <move element="header" destination="hmv_header"/>
+        <move element="header.links" destination="hmv_header" />
+        <move element="logo" destination="hmv_header"/>
+        <move element="minicart" destination="hmv_header"/>
+        <move element="top.links" destination="hmv_header" />
+        <move element="page.main.title" destination="breadcrumbs" before="-" />
+        <move element="custom.topnav" destination="top.navigation.sections" />
+        <move element="store_switcher" destination="hmv_footer" />
+
+        <referenceContainer name="store_language" remove="true"/>
+        <referenceContainer name="store_switcher" remove="true"/>
+        <referenceContainer name="currency" remove="true"/>
+        <referenceContainer name="top.search" remove="true"/>
+        <referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceContainer name="header-wrapper" remove="true"/>
+        <referenceContainer name="navigation.sections" remove="true"/>
         <referenceContainer name="footer_links" remove="true"/>
         <referenceContainer name="copyright" remove="true"/>
-        <move element="store_switcher" destination="hmv_footer" />
         <referenceContainer name="report.bugs" remove="1"/>
         <referenceContainer name="form.subscribe" remove="1"/>
-
         <referenceBlock name="reviews.tab" remove="true" />
         <referenceBlock name="product.review.form" remove="true" />
         <referenceBlock name="product.info.review" remove="true" />
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="view.addto.compare" remove="true" />
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="view.addto.wishlist" remove="true" />
         <referenceBlock name="product.info.sku" remove="true" />
     </body>
