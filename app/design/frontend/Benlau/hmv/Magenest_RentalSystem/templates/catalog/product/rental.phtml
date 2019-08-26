@@ -312,7 +312,7 @@ $priceFormat    = $block->getPriceFormatArray();
                     }
                 }
             }, function (start, end) {
-                dateto.val(end.format(dateFormat + showTime));
+                dateto.val(end.format(dateFormat));
                 var fromStamp = parseInt(productRentalStart.value);
                 var duration = getDurationInHour(fromStamp, end);
                 getPrice(duration);
