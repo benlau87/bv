@@ -55,5 +55,9 @@
         <move element="store_switcher" destination="hmv_footer" />
         <referenceContainer name="report.bugs" remove="1"/>
         <referenceContainer name="form.subscribe" remove="1"/>
+
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
     </body>
 </page>
