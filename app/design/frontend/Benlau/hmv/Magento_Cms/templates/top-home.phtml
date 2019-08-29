@@ -28,8 +28,7 @@
     <div class="container">
         <h5 class="title">Service</h5>
         <div class="row">
-            <div class="column">1</div>
-            <div class="column">2</div>
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_services')->toHtml(); ?>
         </div>
     </div>
 </section>
