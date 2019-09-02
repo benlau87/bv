@@ -21,12 +21,8 @@
             <?php if($this->helper('Rokanthemes\LayeredAjax\Helper\Data')->isEnabledPriceRangeSliders() && $attributeModel && $attributeModel->getFrontendInput() == 'price'): ?>
                 <?php
                     $productCollection = $filter->getLayer()->getProductCollection();
-                    $productCollectionClone = $productCollection->getCollectionClone();
-                    $collection = $productCollectionClone
-                        ->removeAttributeSearch(['price.from', 'price.to']);
-
-                    $min = $collection->getMinPrice();
-                    $max = $collection->getMaxPrice();
+					$min = $productCollection->getMinPrice();
+                    $max = $productCollection->getMaxPrice();
 
                     list($from, $to) = $requestValue ? explode('-', $requestValue) : [$min, $max];
                 ?>

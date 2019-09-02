@@ -39,6 +39,17 @@
                                     <item name="component" xsi:type="string">Rokanthemes_OpCheckout/js/view/osc-before</item>
                                     <item name="displayArea" xsi:type="string">osc-before</item>
                                 </item>
+								<item name="progressBar" xsi:type="array">
+									<item name="sortOrder" xsi:type="string">0</item>
+									<item name="component" xsi:type="string">Rokanthemes_OpCheckout/js/view/progress-bar</item>
+									<item name="displayArea" xsi:type="string">progressBar</item>
+									<item name="config" xsi:type="array">
+										<item name="deps" xsi:type="array">
+											<item name="0" xsi:type="string">checkout.steps.shipping-step.shippingAddress</item>
+											<item name="1" xsi:type="string">checkout.steps.billing-step.payment</item>
+										</item>
+									</item>
+								</item>								
                                 <item name="steps" xsi:type="array">
                                     <item name="component" xsi:type="string">uiComponent</item>
                                     <item name="displayArea" xsi:type="string">steps</item>

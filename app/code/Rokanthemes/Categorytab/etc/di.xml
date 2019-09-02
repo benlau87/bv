@@ -5,16 +5,4 @@
             <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
         </arguments>
     </type>
-    <virtualType name="Magento\Catalog\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
-        <arguments>
-            <argument name="baseTmpPath" xsi:type="string">catalog/tmp/category</argument>
-            <argument name="basePath" xsi:type="string">catalog/category</argument>
-            <argument name="allowedExtensions" xsi:type="array">
-                <item name="jpg" xsi:type="string">jpg</item>
-                <item name="jpeg" xsi:type="string">jpeg</item>
-                <item name="gif" xsi:type="string">gif</item>
-                <item name="png" xsi:type="string">png</item>
-            </argument>
-        </arguments>
-    </virtualType>
 </config>

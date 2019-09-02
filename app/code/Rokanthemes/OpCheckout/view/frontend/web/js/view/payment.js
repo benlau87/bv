@@ -42,6 +42,16 @@ define(
                 });
                 return this;
             },
+			navigate: function () {
+				var self = this;
+				if (!self.hasShippingMethod()) {
+					this.isVisible(true);
+				} else {
+					getPaymentInformation().done(function () {
+						self.isVisible(true);
+					});
+				}
+			},
             beforeInitPayment: function(){
                 /*
                  * 10/09/2016 - Daniel
