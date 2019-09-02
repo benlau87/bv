@@ -16,7 +16,6 @@ define(
         _,
         ko,
         paymentService,
-        getPaymentInformation,
         methodConverter,
         $t,
         Payment,
