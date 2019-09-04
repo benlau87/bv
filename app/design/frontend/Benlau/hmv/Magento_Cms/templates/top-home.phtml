@@ -1,0 +1,33 @@
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_slider')->toHtml(); ?>
+        </div>
+    </div>
+</section>
+
+<section id="slider-bottom">
+    <div class="container">
+        <div class="row">
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_instructions')->toHtml(); ?>
+        </div>
+    </div>
+</section>
+
+<section id="bestsellers">
+    <div class="container">
+        <div class="row p-t-80 p-b-80">
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_bestsellers')->toHtml(); ?>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hmv_home_services')->toHtml(); ?>
+        </div>
+    </div>
+</section>

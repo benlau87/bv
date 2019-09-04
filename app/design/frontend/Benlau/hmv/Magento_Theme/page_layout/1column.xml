@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <move element="breadcrumbs" destination="page.wrapper" before="main.content"/>
+    <container name="root">
+        <container name="after.body.start" as="after.body.start" before="-" label="Page Top"/>
+        <container name="page.wrapper" as="page_wrapper" htmlTag="div" htmlClass="wrapper">
+            <container name="global.notices" as="global_notices" before="-"/>
+            <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main container">
+                <container name="columns.top" label="Before Main Columns"/>
+                <container name="columns" htmlTag="div" htmlClass="row">
+                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="column col-main" after="-"/>
+                </container>
+            </container>
+        </container>
+    </container>
+<!--    <container name="sidebar.additional" label="Sidebar Additional" htmlTag="div">
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="paypal.partner.right.logo" remove="true" />
+        <referenceBlock name="bml.right.logo" remove="true" />
+    </container>-->
+    <referenceContainer name="page.wrapper">
+        <container name="header.nav" as="header_container" label="Page Header Container"  htmlTag="nav" htmlClass="navigation" before="main.content">
+            <container name="header.container" htmlTag="section" htmlId="header" htmlClass="header-container"/>
+        </container>
+        <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="footer" />
+    </referenceContainer>
+</layout>

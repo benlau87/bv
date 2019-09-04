@@ -1,34 +1,28 @@
 <?php
 namespace Rokanthemes\Categorytab\Controller\Adminhtml\Category\Thumbnailimage;
 
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 
-/**
- * Class Upload
- */
-class Upload extends \Magento\Backend\App\Action
-{
-    protected $baseTmpPath;
-    protected $imageUploader;
+class Upload extends \Magento\Backend\App\Action implements HttpPostActionInterface
+{	
+	protected $imageUploader;
+
+    
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Catalog\Model\ImageUploader $imageUploader
     ) {
-        $this->imageUploader = $imageUploader;
         parent::__construct($context);
-
+        $this->imageUploader = $imageUploader;
     }
-    public function execute() {
+	
+	public function execute()
+    {
+        $imageId = $this->_request->getParam('param_name', 'cat_image_thumbnail');
 
         try {
-            $result = $this->imageUploader->saveFileToTmpDir('cat_image_thumbnail');
-            $result['cookie'] = [
-                'name' => $this->_getSession()->getName(),
-                'value' => $this->_getSession()->getSessionId(),
-                'lifetime' => $this->_getSession()->getCookieLifetime(),
-                'path' => $this->_getSession()->getCookiePath(),
-                'domain' => $this->_getSession()->getCookieDomain(),
-            ];
+            $result = $this->imageUploader->saveFileToTmpDir($imageId);
         } catch (\Exception $e) {
             $result = ['error' => $e->getMessage(), 'errorcode' => $e->getCode()];
         }

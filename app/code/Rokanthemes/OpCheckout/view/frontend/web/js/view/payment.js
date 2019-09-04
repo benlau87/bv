@@ -9,7 +9,8 @@ define(
         'Magento_Checkout/js/view/payment',
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/model/payment/method-list',
-        'Rokanthemes_OpCheckout/js/action/save-default-payment'
+        'Rokanthemes_OpCheckout/js/action/save-default-payment',
+		'Magento_Checkout/js/action/get-payment-information'
     ],
     function (
         $,
@@ -21,7 +22,8 @@ define(
         Payment,
         quote,
         methodList,
-        saveDefaultPayment
+        saveDefaultPayment,
+		getPaymentInformation
     ) {
         'use strict';
 
@@ -42,6 +44,16 @@ define(
                 });
                 return this;
             },
+			navigate: function () {
+				var self = this;
+				if (!self.hasShippingMethod()) {
+					this.isVisible(true);
+				} else {
+					getPaymentInformation().done(function () {
+						self.isVisible(true);
+					});
+				}
+			},
             beforeInitPayment: function(){
                 /*
                  * 10/09/2016 - Daniel

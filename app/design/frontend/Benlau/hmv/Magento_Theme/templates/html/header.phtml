@@ -1,0 +1,39 @@
+<nav class="navigation">
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div id="logo" class="column">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+            </div>
+        </div>
+
+        <div id="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="column column-60 column-offset-20">
+                        <?php echo $this->getChildHtml("top_link"); ?>
+                    </div>
+                    <div class="column text-right"><a href="/rollator" class="cta" title="">Rollator ausleihen</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="column column-offset-20">
+                        <ul id="mainnav" class="sf-menu">
+                            <li><a href="/">Startseite</a></li>
+                            <li><a href="/sortiment">Sortiment</a></li>
+                            <li><a href="/informationen">Informationen</a></li>
+                            <li><a href="/hilfe">Hilfe</a></li>
+                            <li><a href="/kontakt">Kontakt</a></li>
+                        </ul>
+                        <?php #echo $this->getChildHtml("top.navigation.sections"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</nav>

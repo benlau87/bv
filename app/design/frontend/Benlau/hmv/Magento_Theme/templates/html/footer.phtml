@@ -1,0 +1,30 @@
+<footer class="footer">
+    <section id="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <?php echo $this->getChildHtml("footer-cta-text"); ?>
+                </div>
+                <div class="column text-right">
+                    <?php echo $this->getChildHtml("footer-cta"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="copyright">
+        <div class="container">
+            <p><?php echo $this->getChildHtml("copyright-hmv"); ?></p>
+        </div>
+    </section>
+</footer>
+
+<script>
+    window.onload = function () {
+        document.body.className += " preloaded";
+    }
+
+    require(['jquery', 'main'], function($, main) {
+        main();
+    });
+</script>

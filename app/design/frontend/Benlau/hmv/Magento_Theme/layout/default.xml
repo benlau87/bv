@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="hmv_header" template="Magento_Theme::html/header.phtml" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="top_link" template="Magento_Theme::html/toplink.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="top.navigation.sections" template="Magento_Theme::html/sections.phtml">
+                    <arguments>
+                        <argument name="group_name" xsi:type="string">navigation-sections</argument>
+                        <argument name="group_css" xsi:type="string">nav-sections</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="hmv_footer" template="Magento_Theme::html/footer.phtml">
+                <block class="Magento\Cms\Block\Block" name="footer-cta-text">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-cta-text</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer-cta">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-cta</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="copyright-hmv">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">copyright-hmv</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <move element="header" destination="hmv_header"/>
+        <move element="header.links" destination="hmv_header" />
+        <move element="logo" destination="hmv_header"/>
+        <move element="minicart" destination="hmv_header"/>
+        <move element="top.links" destination="hmv_header" />
+        <move element="page.main.title" destination="breadcrumbs" before="-" />
+        <move element="custom.topnav" destination="top.navigation.sections" />
+        <move element="store_switcher" destination="hmv_footer" />
+
+        <referenceContainer name="store_language" remove="true"/>
+        <referenceContainer name="store_switcher" remove="true"/>
+        <referenceContainer name="currency" remove="true"/>
+        <referenceContainer name="top.search" remove="true"/>
+        <referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceContainer name="header-wrapper" remove="true"/>
+        <referenceContainer name="navigation.sections" remove="true"/>
+        <referenceContainer name="footer_links" remove="true"/>
+        <referenceContainer name="copyright" remove="true"/>
+        <referenceContainer name="report.bugs" remove="1"/>
+        <referenceContainer name="form.subscribe" remove="1"/>
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true" />
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="view.addto.wishlist" remove="true" />
+        <referenceBlock name="product.info.sku" remove="true" />
+    </body>
+</page>
