@@ -25,7 +25,7 @@
 		"temando/module-shipping-m2": "1.5.3",
 		"magento/framework": "102.0.2",
 		"magento/module-paypal": "100.3.2"
-    },
+		},
     "config": {
         "use-include-path": true,
 		"platform": {
