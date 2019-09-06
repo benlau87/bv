@@ -9,7 +9,8 @@ define(
         'Magento_Checkout/js/view/payment',
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/model/payment/method-list',
-        'Rokanthemes_OpCheckout/js/action/save-default-payment'
+        'Rokanthemes_OpCheckout/js/action/save-default-payment',
+		'Magento_Checkout/js/action/get-payment-information'
     ],
     function (
         $,
@@ -21,7 +22,8 @@ define(
         Payment,
         quote,
         methodList,
-        saveDefaultPayment
+        saveDefaultPayment,
+		getPaymentInformation
     ) {
         'use strict';
 
