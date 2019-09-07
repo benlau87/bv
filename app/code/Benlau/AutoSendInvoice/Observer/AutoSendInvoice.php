@@ -48,7 +48,7 @@ class AutoSendInvoice implements ObserverInterface
         $invoice = $observer->getEvent()->getInvoice();
         $order = $invoice->getOrder();
 
-        $debug = true;
+        $debug = false;
 
         if (!$order->getId()) {
             throw new LocalizedException(__('The order no longer exists.'));
