@@ -815,7 +815,7 @@ Ok,Ok,module,Amazon_Login
 "Continue as Guest","Continue as Guest",module,Amazon_Login
 "Forgot Your Password?","Forgot Your Password?",module,Amazon_Login
 "Login with Amazon","Login with Amazon",module,Amazon_Login
-"With Amazon Pay and Login with Amazon, you can easily sign-in and use the shipping and payment information stored in your Amazon account to place an order on this shop. ","Mit Amazon Pay und Login mit Amazon können Sie sich auf einfache Weise anmelden und die Liefer- und Zahlungsdaten aus Ihrem Amazon-Kundenkonto verwenden, um auf dieser Website eine Bestellung aufzugeben.",module,Amazon_Login
+"With Amazon Pay and Login with Amazon, you can easily sign-in and use the shipping and payment information stored in your Amazon account to place an order on this shop. ","With Amazon Pay and Login with Amazon, you can easily sign-in and use the shipping and payment information stored in your Amazon account to place an order on this shop. ",module,Amazon_Login
 "Securely login into our website using your existing Amazon details.","Securely login into our website using your existing Amazon details.",module,Amazon_Login
 "You will be redirected shortly...","You will be redirected shortly...",module,Amazon_Login
 "IPN not enabled.","IPN not enabled.",module,Amazon_Payment
